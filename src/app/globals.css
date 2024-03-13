@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.signup-form>input, select {
+  @apply p-3 rounded-2xl outline-none text-neutral-500 text-sm shadow-md bg-neutral-100
+}
