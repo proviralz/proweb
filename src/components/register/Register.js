@@ -1,68 +1,76 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { FaCheck } from "react-icons/fa";
+import { FaFacebookF } from 'react-icons/fa6';
+import { FcGoogle } from 'react-icons/fc';
+import Select from './Select';
+// import { FaCheck } from "react-icons/fa";
 
 const Register = () => {
 
+    const [showSelect, setShowSelect] = useState(false)
+
     // #CCE7F1
   return (
-    <div className='p-5 relative h-screen flex flex-col justify-center'>
-        
-        {/* top */}
-        <div className='absolute top-10 ml-auto mr-auto left-0 right-0 flex justify-center flex-col items-center gap-4'>
-            {/* logo */}
-            <div>
-                <Image src={"/assets/logo/logo.svg"} alt='logo' width={100} height={100} className='' />
-            </div>
-
-            {/* welcome text */}
-            <p className=' uppercase text-lg text-neutral-500'>
-                welcome to suuave
+    <div className=' p-5'>
+        <div className=' fixed top-0  w-full left-0'>
+            <Select showSelect={showSelect} setShowSelect={setShowSelect} />
+        </div>
+       <div className=' mt-10'>
+        <div>
+            <p className=' text-3xl text-neutral-700 font-light'>
+                Sign up
             </p>
         </div>
-
-        {/* form */}
-        <div className=' mt-10'>
-            {/* user type */}
-            <div className=' border flex p-1 gap-2 rounded-lg text-center'>
-                <p className='cursor-pointer flex-1 bg-[#CCE7F1] rounded-md p-2 text-neutral-600 text-sm'>
-                    Fashion Designer
-                </p>
-                <p className='cursor-pointer flex-1 bg-[#f2f1f1] rounded-md p-2 text-neutral-600 text-sm'>
-                    Fashion illustrator
-                </p>
-            </div>
-
-            <div className='mt-10'>
-                <div className='signup-form flex gap-5'>
-                    <input type="text" name="firstname" id=""  placeholder='Firstname' className='w-1/2'  />
-                    <input type="text" name="lastname" id=""  placeholder="Lastname" className=' w-1/2' />
+        <div className=' login-form mt-6 flex flex-col gap-4'>
+            <input type="text" name="name" id="name" placeholder='Enter Fullname' />
+            <input type="text" name="email" id="email" placeholder='Enter Email' />
+            <input type="password" name="password" id="password" placeholder='Password' />
+            <input type="password" name="Confirm password" id="repeat" placeholder='Confirm Password' />
+            <div className=' flex items-center gap-4'>
+                <div className=' h-6 w-8 border border-neutral-400 rounded-sm flex items-center justify-center'>
+                    <FaCheck className=' text-sm text-[#31013f] ' />
                 </div>
-                <div className=' flex flex-col signup-form gap-5 mt-5'>
-                    <input type="text" placeholder='Email' name='email' />
-                    <input type="tel"  placeholder="Phone" name='phone' />
-                    {/* <label className=' -mb-4 text-neutral-500 text-sm px-3' htmlFor="dob">Select Category</label> */}
-                    <input type="text" name="username" placeholder='username' id="" />
-                </div>
-
-            </div>
-            <div className=' mt-5 flex items-center gap-4 px-5'>
-                <div className=' bg-neutral-300 p-1 rounded-sm text-xs'>
-                    <FaCheck />
-                </div>
-                <div>
-                    <small className=' text-neutral-500'>
-                        By creating an account, I agree to Suuave Terms of service and privacy policy
-                    </small>
-                </div>
-            </div>
-
-            <div className=' flex justify-center mt-5'>
-                <p className=' bg-[#CCE7F1] w-full text-center p-3 rounded-lg text-neutral-600 font-semibold'>
-                    Create account
+                <p className=' text-neutral-500 text-sm'>
+                    By signing up, you accept the <span className=' text-[#31013f]'>Terms of service</span> and <span className=' text-[#31013f]'>Privacy policy</span>
                 </p>
             </div>
         </div>
+        <div className=' mt-5'>
+            <p onClick={()=> setShowSelect(true)} className='purple-btn-long'>
+                Register
+            </p>
+        </div>
+        <div className=' mt-5 flex items-center gap-2 justify-between'>
+            <div className=' bg-neutral-400 h-[1px] w-full'></div>
+            <div className=' w-72 flex justify-center'>
+                <p className=' text-sm  text-neutral-500'>
+                    Or login with
+                </p>
+            </div>
+            <div className='bg-neutral-400 h-[1px] w-full'></div>
+        </div>
+        <div className=' mt-5 flex flex-col gap-4'>
+            <div className='trans-btn'>
+                <FcGoogle />
+                <p className=''>
+                    Continue with Google
+                </p>
+            </div>
+            <div className='trans-btn'>
+                <FaFacebookF className=' text-[#3b5998]' />
+                <p>
+                    Continue with Facebook
+                </p>
+            </div>
+        </div>
+        <div className=' mt-10 flex justify-center'>
+            <p className=' text-neutral-500 font-light'>
+                Already Registered? <span className=' text-[#31013f] '>Login</span>
+            </p>
+        </div>
+       </div>
     </div>
   )
 }

@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 
-.signup-form>input, select {
-  @apply p-3 rounded-2xl outline-none text-neutral-500 text-sm shadow-md bg-neutral-100
+.login-form>input {
+  @apply border p-3 w-full border-neutral-400 rounded-md outline-none text-neutral-600
+}
+
+.purple-btn-long {
+  @apply bg-[#31013f] text-white rounded-md p-4 text-center 
+}
+
+.trans-btn {
+  @apply p-3 shadow-md rounded-md border flex justify-center items-center gap-2 text-neutral-500
 }
