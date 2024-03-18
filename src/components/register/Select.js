@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import Image from 'next/image'
+import SetupProfile from './SetupProfile'
 
 const Select = ({showSelect, setShowSelect}) => {
+
+    const [showSetup, setShowSetup] = useState(false)
   return (
-    <div className={`${showSelect? 'flex': 'hidden'} h-screen overflow-y-scroll bg-gray-100 w-full`}>
+    <div className={`${showSelect? 'flex': 'hidden'} h-screen overflow-y-scroll bg-gray-100 w-full flex justify-center`}>
+        <div className=' fixed top-0  w-full left-0'>
+            <SetupProfile showSetup={showSetup} setShowSetup={setShowSetup} />
+        </div>
         <div className=' p-5'>
             <Header />
 
@@ -16,7 +22,7 @@ const Select = ({showSelect, setShowSelect}) => {
             </div>
 
             <div  className=' mt-5 '>
-                <div  className=' border border-neutral-400 flex items-center justify-center h-64 rounded-md bg-[#31013f]/15'>
+                <div onClick={()=> setShowSetup(true)}  className=' border border-neutral-400 flex items-center justify-center h-64 rounded-md bg-[#31013f]/15'>
                     <div>
                         <div className=' flex justify-center'>
                             <Image src={'/assets/onboard/woman.svg'} alt='' width={100} height={100} className=' w-48' />

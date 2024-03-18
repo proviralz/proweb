@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.login-form>input {
+.login-form>input, .login-form>select {
   @apply border p-3 w-full border-neutral-400 rounded-md outline-none text-neutral-600
 }
 
