@@ -14,3 +14,11 @@
 .trans-btn {
   @apply p-3 shadow-md rounded-md border flex justify-center items-center gap-2 text-neutral-500
 }
+
+.yellow-btn-long {
+  @apply bg-[#fff800] py-3 text-[#31013f] capitalize text-center rounded-md
+}
+
+.social-icon {
+  @apply border border-white p-2 rounded-full
+}
