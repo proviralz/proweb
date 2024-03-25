@@ -7,6 +7,7 @@ import { FaStar } from 'react-icons/fa';
 import Footer from '../footer/Footer';
 import { MdOutlineEdit } from "react-icons/md";
 import { FaPlus } from 'react-icons/fa6';
+import CompleteProfile from './CompleteProfile';
 
 const UserProfile = () => {
 
@@ -32,14 +33,14 @@ const UserProfile = () => {
 
 
             <div className=' flex-1'>
-                <div className=' p-5 bg-white rounded-md flex gap-5'>
-                    <div className=' relative bg-slate-400 w-2/5 rounded-sm overflow-hidden'>
+                <div className=' p-5 bg-white rounded-md flex md:flex-row flex-col gap-5'>
+                    <div className=' relative bg-slate-400 md:w-2/5 rounded-sm overflow-hidden'>
                         <div className=' absolute bg-white p-1 rounded-full bottom-3 left-3 text-neutral-600 text-xl'>
                             <TbCameraPlus />
                         </div>
                         <Image src={'/assets/profile/man.svg'} alt='user' width={100} height={100} className=' h-full object-cover w-full' />
                     </div>
-                    <div className=' w-3/5 text-neutral-500'>
+                    <div className=' md:w-3/5 text-neutral-500'>
                         <div>
                             <p>
                                 Victor Matthew
@@ -88,7 +89,7 @@ const UserProfile = () => {
                         </div>
                     </div>
                     <div className=' mt-5'>
-                        <div className=' flex flex-wrap justify-between gap-10'>
+                        <div className=' flex flex-wrap justify-center md:justify-between gap-10'>
                             {gallery.map((g, i)=> (
                                 <div key={i} className=' w-56'>
                                     <div className=' w-full rounded-lg overflow-hidden'>
@@ -156,8 +157,8 @@ const UserProfile = () => {
             </div>
 
 
-            <div className=' w-72  lg:w-[400px]'>
-                <div className=' bg-white p-5 rounded-md'>
+            <div className=' w-full md:w-72  lg:w-[400px]'>
+                <div className=' mt-5 md:mt-0 bg-white p-5 rounded-md'>
                     <div>
                         <p>
                             Basic information
@@ -306,13 +307,57 @@ const UserProfile = () => {
                             </div>
                         </div>
                     </div>
+
+                    <div className=' mt-4 border-b pb-4 flex justify-between'>
+                        <div>
+                            <p className=' text-sm'>
+                                Languages
+                            </p>
+                            <p className=' text-xs mt-2 font-light'>
+                                English (Basic)
+                            </p>
+                        </div>
+                        <div className=' flex gap-2 items-start '>
+                            <div className=' border border-[#31013f] p-1 rounded-full text-[#31013f]'>
+                                <MdOutlineEdit />
+                            </div>
+                            <div className=' border border-[#31013f] p-1 rounded-full text-[#31013f]'>
+                                <FaPlus />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className=' mt-4 flex justify-between'>
+                        <div>
+                            <p className=' text-sm'>
+                                Education
+                            </p>
+                            <div className=' mt-2 text-xs font-light'>
+                                <p>
+                                    University of Ibandan
+                                </p>
+                                <p>
+                                    Computer Science (B.Sc)
+                                </p>
+                                <p>
+                                    2016 - 2020
+                                </p>
+                            </div>
+                        </div>
+                        <div className=' flex gap-2 items-start '>
+                            <div className=' border border-[#31013f] p-1 rounded-full text-[#31013f]'>
+                                <MdOutlineEdit />
+                            </div>
+                            <div className=' border border-[#31013f] p-1 rounded-full text-[#31013f]'>
+                                <FaPlus />
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div className=' mt-4 border-b pb-4'>
-                        hh
-                    </div>
-                    <div className=' mt-4 border-b pb-4'>
-                        ggg
-                    </div>
+                </div>
+
+                <div className=' mt-5'>
+                    <CompleteProfile />
                 </div>
             </div>
         </div>
