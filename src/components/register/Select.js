@@ -12,17 +12,21 @@ const Select = ({showSelect, setShowSelect}) => {
             <SetupProfile showSetup={showSetup} setShowSetup={setShowSetup} />
         </div>
         <div className=' p-5'>
-            <Header />
+            <div className=' '>
+                <Header />
+            </div>
 
             <div className=' mt-10'>
-                <p className=' text-center text-2xl capitalize text-[#31013f]'>
+                <p className=' text-center text-2xl md:text-4xl capitalize text-[#31013f]'>
                     ready to make your mark? <br />
                     choose your role and let&apos;s get started 
                 </p>
             </div>
 
-            <div  className=' mt-5 '>
-                <div onClick={()=> setShowSetup(true)}  className=' border border-neutral-400 flex items-center justify-center h-64 rounded-md bg-[#31013f]/15'>
+            <div  className=' mt-5 flex flex-col md:flex-row md:items-center gap-10 md:mt-20  '>
+                <div 
+                    onClick={()=> setShowSetup(true)}  
+                    className=' border border-neutral-400 flex items-center justify-center h-64 rounded-md bg-[#31013f]/15'>
                     <div>
                         <div className=' flex justify-center'>
                             <Image src={'/assets/onboard/woman.svg'} alt='' width={100} height={100} className=' w-48' />
@@ -34,7 +38,7 @@ const Select = ({showSelect, setShowSelect}) => {
                         </div>
                     </div>
                 </div>
-                <div className=' border border-neutral-400 flex items-center justify-center h-64 mt-5 rounded-md'>
+                <div className=' border border-neutral-400 flex items-center justify-center h-64 rounded-md'>
                     <div>
                         <div className=' flex justify-center'>
                             <Image src={'/assets/onboard/contract.svg'} alt='' width={100} height={100} className=' w-48' />

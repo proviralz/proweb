@@ -22,3 +22,7 @@
 .social-icon {
   @apply border border-white p-2 rounded-full
 }
+
+.trans-purple-btn {
+  @apply border border-[#31013f] text-[#31013f] text-[0.8rem] px-4 py-2 rounded-sm
+}
