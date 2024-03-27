@@ -5,7 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 
-const Header = () => {
+const HeaderTwo = () => {
   return (
     <div className=' p-5 md:p-0 flex justify-between bg-white md:flex-col'>
         <div className=' flex items-center gap-2  md:px-10 md:py-5 md:border-b border-neutral-500'>
@@ -25,7 +25,7 @@ const Header = () => {
                             Messages
                         </Link>
                         <Link href={'/'}>
-                            Applications
+                            Proposals
                         </Link>
                         <Link href={'/'}>
                             Marketing Agency
@@ -37,20 +37,20 @@ const Header = () => {
                 <div className=' text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
                     <IoIosNotificationsOutline />
                 </div>
-                <Link href={'/profile'} className=' relative'>
+                <div className=' relative'>
                     <div className=' absolute top-0 right-5 bg-green-500 h-3 w-3 rounded-full' />
                     <Image src={'/assets/home/profile.svg'} alt='profile' width={100} height={100} className=' h-8'  />
-                </Link>
+                </div>
             </div>
         </div>
-        <div className=' md:px-10 md:py-5'>
+        {/* <div className=' md:px-10 md:py-5'>
             <div className=' flex items-center border px-2 py-1  rounded-xl gap-3'>
                 <FiSearch />
                 <input type="text" name="" id="" className=' w-28 md:w-full outline-none  text-neutral-600 ' placeholder='Search services' />
             </div>
-        </div>
+        </div> */}
     </div>
   )
 }
 
-export default Header
+export default HeaderTwo

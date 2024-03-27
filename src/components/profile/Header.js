@@ -13,9 +13,9 @@ const Header = () => {
                 <div className=' md:hidden text-2xl'>
                     <AiOutlineMenu />
                 </div>
-                <div className=''>
+                <Link href={'/'} className=''>
                     <Image src={'/assets/logo/logo.svg'}  alt='proviralz' width={100} height={100} />
-                </div>
+                </Link>
                 <div className=' hidden md:flex'>
                     <nav className=' flex gap-4 text-neutral-500 text-sm font-light'>
                         <Link href={'/'}>
