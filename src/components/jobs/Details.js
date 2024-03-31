@@ -2,6 +2,13 @@ import React from 'react'
 import HeaderTwo from '../skilled/HeaderTwo'
 import Footer from '../footer/Footer'
 import { skills } from '../data/featured'
+import Image from 'next/image'
+import { CiLocationOn } from 'react-icons/ci'
+import { GiWorld } from "react-icons/gi";
+import { BsClockHistory, BsTelephone } from "react-icons/bs";
+import { FaRegAddressCard } from 'react-icons/fa6'
+import { IoMailOutline } from "react-icons/io5";
+import { MdOutlinePayments } from 'react-icons/md'
 
 const Details = () => {
   return (
@@ -117,8 +124,105 @@ const Details = () => {
 
 
             <div className=' w-full md:w-72  lg:w-[400px]'>
-                <div className=' mt-5 md:mt-0 bg-white p-5 rounded-md'>
-                    Holla
+                <div className=' mt-5 md:mt-0 bg-white p-5 rounded-md flex flex-col gap-1'>
+                    <div className=' border-b py-4'>
+                        <p>
+                            Client Details
+                        </p>
+                    </div>
+                    <div className='py-4'>
+                        <div>
+                            <p className=' text-sm'>
+                                About Client
+                            </p>
+                        </div>
+                        <div className=' flex flex-col items-center justify-center gap-2'>
+                            <div>
+                                <Image src={'/assets/home/ibm.svg'} alt='' width={100} height={100} className=' h-16' />
+                            </div>
+                            <p className=' text-[0.6rem]'>
+                                International business machine corp
+                            </p>
+                        </div>
+                        <div className=' mt-3 flex flex-col gap-2'>
+                            <div className=' flex items-center gap-4 text-xs font-light'>
+                                <p>
+                                    <CiLocationOn />
+                                </p>
+                                <p>
+                                    New York
+                                </p>
+                            </div>
+                            <div className=' flex items-center gap-4 text-xs font-light'>
+                                <p>
+                                    <GiWorld />
+                                </p>
+                                <p>
+                                    United states
+                                </p>
+                            </div>
+                            <div className=' flex items-center gap-4 text-xs font-light'>
+                                <p>
+                                    <BsClockHistory />
+                                </p>
+                                <p>
+                                    member since December 2023
+                                </p>
+                            </div>
+                        </div>
+                        <div className=' mt-4 flex flex-col gap-2'>
+                            <p className=' text-sm'>
+                                Client verification
+                            </p>
+                            <div className=' flex items-center gap-4 text-xs font-light'>
+                                <p>
+                                    <FaRegAddressCard />
+                                </p>
+                                <p>
+                                    Identity verified
+                                </p>
+                            </div>
+                            <div className=' flex items-center gap-4 text-xs font-light'>
+                                <p>
+                                    <IoMailOutline />
+                                </p>
+                                <p>
+                                    Email verified
+                                </p>
+                            </div>
+                            <div className=' flex items-center gap-4 text-xs font-light'>
+                                <p>
+                                    <BsTelephone />
+                                </p>
+                                <p>
+                                    Phone verified
+                                </p>
+                            </div>
+                            <div className=' flex items-center gap-4 text-xs font-light'>
+                                <p>
+                                    <MdOutlinePayments />
+                                </p>
+                                <p>
+                                    Payment verified
+                                </p>
+                            </div>
+                        </div>
+                        <div className=' mt-3'>
+                            <div>
+                                <p className=' text-sm'>
+                                    Job link
+                                </p>
+                            </div>
+                            <div className=' flex gap-5 items-center text-xs mt-2'>
+                                <p className=' text-[0.6rem] p-2 bg-neutral-100 font-light rounded-md'>
+                                    https://provirals.com/job/12456
+                                </p>
+                                <p>
+                                    copy link
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>    
             </div>
         </div>

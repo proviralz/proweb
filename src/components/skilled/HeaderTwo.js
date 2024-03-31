@@ -1,11 +1,18 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react'
 import { AiOutlineMenu } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 
 const HeaderTwo = () => {
+
+    const router = useRouter()
+    const pathname = usePathname()
+
+    // console.log(pathname)
   return (
     <div className=' p-5 md:p-0 flex justify-between bg-white md:flex-col'>
         <div className=' flex items-center gap-2  md:px-10 md:py-5 md:border-b border-neutral-500'>
@@ -18,16 +25,16 @@ const HeaderTwo = () => {
                 </Link>
                 <div className=' hidden md:flex'>
                     <nav className=' flex gap-4 text-neutral-500 text-sm font-light'>
-                        <Link href={'/'}>
+                        <Link href={'/jobs'} className={pathname.startsWith('/jobs')? 'text-[#31013f]': ''}>
                             My Jobs
                         </Link>
-                        <Link href={'/'}>
+                        <Link href={'/messages'} className={pathname.startsWith('/messages')? 'text-[#31013f]': ''}>
                             Messages
                         </Link>
-                        <Link href={'/'}>
+                        <Link href={'/proposals'} className={pathname.startsWith('/proposals')? 'text-[#31013f]': ''}>
                             Proposals
                         </Link>
-                        <Link href={'/'}>
+                        <Link href={'/agency'} className={pathname.startsWith('/agency')? 'text-[#31013f]': ''}>
                             Marketing Agency
                         </Link>
                     </nav>

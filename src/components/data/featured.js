@@ -310,3 +310,187 @@ export const experience = [
     },
     
 ]
+
+export const message = [
+    {
+        user: 'Mike',
+        id: 1,
+        msg: 'Hi, good morning',
+        time: '12:30',
+        img: '/assets/messages/1.svg',
+        chat: [
+            {
+              "id": "msg1",
+              "sender": "Alice",
+              "message": "Hi there! i am mike",
+              "timestamp": "2024-03-28T09:00:00Z"
+            },
+            {
+              "id": "msg2",
+              "sender": "Bob",
+              "message": "Hey Alice, how's it going? from mike",
+              "timestamp": "2024-03-28T09:01:30Z"
+            },
+            {
+              "id": "msg3",
+              "sender": "Alice",
+              "message": "Pretty good, thanks! Working on a project. You?",
+              "timestamp": "2024-03-28T09:02:15Z"
+            },
+            {
+              "id": "msg4",
+              "sender": "Bob",
+              "message": "Same here. Just taking a short break.",
+              "timestamp": "2024-03-28T09:05:00Z"
+            }
+          ]
+    },
+    {
+        user: 'Jesse',
+        id: 2,
+        msg: 'Hello dave, good morning',
+        time: '12:30',
+        img: '/assets/messages/2.svg',
+        chat: [
+            {
+              "id": "msg1",
+              "sender": "Alice",
+              "message": "Hi there!, i am jesse",
+              "timestamp": "2024-03-28T09:00:00Z"
+            },
+            {
+              "id": "msg2",
+              "sender": "Bob",
+              "message": "Hey Alice, how's it going? from jesse",
+              "timestamp": "2024-03-28T09:01:30Z"
+            },
+            {
+              "id": "msg3",
+              "sender": "Alice",
+              "message": "Pretty good, thanks! Working on a project. You?",
+              "timestamp": "2024-03-28T09:02:15Z"
+            },
+            {
+              "id": "msg4",
+              "sender": "Bob",
+              "message": "Same here. Just taking a short break.",
+              "timestamp": "2024-03-28T09:05:00Z"
+            }
+          ]
+    },
+    {
+        user: 'Princess',
+        id: 3,
+        msg: 'Hi, good morning',
+        time: '12:30',
+        img: '/assets/messages/1.svg',
+        chat: [
+            {
+              "id": "msg1",
+              "sender": "Alice",
+              "message": "Hi there! i am princess",
+              "timestamp": "2024-03-28T09:00:00Z"
+            },
+            {
+              "id": "msg2",
+              "sender": "Bob",
+              "message": "Hey Alice, how's it going?",
+              "timestamp": "2024-03-28T09:01:30Z"
+            },
+            {
+              "id": "msg3",
+              "sender": "Alice",
+              "message": "Pretty good, thanks! Working on a project. You?",
+              "timestamp": "2024-03-28T09:02:15Z"
+            },
+            {
+              "id": "msg4",
+              "sender": "Bob",
+              "message": "Same here. Just taking a short break.",
+              "timestamp": "2024-03-28T09:05:00Z"
+            }
+          ]
+    },
+    {
+        user: 'femi',
+        id: 4,
+        msg: 'Hi, good morning',
+        time: '12:30',
+        img: '/assets/messages/2.svg',
+        chat: [
+            {
+              "id": "msg1",
+              "sender": "Alice",
+              "message": "Hi there!",
+              "timestamp": "2024-03-28T09:00:00Z"
+            },
+            {
+              "id": "msg2",
+              "sender": "Bob",
+              "message": "Hey Alice, how's it going?",
+              "timestamp": "2024-03-28T09:01:30Z"
+            },
+            {
+              "id": "msg3",
+              "sender": "Alice",
+              "message": "Pretty good, thanks! Working on a project. You?",
+              "timestamp": "2024-03-28T09:02:15Z"
+            },
+            {
+              "id": "msg4",
+              "sender": "Bob",
+              "message": "Same here. Just taking a short break.",
+              "timestamp": "2024-03-28T09:05:00Z"
+            }
+          ]
+    },
+    
+]
+
+export const me = {
+    user: "femi",
+    chat: [
+        {
+          "id": "msg5",
+          "sender": "Charlie",
+          "message": "Good morning, Alice and Bob!",
+          "timestamp": "2024-03-28T09:00:30Z"
+        },
+        {
+          "id": "msg6",
+          "sender": "Alice",
+          "message": "Morning, Charlie! Joining the work grind?",
+          "timestamp": "2024-03-28T09:01:45Z"
+        },
+        {
+          "id": "msg7",
+          "sender": "Bob",
+          "message": "Welcome, Charlie! Yeah, we're both caught up in projects today.",
+          "timestamp": "2024-03-28T09:02:00Z"
+        },
+        {
+          "id": "msg8",
+          "sender": "Charlie",
+          "message": "I see. I'm here to discuss the new project proposal.",
+          "timestamp": "2024-03-28T09:03:00Z"
+        },
+        {
+          "id": "msg9",
+          "sender": "Alice",
+          "message": "That's great, Charlie. Let's set up a meeting for it.",
+          "timestamp": "2024-03-28T09:03:30Z"
+        },
+        {
+          "id": "msg10",
+          "sender": "Bob",
+          "message": "Sounds good. How about tomorrow morning?",
+          "timestamp": "2024-03-28T09:04:00Z"
+        },
+        {
+          "id": "msg11",
+          "sender": "Charlie",
+          "message": "Perfect. See you both then.",
+          "timestamp": "2024-03-28T09:04:30Z"
+        }
+      ]
+}

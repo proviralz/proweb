@@ -8,15 +8,15 @@
 }
 
 .purple-btn-long {
-  @apply bg-[#31013f] text-white rounded-md p-4 text-center 
+  @apply bg-[#31013f] text-white rounded-md p-4 text-center cursor-pointer
 }
 
 .trans-btn {
-  @apply p-3 shadow-md rounded-md border flex justify-center items-center gap-2 text-neutral-500
+  @apply p-3 shadow-md rounded-md border flex justify-center items-center gap-2 text-neutral-500 cursor-pointer
 }
 
 .yellow-btn-long {
-  @apply bg-[#fff800] py-3 text-[#31013f] capitalize text-center rounded-md
+  @apply bg-[#fff800] py-3 text-[#31013f] capitalize text-center rounded-md cursor-pointer
 }
 
 .social-icon {
@@ -24,11 +24,11 @@
 }
 
 .trans-purple-btn {
-  @apply border border-[#31013f] text-[#31013f] text-[0.8rem] px-4 py-2 rounded-sm
+  @apply border border-[#31013f] text-[#31013f] text-[0.8rem] px-4 py-2 rounded-sm cursor-pointer
 }
 
 .purple-btn {
-  @apply border bg-[#31013f] border-[#31013f] text-white text-[0.8rem] px-4 py-2 rounded-sm
+  @apply border bg-[#31013f] border-[#31013f] text-white text-[0.8rem] px-4 py-2 rounded-sm cursor-pointer
 }
 
 .tab-menu p {

@@ -1,9 +1,32 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa6";
+import { useRouter } from 'next/navigation';
+import { login } from '@/redux/apiCalls';
+import { useDispatch } from 'react-redux';
+import { signIn } from 'next-auth/react';
 
 const Login = () => {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const dispatch = useDispatch()
+    const router = useRouter()
+
+    const handleSubmit = async(e)=> {
+      e.preventDefault();
+      try {
+        const res = await login({email, password}, dispatch)
+        console.log(res.data)
+        if(res.status ===  200) {
+          router.push('/')
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
   return (
     <div className=' p-5 md:p-0 md:flex'>
         <div className=' md:p-10 flex-1 md:bg-neutral-100'>
@@ -14,8 +37,18 @@ const Login = () => {
                     </p>
                 </div>
                 <div className=' login-form mt-6 flex flex-col gap-4'>
-                    <input type="text" name="email" id="" placeholder='Username or Email' />
-                    <input type="text" name="password" id="" placeholder='Password' />
+                    <input 
+                        type="text" 
+                        name="email" 
+                        id="" 
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder='Username or Email' />
+                    <input 
+                        type="text" 
+                        name="password" 
+                        id="" 
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder='Password' />
                     <div className=' flex justify-end'>
                         <p className=' text-neutral-500'>
                             Forgot password?
@@ -23,7 +56,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className=' mt-5'>
-                    <p className='purple-btn-long'>
+                    <p onClick={handleSubmit} className='purple-btn-long'>
                         Login
                     </p>
                 </div>
@@ -37,7 +70,7 @@ const Login = () => {
                     <div className='bg-neutral-400 h-[1px] w-full'></div>
                 </div>
                 <div className=' mt-5 flex flex-col gap-4'>
-                    <div className='trans-btn'>
+                    <div onClick={()=> signIn("google")} className='trans-btn'>
                         <FcGoogle />
                         <p className=''>
                             Continue with Google

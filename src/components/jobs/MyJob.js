@@ -5,6 +5,7 @@ import PendingJobs from './PendingJobs'
 import CompletedJobs from './CompletedJobs'
 import Bookmarks from './Bookmarks'
 import Footer from '../footer/Footer'
+import HeaderTwo from '../skilled/HeaderTwo'
 
 const MyJob = () => {
 
@@ -12,7 +13,7 @@ const MyJob = () => {
   return (
     <div>
         <div>
-            <Header />
+            <HeaderTwo />
         </div>
         <div className=' p-5 md:p-10 bg-neutral-100'>
             <div className=' p-5 bg-white rounded-lg'>
