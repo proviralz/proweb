@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { login } from '@/redux/apiCalls';
 import { useDispatch } from 'react-redux';
 import { signIn } from 'next-auth/react';
+import Link from 'next/link';
 
 const Login = () => {
 
@@ -85,7 +86,7 @@ const Login = () => {
                 </div>
                 <div className=' mt-10 flex justify-center'>
                     <p className=' text-neutral-500 font-light'>
-                        Not Registered? <span className=' text-[#31013f] '>Sign up</span>
+                        Not Registered? <Link href={'/start'} className=' text-[#31013f] '>Sign up</Link>
                     </p>
                 </div>
             </div>

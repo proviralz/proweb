@@ -1,9 +1,79 @@
+import { publicRequest } from '@/requestMethods'
 import Image from 'next/image'
-import React from 'react'
+import Link from 'next/link'
+import React, { useState } from 'react'
 import { FaCheck, FaFacebookF } from 'react-icons/fa6'
 import { FcGoogle } from 'react-icons/fc'
 
-const StepOne = ({nextPage}) => {
+const StepOne = ({nextPage, setNewUser}) => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [acceptTerms, setAcceptTerms] = useState(false)
+    const [formErrors, setFormErrors] = useState([]);
+
+    const registerUser = async ()=> {
+        try {
+            const res = await publicRequest.post('auth/register', {
+                fullName: name,
+                email: email,
+                password: password
+            })
+            // console.log(res)
+            if (res.status === 201) {
+                setNewUser(res.data)
+                nextPage()
+            }  
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevents the default form submission behavior
+        let errors = [];
+
+        if (!name || !email || !password || !confirmPassword || !acceptTerms) {
+            errors.push('All fields are required.');
+        }
+
+        if (password !== confirmPassword) {
+            errors.push('Passwords do not match.');
+        }
+
+        if (password.length < 8) {
+            errors.push('Password must be at least 8 characters long.');
+        }
+
+        const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailFormat.test(email)) {
+            errors.push('Please enter a valid email address.');
+        }
+
+        if (!acceptTerms) {
+            errors.push("You must accept terms of service and privacy policy")
+        }
+
+        setFormErrors(errors);
+
+        if (errors.length === 0) {
+            // Proceed with form submission or further processing
+            console.log('Form is valid');
+            registerUser()
+            // nextPage()
+            // Reset form or redirect user
+        }
+    };
+
+    const handleNext =()=> {
+        handleSubmit()
+        nextPage()
+    }
+
+
   return (
     <div className=' md:flex'>
         <div className=' md:p-10 md:flex-1 md:bg-neutral-100 md:flex md:items-center'>
@@ -15,25 +85,54 @@ const StepOne = ({nextPage}) => {
                     </p>
                 </div>
                 <div className=' login-form mt-6 flex flex-col gap-4'>
-                    <input type="text" name="name" id="name" placeholder='Enter Fullname' />
-                    <input type="text" name="email" id="email" placeholder='Enter Email' />
-                    <input type="password" name="password" id="password" placeholder='Password' />
-                    <input type="password" name="Confirm password" id="repeat" placeholder='Confirm Password' />
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name" 
+                        onChange={(e)=> setName(e.target.value)}
+                        placeholder='Enter Fullname' />
+                    <input 
+                        type="text" 
+                        name="email" 
+                        id="email" 
+                        onChange={(e)=> setEmail(e.target.value)}
+                        placeholder='Enter Email' />
+                    <input 
+                        type="password" 
+                        name="password" 
+                        id="password" 
+                        onChange={(e)=> setPassword(e.target.value)}
+                        placeholder='Password' />
+                    <input 
+                        type="password" 
+                        name="Confirm password" 
+                        id="repeat" 
+                        onChange={(e)=> setConfirmPassword(e.target.value)}
+                        placeholder='Confirm Password' />
                     <div className=' flex items-center gap-4'>
-                        <div className=' h-6 w-8 border border-neutral-400 rounded-sm flex items-center justify-center'>
-                            <FaCheck className=' text-sm text-[#31013f] ' />
+                        <div onClick={()=> setAcceptTerms(!acceptTerms)} className=' h-6 w-8 border cursor-pointer border-neutral-400 rounded-sm flex items-center justify-center'>
+                            {acceptTerms && <FaCheck className=' text-sm text-[#31013f] ' />}
                         </div>
                         <p className=' text-neutral-500 text-sm'>
                             By signing up, you accept the <span className=' text-[#31013f]'>Terms of service</span> and <span className=' text-[#31013f]'>Privacy policy</span>
                         </p>
                     </div>
                 </div>
+                <div className=' mt-2 space-y-1'>
+                    {formErrors.length > 0 && (
+                        <ul>
+                            {formErrors.map((error, index) => (
+                                <li className=' text-xs text-red-500 font-light'  key={index}>{error}</li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
                 <div className=' mt-5'>
-                    <p onClick={nextPage} className='purple-btn-long'>
+                    <p onClick={handleSubmit} className='purple-btn-long'>
                         Register
                     </p>
                 </div>
-                <div className=' mt-5 flex items-center gap-2 justify-between'>
+                {/* <div className=' mt-5 flex items-center gap-2 justify-between'>
                     <div className=' bg-neutral-400 h-[1px] w-full'></div>
                     <div className=' w-72 flex justify-center'>
                         <p className=' text-sm  text-neutral-500'>
@@ -55,10 +154,10 @@ const StepOne = ({nextPage}) => {
                             Continue with Facebook
                         </p>
                     </div>
-                </div>
+                </div> */}
                 <div className=' mt-10 flex justify-center'>
                     <p className=' text-neutral-500 font-light'>
-                        Already Registered? <span className=' text-[#31013f] '>Login</span>
+                        Already Registered? <Link href={'/login'} className=' text-[#31013f] '>Login</Link>
                     </p>
                 </div>
             </div>

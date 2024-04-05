@@ -15,6 +15,8 @@ const Register = () => {
 
     const [showSelect, setShowSelect] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
+    const [newUser, setNewUser] = useState(null)
+    
 
     const nextPage =()=> {
         setCurrentPage(currentPage +1)
@@ -24,6 +26,8 @@ const Register = () => {
         setCurrentPage(currentPage - 1)
     }
 
+    console.log(newUser)
+
     // #CCE7F1
 
     return (
@@ -31,16 +35,21 @@ const Register = () => {
             {currentPage === 1 && (
                 <StepOne 
                     nextPage={nextPage} 
+                    setNewUser={setNewUser}
                 />
             )}
             {currentPage === 2 && (
                 <StepTwo 
                     nextPage={nextPage} 
                     prevpage={prevPage} 
+                    userId={newUser?._id}
                 />
             )}
             {currentPage === 3 && (
-                <StepThree />
+                <StepThree 
+                    nextPage={nextPage} 
+                    prevPage={prevPage} 
+                    userId={newUser?._id} />
             )}
             {currentPage === 4 && (
                 <StepFour />

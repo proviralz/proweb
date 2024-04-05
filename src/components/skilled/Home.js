@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Header from './Header'
 import FeaturedJob from './FeaturedJob'
@@ -5,8 +6,13 @@ import Earn from '../footer/Earn'
 import Footer from '../footer/Footer'
 import { FiSearch } from 'react-icons/fi'
 import Sidebar from './Sidebar'
+import { useSession } from 'next-auth/react'
 
 const Landing = () => {
+
+    const {status, data: session} = useSession()
+
+    // console.log(session)
   return (
     <div className=' bg-neutral-100'>
         <div>

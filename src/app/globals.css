@@ -24,7 +24,7 @@
 }
 
 .trans-purple-btn {
-  @apply border border-[#31013f] text-[#31013f] text-[0.8rem] px-4 py-2 rounded-sm cursor-pointer
+  @apply border border-[#31013f] text-[#31013f] text-[0.8rem] px-4 py-2 rounded-sm cursor-pointer flex items-center justify-center
 }
 
 .purple-btn {
@@ -33,4 +33,20 @@
 
 .tab-menu p {
   @apply cursor-pointer pb-3 px-4
+}
+
+.wallet-nav>div {
+  @apply flex items-center gap-3 font-light capitalize hover:bg-neutral-100 p-2 rounded-md cursor-pointer
+}
+
+.wallet-nav {
+  @apply space-y-3
+}
+
+.wallet-cards {
+  @apply flex gap-3
+}
+
+.wallet-cards>div {
+  @apply p-5 border rounded-lg min-w-40
 }
