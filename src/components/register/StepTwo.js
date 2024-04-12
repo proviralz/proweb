@@ -136,7 +136,7 @@ const StepTwo = ({nextPage, userId}) => {
                     <div className=' mt-5 flex justify-center'>
                         <div className=' flex flex-col items-center'>
                             <div className=' border p-3 border-neutral-500 w-40 flex justify-center items-center'>
-                                <Image src={imagePreview || '/assets/onboard/user.svg'} alt='' width={100} height={100} />
+                                <Image src={imagePreview || '/assets/onboard/user.svg'} alt='' width={100} height={100} className={`${imagePreview? "w-full h-auto object-cover": ""}`} />
                             </div>
                             <div className=' flex justify-center flex-col items-center mt-5'>
                                 <label className=' border py-3 px-5 rounded-full border-neutral-500' htmlFor="profile-picture">Choose image</label>

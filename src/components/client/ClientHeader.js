@@ -8,7 +8,7 @@ import { FiSearch } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import ProfileDropdown from './ProfileDropdown';
 
-const HeaderTwo = () => {
+const ClientHeader = () => {
 
     const router = useRouter()
     const pathname = usePathname()
@@ -27,8 +27,11 @@ const HeaderTwo = () => {
                 </Link>
                 <div className=' hidden md:flex'>
                     <nav className=' flex gap-4 text-neutral-500 text-sm font-light'>
-                        <Link href={'/jobs'} className={pathname.startsWith('/jobs')? 'text-[#31013f]': ''}>
-                            My Jobs
+                        <Link href={'/'} className={pathname.startsWith('/jobs')? 'text-[#31013f]': ''}>
+                            My Projects
+                        </Link>
+                        <Link href={'/'} className={pathname.startsWith('/jobs')? 'text-[#31013f]': ''}>
+                            Top service providers
                         </Link>
                         <Link href={'/messages'} className={pathname.startsWith('/messages')? 'text-[#31013f]': ''}>
                             Messages
@@ -65,4 +68,4 @@ const HeaderTwo = () => {
   )
 }
 
-export default HeaderTwo
+export default ClientHeader

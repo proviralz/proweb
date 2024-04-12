@@ -1,50 +1,40 @@
-import Image from 'next/image'
-import React, { useState } from 'react'
-import Header from './Header'
-import { publicRequest } from '@/requestMethods'
-import { useRouter } from 'next/navigation'
 
-const StepFive = ({userId, nextPage}) => {
+import React, { useState } from 'react'
+import Header from '../Header'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { publicRequest } from '@/requestMethods'
+
+const StepOne = ({nextPage, userId}) => {
 
     const [isselected, setIsSelected] =  useState(null)
     const router = useRouter()
 
-    const handleUnSkilled = async()=> {
+    const handleIndividual = async () => {
         try {
             const res = await publicRequest.put(`users/${userId}`, {
-                group: "unskilled"
+                clientType: "individual"
             })
 
             if (res.status === 200) {
-                router.push(`/start/unskilled/${userId}`)
+                router.push('/login')
             }
         } catch (error) {
             console.log(error)
         }
     }
 
-    const handleSkilled = async()=> {
-        try {
-            const res = await publicRequest.put(`users/${userId}`, {
-                group: "skilled"
-            })
-
-            if (res.status === 200) {
-                router.push(`/start/skilled/${userId}`)
-            }
-        } catch (error) {
-            console.log(error)
-        }
+    const handleCompany =()=> {
+        nextPage()
     }
 
-    const handleClick = ()=> {
-        if(isselected === "unskilled") {
-            handleUnSkilled()
-        } else if(isselected === 'skilled') {
-            handleSkilled()
+    const handleSubmit =()=> {
+        if(isselected === "individual") {
+            handleIndividual()
+        } else {
+            handleCompany()
         }
     }
-
   return (
     <div className={``}>
         <div className=''>
@@ -56,36 +46,35 @@ const StepFive = ({userId, nextPage}) => {
                 <div className=' md:border md:p-5 md:rounded-lg border-neutral-500 flex flex-col items-center'>
                     <div className=' mt-10'>
                         <p className=' text-center text-2xl md:text-4xl capitalize text-[#31013f]'>
-                            ready to make your mark? <br />
-                            choose your role and let&apos;s get started 
+                            Sign up as
                         </p>
                     </div>
 
                     <div  className=' mt-5 flex flex-col md:flex-row md:items-center md:mt-20 md:gap-3 '>
                         <div 
-                            onClick={()=> setIsSelected('unskilled')}  
-                            className={` border border-neutral-400 overflow-hidden flex flex-1 items-center justify-center h-64 rounded-md ${isselected === 'unskilled' && 'bg-[#31013f]/15'} `}>
-                            <div>
+                            onClick={()=> setIsSelected('company')}  
+                            className={` border border-neutral-400 flex flex-1 items-center justify-center h-64 rounded-md ${isselected === 'company' && 'bg-[#31013f]/15'} `}>
+                            <div className=' md:w-64'>
                                 <div className=' flex justify-center'>
-                                    <Image src={'/assets/onboard/amico-top.svg'} alt='' width={100} height={100} className=' w-48' />
+                                    <Image src={'/assets/onboard/bro.svg'} alt='' width={100} height={100} className=' w-48 ' />
                                 </div>
                                 <div className=' p-5 '>
                                     <p className=' text-xl text-[#31013f] text-center'>
-                                      I am unskilled service provider (artisan)
+                                        A Company
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div 
-                            onClick={()=> setIsSelected("skilled")} 
-                            className={` border border-neutral-400 flex flex-1 items-center justify-center h-64 rounded-md ${isselected === 'skilled' && 'bg-[#31013f]/15'} mt-8 md:mt-0`}>
-                            <div>
+                            onClick={()=> setIsSelected("individual")} 
+                            className={` border border-neutral-400 flex flex-1 items-center justify-center h-64 rounded-md ${isselected === 'individual' && 'bg-[#31013f]/15'} mt-8 md:mt-0`}>
+                            <div className='md:w-64'>
                                 <div className=' flex justify-center'>
-                                    <Image src={'/assets/onboard/amico-bottom.svg'} alt='' width={100} height={100} className=' w-48' />
+                                    <Image src={'/assets/onboard/pana.svg'} alt='' width={100} height={100} className=' w-48' />
                                 </div>
                                 <div className=' p-5 '>
                                     <p className=' text-xl text-[#31013f] text-center'>
-                                      I am a skilled service providers
+                                        An Individual
                                     </p>
                                 </div>
                             </div>
@@ -102,7 +91,7 @@ const StepFive = ({userId, nextPage}) => {
                             </p>
                         </div> */}
                         <div>
-                            <p onClick={handleClick} className={`${!isselected? "grey-btn-long" : "purple-btn-long"} `}>
+                            <p onClick={handleSubmit} className='purple-btn-long'>
                                 Continue
                             </p>
                         </div>
@@ -115,4 +104,4 @@ const StepFive = ({userId, nextPage}) => {
   )
 }
 
-export default StepFive
+export default StepOne

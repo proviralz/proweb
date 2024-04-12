@@ -9,12 +9,13 @@ import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import StepFour from './StepFour';
+import StepFive from './StepFive';
 // import { FaCheck } from "react-icons/fa";
 
 const Register = () => {
 
     const [showSelect, setShowSelect] = useState(false)
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(5)
     const [newUser, setNewUser] = useState(null)
     
 
@@ -27,6 +28,8 @@ const Register = () => {
     }
 
     console.log(newUser)
+
+    const id = '66197c701e036d680449c7b9'
 
     // #CCE7F1
 
@@ -52,7 +55,10 @@ const Register = () => {
                     userId={newUser?._id} />
             )}
             {currentPage === 4 && (
-                <StepFour />
+                <StepFour nextPage={nextPage} prevPage={prevPage} userId={newUser?._id}/>
+            )}
+            {currentPage === 5 && (
+                <StepFive nextPage={nextPage} prevPage={prevPage} userId={id}/>
             )}
         </div>
     )

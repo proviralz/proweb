@@ -1,10 +1,36 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Header from './Header'
+import { publicRequest } from '@/requestMethods'
+import { useRouter } from 'next/navigation'
 
-const StepFour = ({nextPage, prevpage}) => {
+const StepFour = ({nextPage, prevpage, userId}) => {
 
     const [isselected, setIsSelected] =  useState(null)
+    const router = useRouter()
+
+    const submitClient= async()=> {
+        try {
+            const res = await publicRequest.put(`users/${userId}`, {
+                isClient: true,
+                group: "client"
+            })
+
+            if (res.status === 200) {
+                router.push(`/start/client/${userId}`)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleClick = ()=> {
+        if(isselected === "client") {
+            submitClient()
+        } else {
+            nextPage()
+        }
+    }
   return (
     <div className={``}>
         <div className=''>
@@ -62,7 +88,7 @@ const StepFour = ({nextPage, prevpage}) => {
                             </p>
                         </div>
                         <div>
-                            <p onClick={nextPage} className='purple-btn-long'>
+                            <p onClick={handleClick} className='purple-btn-long'>
                                 Continue
                             </p>
                         </div>

@@ -13,9 +13,11 @@ const StepOne = ({nextPage, setNewUser}) => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [acceptTerms, setAcceptTerms] = useState(false)
     const [formErrors, setFormErrors] = useState([]);
+    const [isClicked, setIsClicked] = useState(false)
 
     const registerUser = async ()=> {
         try {
+            setIsClicked(true)
             const res = await publicRequest.post('auth/register', {
                 fullName: name,
                 email: email,
@@ -28,6 +30,7 @@ const StepOne = ({nextPage, setNewUser}) => {
             }  
         } catch (error) {
             console.log(error)
+            setIsClicked(false)
         }
 
     }
@@ -35,6 +38,8 @@ const StepOne = ({nextPage, setNewUser}) => {
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevents the default form submission behavior
         let errors = [];
+
+        
 
         if (!name || !email || !password || !confirmPassword || !acceptTerms) {
             errors.push('All fields are required.');
@@ -128,9 +133,17 @@ const StepOne = ({nextPage, setNewUser}) => {
                     )}
                 </div>
                 <div className=' mt-5'>
-                    <p onClick={handleSubmit} className='purple-btn-long'>
-                        Register
-                    </p>
+                    <div onClick={handleSubmit} className='purple-btn-long'>
+                        {isClicked? (
+                            <div className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-blue-600 rounded-full dark:text-blue-500" role="status" aria-label="loading">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                        ):(
+                            <p>
+                                Register
+                            </p>
+                        ) }
+                    </div>
                 </div>
                 {/* <div className=' mt-5 flex items-center gap-2 justify-between'>
                     <div className=' bg-neutral-400 h-[1px] w-full'></div>
@@ -164,7 +177,7 @@ const StepOne = ({nextPage, setNewUser}) => {
             </div>
         </div>
         <div className=' hidden w-1/2 bg-[#BA68C8] h-screen md:flex items-center justify-center'>
-            <Image src={'/assets/onboard/woman-desktop.svg'} alt='login' width={100} height={100} className=' w-full'  />
+            <Image src={'/assets/onboard/woman-desktop.svg'} priority={true} alt='login' width={100} height={100} className=' w-full'  />
        </div>
     </div>
   )

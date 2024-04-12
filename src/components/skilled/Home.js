@@ -7,6 +7,7 @@ import Footer from '../footer/Footer'
 import { FiSearch } from 'react-icons/fi'
 import Sidebar from './Sidebar'
 import { useSession } from 'next-auth/react'
+import HeaderTwo from './HeaderTwo'
 
 const Landing = () => {
 
@@ -16,7 +17,7 @@ const Landing = () => {
   return (
     <div className=' bg-neutral-100'>
         <div>
-            <Header />
+            <HeaderTwo />
         </div>
 
         {/* featured jobs */}

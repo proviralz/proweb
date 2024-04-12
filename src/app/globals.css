@@ -11,6 +11,10 @@
   @apply bg-[#31013f] text-white rounded-md p-4 text-center cursor-pointer
 }
 
+.grey-btn-long {
+  @apply bg-neutral-400 text-white rounded-md p-4 text-center cursor-pointer
+}
+
 .trans-btn {
   @apply p-3 shadow-md rounded-md border flex justify-center items-center gap-2 text-neutral-500 cursor-pointer
 }
@@ -49,4 +53,9 @@
 
 .wallet-cards>div {
   @apply p-5 border rounded-lg min-w-40
+}
+
+
+.dot {
+  transition: transform 0.3s ease-in-out;
 }
