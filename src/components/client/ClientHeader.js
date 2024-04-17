@@ -52,7 +52,7 @@ const ClientHeader = () => {
                 <div className=' relative cursor-pointer' >
                     <div className=' absolute top-0 right-5 bg-green-500 h-3 w-3 rounded-full' />
                     <Image onClick={()=> setShowProfileDropdown(!showProfileDropdown)} src={'/assets/home/profile.svg'} alt='profile' width={100} height={100} className=' h-8'  />
-                    { showProfileDropdown && <div className=' absolute top-12 right-5'>
+                    { showProfileDropdown && <div className=' absolute top-12 right-5 z-30'>
                         <ProfileDropdown />
                     </div>}
                 </div>

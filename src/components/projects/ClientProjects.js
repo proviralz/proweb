@@ -1,6 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 import ClientHeader from '../client/ClientHeader'
+import OngoingProjects from './OngoingProjects'
+import CompletedProjects from './CompletedProjects'
+import Footer from '../footer/Footer'
 
 const ClientProjects = () => {
 
@@ -41,9 +44,18 @@ const ClientProjects = () => {
 
                 {/* tabs */}
                 <div className=' mt-5'>
-                    Holla
+                    {selectedTab === 1 && (
+                        <OngoingProjects />
+                    )}
+                    {selectedTab === 2 && (
+                        <CompletedProjects />
+                    )}
                 </div>
             </div>
+        </div>
+
+        <div>
+            <Footer />
         </div>
     </div>
   )

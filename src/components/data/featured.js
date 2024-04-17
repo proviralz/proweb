@@ -594,60 +594,124 @@ export const providers = [
   {
       name: 'Victor Malachi',
       desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
-      skill: 'Graphic designer',
+      field: 'Photographer',
       rate: 20.0,
       posts: 40,
       logo: '/assets/profile/man.svg',
+      location: 'Lagos',
+      availability: 'part time',
+      experience: '1 - 3 Years'
   },
   {
-      name: 'Victor Malachi',
+      name: 'Dave Ramzy',
       desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
-      skill: 'Graphic designer',
+      field: 'Makeup artist',
       rate: 20.0,
       posts: 40,
       logo: '/assets/profile/man.svg',
+      location: 'Abia',
+      availability: 'full time',
+      experience: '3+ Years'
   },
   {
-      name: 'Victor Malachi',
+      name: 'Moses simon',
       desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
-      skill: 'Graphic designer',
+      field: 'Graphic designer',
       rate: 20.0,
       posts: 40,
       logo: '/assets/profile/man.svg',
+      location: 'Delta',
+      availability: 'part time',
+      experience: '0 - 1 Year'
   },
   {
-      name: 'Victor Malachi',
+      name: 'Elizabeth',
       desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
-      skill: 'Graphic designer',
+      field: 'Data entry',
       rate: 20.0,
       posts: 40,
       logo: '/assets/profile/man.svg',
+      location: 'Edo',
+      availability: 'part time',
+      experience: '0 - 1 Year'
   },
   {
-      name: 'Victor Malachi',
+      name: 'Gracious',
       desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
-      skill: 'Graphic designer',
+      field: 'Graphic designer',
       rate: 20.0,
       posts: 40,
       logo: '/assets/profile/man.svg',
+      location: 'Benue',
+      availability: 'full time',
+      experience: '0 - 1 Year'
   },
   {
-      name: 'Victor Malachi',
+      name: 'Emmanuel',
       desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
-      skill: 'Graphic designer',
+      field: 'Web designer',
       rate: 20.0,
       posts: 40,
       logo: '/assets/profile/man.svg',
+      location: 'Ebonyi',
+      availability: 'full time',
+      experience: '0 - 1 Year'
   },
   {
-      name: 'Victor Malachi',
+      name: 'Gabriel',
       desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
-      skill: 'Graphic designer',
+      field: 'Graphic designer',
       rate: 20.0,
       posts: 40,
       logo: '/assets/profile/man.svg',
+      location: 'Enugu',
+      availability: 'part time',
+      experience: '0 - 1'
+  },
+  {
+      name: 'Eunice',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      field: 'Photographer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+      location: 'Bauchi',
+      availability: 'part time',
+      experience: '0 - 1'
+  },
+  {
+      name: 'Tomothy',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      field: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+      location: 'Ekiti',
+      availability: 'full time',
+      experience: '3+'
+  },
+  {
+      name: 'Soji',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      field: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+      location: 'Gombe',
+      availability: 'full time',
+      experience: '1 - 3 Year'
+  },
+  {
+      name: 'Shalom',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      field: 'Shoe repair',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+      location: 'Port Harcourt',
+      availability: 'part time',
+      experience: '0 - 1 Year'
   },
   
-  
-  
-]
+  // Add more providers here...
+];

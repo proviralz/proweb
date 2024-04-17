@@ -1,6 +1,7 @@
 import React from 'react'
 import { FiSearch } from 'react-icons/fi'
 import TopProviders from './TopProviders'
+import Link from 'next/link'
 // import TopCompanies from './TopCompanies'
 
 const Sidebar = () => {
@@ -14,12 +15,12 @@ const Sidebar = () => {
             </div>
             <div className=' mt-5 flex justify-center'>
                 <div className=' inline-block'>
-                    <p className=' border py-3 px-5 border-neutral-500 rounded-full'>
+                    <Link href={'/top-providers'} className=' border py-3 px-5 border-neutral-500 rounded-full'>
                         Browse all
-                    </p>
+                    </Link>
                 </div>
             </div>
-            <div className=' mt-5 pb-5'>
+            <div className=' mt-5 pb-5 flex justify-center'>
                 <TopProviders />
             </div>
         </div>

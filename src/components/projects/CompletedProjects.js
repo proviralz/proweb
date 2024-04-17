@@ -1,9 +1,8 @@
 import React from 'react'
-import { jobs } from '../data/jobs'
 import { GoDotFill } from 'react-icons/go'
-import Image from 'next/image'
+import { jobs } from '../data/jobs'
 
-const OngoingProjects = () => {
+const CompletedProjects = () => {
   return (
     <div className=' flex flex-col gap-4'>
         {jobs.map((job, i)=> (
@@ -41,17 +40,17 @@ const OngoingProjects = () => {
                         </p>
                     </div>
                 </div>
-                <div className=' py-5 px-10  flex items-end justify-center gap-1'>
+                {/* <div className=' py-5 px-10  flex items-end justify-center gap-1'>
                     <div>
                         <p className=' text-lg'>
                             Closed
                         </p>
                     </div>
-                </div>
+                </div> */}
             </div>
         ))}
     </div>
   )
 }
 
-export default OngoingProjects
+export default CompletedProjects

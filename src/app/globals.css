@@ -31,6 +31,10 @@
   @apply border border-[#31013f] text-[#31013f] text-[0.8rem] px-4 py-2 rounded-sm cursor-pointer flex items-center justify-center
 }
 
+.trans-red-btn {
+  @apply border border-red-600 text-[#31013f] text-[0.8rem] px-4 py-2 rounded-sm cursor-pointer flex items-center justify-center
+}
+
 .purple-btn {
   @apply border bg-[#31013f] border-[#31013f] text-white text-[0.8rem] px-4 py-2 rounded-sm cursor-pointer
 }
@@ -58,4 +62,16 @@
 
 .dot {
   transition: transform 0.3s ease-in-out;
+}
+
+.filter-options ul {
+  @apply flex flex-col h-36 overflow-y-scroll
+}
+
+.filter-options li {
+  @apply text-xs px-3 py-1 hover:bg-neutral-100  hover:text-[#31013f]  cursor-pointer rounded-md
+}
+
+.filter-options .selected {
+  @apply bg-neutral-100 text-[#31013f]
 }

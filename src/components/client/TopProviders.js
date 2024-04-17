@@ -2,11 +2,12 @@ import React from 'react'
 import { providers } from '../data/featured'
 import Image from 'next/image'
 
-const TopProviders = () => {
+const TopProviders = ({filteredProviders}) => {
   return (
-    <div className=' flex items-center flex-col gap-5'>
-        {providers.map((p, i)=> (
-            <div key={i} className=' w-4/5 border pb-5 rounded-xl overflow-hidden'>
+    <div className=' flex items-center flex-wrap justify-center w-full gap-5'>
+        {filteredProviders.length == 0 && (<p>No item matches your search..</p>)}
+        {filteredProviders.map((p, i)=> (
+            <div key={i} className=' w-72 border pb-5 rounded-xl overflow-hidden'>
                 <div className=''>
                     <Image src={'/assets/profile/cover.svg'} alt='' width={100} height={100} className=' w-full h-28 object-cover' />
                 </div>
@@ -24,7 +25,7 @@ const TopProviders = () => {
                     </p>
                 </div>
                 <div className=' px-5 mt-3'>
-                    <p className=' text-sm font-light'>
+                    <p className=' text-xs font-light'>
                         {p.desc}
                     </p>
                 </div>
