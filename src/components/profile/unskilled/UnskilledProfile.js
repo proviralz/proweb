@@ -1,16 +1,22 @@
 import React from 'react'
-import Header from './Header'
+// import Header from './Header'
 import Image from 'next/image'
-import { experience, featured, gallery, reviews, skills } from '../data/featured'
+import { experience, featured, gallery, reviews, skills } from '../../data/featured'
 import { TbCameraPlus } from "react-icons/tb";
 import { FaStar } from 'react-icons/fa';
-import Footer from '../footer/Footer';
+import Footer from '../../footer/Footer';
 import { MdOutlineEdit } from "react-icons/md";
 import { FaPlus } from 'react-icons/fa6';
 import CompleteProfile from './CompleteProfile';
-import HeaderTwo from '../header/HeaderTwo';
+import HeaderTwo from './HeaderTwo';
+import Earn from '@/components/footer/Earn';
+import { useSelector } from 'react-redux';
 
-const UserProfile = () => {
+const UnskilledProfile = () => {
+
+    const user = useSelector(state=> state.user.info)
+
+    console.log(user)
 
     const generateStars = (rating) => {
         const stars = [];
@@ -23,7 +29,7 @@ const UserProfile = () => {
         }
         return stars;
     };
-  return (
+  return ( user &&
     <div className=' bg-neutral-100'>
         <div>
             <HeaderTwo />
@@ -35,19 +41,19 @@ const UserProfile = () => {
 
             <div className=' flex-1'>
                 <div className=' p-5 bg-white rounded-md flex md:flex-row flex-col gap-5'>
-                    <div className=' relative bg-slate-400 md:w-2/5 rounded-sm overflow-hidden'>
+                    <div className=' relative bg-slate-400 md:w-2/5 h-64 rounded-sm overflow-hidden'>
                         <div className=' absolute bg-white p-1 rounded-full bottom-3 left-3 text-neutral-600 text-xl'>
                             <TbCameraPlus />
                         </div>
-                        <Image src={'/assets/profile/man.svg'} alt='user' width={100} height={100} className=' h-full object-cover w-full' />
+                        <Image src={user?.profilePic} alt='user' width={100} height={100} priority={true} className=' h-64 object-cover  w-full' />
                     </div>
                     <div className=' md:w-3/5 text-neutral-500'>
                         <div>
                             <p>
-                                Victor Matthew
+                                {user?.fullName}
                             </p>
                             <p className=' text-xs mt-1'>
-                                @Victormatthew
+                                @{user?.username}
                             </p>
                         </div>
                         <div className=' mt-3'>
@@ -60,7 +66,7 @@ const UserProfile = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             </p>
                         </div>
-                        <div className='mt-3'>
+                        {/* <div className='mt-3'>
                             <div>
                                 Skills:
                             </div>
@@ -73,7 +79,7 @@ const UserProfile = () => {
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className='p-5 bg-white rounded-md mt-5'>
@@ -114,11 +120,11 @@ const UserProfile = () => {
                                 Reviews
                             </p>
                         </div>
-                        <div className=' mt-6 flex flex-col gap-4'>
+                        <div className=' mt-6 flex flex-col gap-4 px-4'>
                             {reviews.map((rev, i)=> (
-                                <div key={i} className=' flex gap-3'>
+                                <div key={i} className=' flex gap-5'>
                                     <div className=''>
-                                        <Image src={rev.img} alt='' width={100} height={100} className=' h-10' />
+                                        <Image src={rev.img} alt='' width={100} height={100} className=' h-10 w-auto' />
                                     </div>
                                     <div className=' text-xs text-neutral-500 flex flex-col gap-1'>
                                         <div>
@@ -166,17 +172,17 @@ const UserProfile = () => {
                         </p>
                     </div>
                     <div className=' text-neutral-500 mt-3 text-xs flex flex-wrap gap-10'>
-                        <div>
+                        {/* <div>
                             <p>
                                 Availability
                             </p>
                             <p>
                                 part time
                             </p>
-                        </div>
+                        </div> */}
                         <div>
                             <p>
-                                years of experience
+                                Experience
                             </p>
                             <p>
                                 2 years
@@ -187,7 +193,7 @@ const UserProfile = () => {
                                 Location
                             </p>
                             <p>
-                                Abuja Nigeria
+                                {user?.location.state}
                             </p>
                         </div>
                         <div>
@@ -207,14 +213,14 @@ const UserProfile = () => {
                             </p>
                         </div>
                     </div>
-                    <div  className='flex justify-center mt-5'>
+                    {/* <div  className='flex justify-center mt-5'>
                         <p className=' trans-purple-btn'>
                             Share your work
                         </p>
-                    </div>
+                    </div> */}
                 </div>
 
-                <div className=' bg-white p-5 rounded-md mt-5 text-neutral-500'>
+                {/* <div className=' bg-white p-5 rounded-md mt-5 text-neutral-500'>
                     <div className=' flex justify-center '>
                         <p>
                             Edit profile
@@ -355,10 +361,10 @@ const UserProfile = () => {
                         </div>
                     </div>
                     
-                </div>
+                </div> */}
 
                 <div className=' mt-5'>
-                    <CompleteProfile />
+                    <Earn />
                 </div>
             </div>
         </div>
@@ -369,4 +375,4 @@ const UserProfile = () => {
   )
 }
 
-export default UserProfile
+export default UnskilledProfile

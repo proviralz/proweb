@@ -3,6 +3,7 @@ export const featured = [
         title: 'Data entry job',
         featuredImg: '/assets/home/data-entry.svg',
         posterImage: '/assets/home/google.svg',
+        unskilledImage: '/assets/home/unskilled.svg',
         description: 'need freelancers who can work oon a simple typing job. Active freelancers to retype my screenshot document into ms word document',
         tags: ['microsoft word', 'microsoft excel', 'sales', 'database', 'typing'],
         durationType: 'Part-time',
@@ -17,6 +18,7 @@ export const featured = [
         title: 'Data entry job',
         featuredImg: '/assets/home/data-entry.svg',
         posterImage: '/assets/home/google.svg',
+        unskilledImage: '/assets/home/unskilled.svg',
         description: 'need freelancers who can work oon a simple typing job. Active freelancers to retype my screenshot document into ms word document',
         tags: ['microsoft word', 'microsoft excel', 'sales', 'database', 'typing'],
         durationType: 'Part-time',
@@ -31,6 +33,7 @@ export const featured = [
         title: 'Data entry job',
         featuredImg: '/assets/home/data-entry.svg',
         posterImage: '/assets/home/google.svg',
+        unskilledImage: '/assets/home/unskilled.svg',
         description: 'need freelancers who can work oon a simple typing job. Active freelancers to retype my screenshot document into ms word document',
         tags: ['microsoft word', 'microsoft excel', 'sales', 'database', 'typing'],
         durationType: 'Part-time',
@@ -45,6 +48,7 @@ export const featured = [
         title: 'Data entry job',
         featuredImg: '/assets/home/data-entry.svg',
         posterImage: '/assets/home/google.svg',
+        unskilledImage: '/assets/home/unskilled.svg',
         description: 'need freelancers who can work oon a simple typing job. Active freelancers to retype my screenshot document into ms word document',
         tags: ['microsoft word', 'microsoft excel', 'sales', 'database', 'typing'],
         durationType: 'Part-time',
@@ -59,6 +63,7 @@ export const featured = [
         title: 'Data entry job',
         featuredImg: '/assets/home/data-entry.svg',
         posterImage: '/assets/home/google.svg',
+        unskilledImage: '/assets/home/unskilled.svg',
         description: 'need freelancers who can work oon a simple typing job. Active freelancers to retype my screenshot document into ms word document',
         tags: ['microsoft word', 'microsoft excel', 'sales', 'database', 'typing'],
         durationType: 'Part-time',
@@ -73,6 +78,7 @@ export const featured = [
         title: 'Data entry job',
         featuredImg: '/assets/home/data-entry.svg',
         posterImage: '/assets/home/google.svg',
+        unskilledImage: '/assets/home/unskilled.svg',
         description: 'need freelancers who can work oon a simple typing job. Active freelancers to retype my screenshot document into ms word document',
         tags: ['microsoft word', 'microsoft excel', 'sales', 'database', 'typing'],
         durationType: 'Part-time',
@@ -87,6 +93,7 @@ export const featured = [
         title: 'Data entry job',
         featuredImg: '/assets/home/data-entry.svg',
         posterImage: '/assets/home/google.svg',
+        unskilledImage: '/assets/home/unskilled.svg',
         description: 'need freelancers who can work oon a simple typing job. Active freelancers to retype my screenshot document into ms word document',
         tags: ['microsoft word', 'microsoft excel', 'sales', 'database', 'typing'],
         durationType: 'Part-time',
@@ -494,3 +501,153 @@ export const me = {
         }
       ]
 }
+
+export const projects = [
+  {
+    img: '/assets/profile/1.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/2.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/1.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/2.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/1.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/2.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/2.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/1.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/2.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/1.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/2.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/1.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/1.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  {
+    img: '/assets/profile/2.svg',
+    title: 'Landing page design',
+    likes: 4,
+    views: 17
+  },
+  
+]
+
+export const providers = [
+  {
+      name: 'Victor Malachi',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      skill: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+  },
+  {
+      name: 'Victor Malachi',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      skill: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+  },
+  {
+      name: 'Victor Malachi',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      skill: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+  },
+  {
+      name: 'Victor Malachi',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      skill: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+  },
+  {
+      name: 'Victor Malachi',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      skill: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+  },
+  {
+      name: 'Victor Malachi',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      skill: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+  },
+  {
+      name: 'Victor Malachi',
+      desc: 'passionate graphic designer dedicated to transforming ideas into visually stunning creations. with keen eye for details',
+      skill: 'Graphic designer',
+      rate: 20.0,
+      posts: 40,
+      logo: '/assets/profile/man.svg',
+  },
+  
+  
+  
+]

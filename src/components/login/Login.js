@@ -49,13 +49,13 @@ const Login = () => {
                     <input 
                         type="text" 
                         name="email" 
-                        id="" 
+                        id="email" 
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder='Username or Email' />
+                        placeholder='Email' />
                     <input 
                         type="password" 
                         name="password" 
-                        id="" 
+                        id="password" 
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder='Password' />
                     <div className=' flex justify-end'>
@@ -108,7 +108,7 @@ const Login = () => {
             </div>
         </div>
        <div className=' hidden w-1/2 bg-[#BA68C8] h-screen md:flex items-center justify-center'>
-        <Image src={'/assets/onboard/woman-desktop.svg'} alt='login' width={100} height={100} className=' w-full'  />
+        <Image src={'/assets/onboard/woman-desktop.svg'} alt='login' width={100} height={100} priority={true} className=' w-full'  />
        </div>
     </div>
   )
