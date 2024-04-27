@@ -7,6 +7,10 @@
   @apply border p-3 w-full border-neutral-400 rounded-md outline-none text-neutral-600
 }
 
+.login-form>label {
+  @apply mt-2 text-neutral-600
+}
+
 .purple-btn-long {
   @apply bg-[#31013f] text-white rounded-md p-4 text-center cursor-pointer
 }

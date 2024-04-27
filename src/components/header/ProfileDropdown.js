@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { logoutUser } from '@/redux/userSlice';
 import { useRouter } from 'next/navigation';
 
-const ProfileDropdown = () => {
+const ProfileDropdown = ({user}) => {
 
     const dispatch = useDispatch()
     const router = useRouter()
@@ -19,15 +19,15 @@ const ProfileDropdown = () => {
   return (
     <div className=' rounded-md bg-white shadow-md'>
         <div className=' p-5 flex flex-col items-center gap-3'>
-            <div className=' w-20'>
-                <Image src={'/assets/home/profile.svg'} alt='profile' width={100} height={100} className=' w-full h-auto' />
+            <div className=' w-20 h-20 overflow-hidden rounded-full'>
+                <Image src={user?.profilePic} alt='profile' width={100} height={100} className=' w-full h-auto object-cover object-center' />
             </div>
             <div className=' text-center'>
                 <p className=' text-neutral-600 text-sm'>
-                    Victor Matthew
+                    {user?.fullName}
                 </p>
                 <p className=' text-xs font-light'>
-                    username
+                    {user?.username}
                 </p>
             </div>
             <div>

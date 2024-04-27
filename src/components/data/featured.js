@@ -254,6 +254,9 @@ export const companies = [
 export const skills = ['Corel Draw', 'Adobe suite', 'Sketch',
 'Canva', 'Photoshop']
 
+export const skilled = ['Corel Draw', 'Adobe suite', 'Sketch',
+'Canva', 'Photoshop']
+
 export const gallery = [
     {
         img: '/assets/profile/1.svg',

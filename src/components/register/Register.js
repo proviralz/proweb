@@ -55,10 +55,16 @@ const Register = () => {
                     userId={newUser?._id} />
             )}
             {currentPage === 4 && (
-                <StepFour nextPage={nextPage} prevPage={prevPage} userId={newUser?._id}/>
+                <StepFour 
+                    nextPage={nextPage} 
+                    prevPage={prevPage} 
+                    userId={newUser?._id}/>
             )}
             {currentPage === 5 && (
-                <StepFive nextPage={nextPage} prevPage={prevPage} userId={id}/>
+                <StepFive 
+                    nextPage={nextPage} 
+                    prevPage={prevPage} 
+                    userId={id}/>
             )}
         </div>
     )

@@ -7,6 +7,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import ProfileDropdown from './ProfileDropdown';
+import { useSelector } from 'react-redux';
 
 const ClientHeader = () => {
 
@@ -14,7 +15,8 @@ const ClientHeader = () => {
     const pathname = usePathname()
     const [showProfileDropdown, setShowProfileDropdown] = useState(false)
 
-    // console.log(pathname)
+    const user = useSelector(state => state.user.info)
+    console.log(user)
   return (
     <div className=' p-5 md:p-0 flex justify-between bg-white md:flex-col'>
         <div className=' flex items-center gap-2  md:px-10 md:py-5 md:border-b border-neutral-500'>
@@ -27,10 +29,10 @@ const ClientHeader = () => {
                 </Link>
                 <div className=' hidden md:flex'>
                     <nav className=' flex gap-4 text-neutral-500 text-sm font-light'>
-                        <Link href={'/'} className={pathname.startsWith('/jobs')? 'text-[#31013f]': ''}>
+                        <Link href={'/projects'} className={pathname.startsWith('/jobs')? 'text-[#31013f]': ''}>
                             My Projects
                         </Link>
-                        <Link href={'/'} className={pathname.startsWith('/jobs')? 'text-[#31013f]': ''}>
+                        <Link href={'/top-providers'} className={pathname.startsWith('/jobs')? 'text-[#31013f]': ''}>
                             Top service providers
                         </Link>
                         <Link href={'/messages'} className={pathname.startsWith('/messages')? 'text-[#31013f]': ''}>
@@ -45,15 +47,18 @@ const ClientHeader = () => {
                     </nav>
                 </div>
             </div>
-            <div className=' hidden md:flex items-center'>
+            <div className=' gap-5 hidden md:flex items-center'>
                 <div className=' text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
                     <IoIosNotificationsOutline />
                 </div>
                 <div className=' relative cursor-pointer' >
-                    <div className=' absolute top-0 right-5 bg-green-500 h-3 w-3 rounded-full' />
-                    <Image onClick={()=> setShowProfileDropdown(!showProfileDropdown)} src={'/assets/home/profile.svg'} alt='profile' width={100} height={100} className=' h-8'  />
+                    <div className=' absolute top-0 right-0 bg-green-500 h-3 w-3 rounded-full' />
+                    <div className=' h-9 w-9 rounded-full border overflow-hidden'>
+                        <Image onClick={()=> setShowProfileDropdown(!showProfileDropdown)} src={user?.profilePic} alt='profile' width={100} height={100} className='object-cover '  />
+                    </div>
+                    {/* <Image onClick={()=> setShowProfileDropdown(!showProfileDropdown)} src={user?.profilePic} alt='profile' width={100} height={100} className=' h-8'  /> */}
                     { showProfileDropdown && <div className=' absolute top-12 right-5 z-30'>
-                        <ProfileDropdown />
+                        <ProfileDropdown user={user} />
                     </div>}
                 </div>
             </div>

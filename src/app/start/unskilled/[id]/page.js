@@ -1,8 +1,11 @@
+import UnskilledReg from '@/components/register/unskilled/UnskilledReg'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <UnskilledReg />
+    </div>
   )
 }
 

@@ -17,7 +17,7 @@ const UnskilledHome = () => {
 
         {/* featured jobs */}
         <div className=' px-5 md: flex gap-5'>
-            <div className=' mt-6 bg-white py-5 px-4 rounded-lg'>
+            <div className=' flex-1 mt-6 bg-white py-5 px-4 rounded-lg'>
                 <p className=' text-center text-xl font-light'>
                     Featured jobs
                 </p>

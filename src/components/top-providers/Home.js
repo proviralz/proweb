@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ClientHeader from '../client/ClientHeader'
 import Image from 'next/image'
 import { IoFilter } from 'react-icons/io5'
@@ -9,6 +9,7 @@ import { location } from '../data/location'
 import { providers } from '../data/featured'
 import TopProviders from '../client/TopProviders'
 import Footer from '../footer/Footer'
+import { publicRequest } from '@/requestMethods'
 
 const Home = () => {
 
@@ -16,7 +17,28 @@ const Home = () => {
     const [experience, setExperience] = useState('')
     const [selectedField, setSelectedField] = useState('')
     const [userLocation, setUserLocation] = useState('')
+    const [activeUsers, setActiveUsers] = useState(null)
 
+
+    useEffect(()=> {
+        const getUsers = async ()=> {
+            try {
+                const res = await publicRequest.get(`users`)
+                setActiveUsers(res.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getUsers()
+    }, [])
+
+    const skilledUsers = activeUsers.filter(user => user.group === 'skilled');
+    const unskilledUsers = activeUsers.filter(user => user.group === 'unskilled');
+
+    
+    const workingUsers = skilledUsers.concat(unskilledUsers)
+    
+    console.log(workingUsers)
 
     const filterOptions = {
         field: ['Web developer', 'Graphic designer', 'Data entry', 'Photographer', 'Shoe repear', 'Makeup artist', 'SEO'],
@@ -25,7 +47,7 @@ const Home = () => {
    
 
 
-    const filteredObject = providers.filter((obj) => {
+    const filteredObject = workingUsers.filter((obj) => {
         // Check if the object meets all the filter criteria
         const fieldFilter = !selectedField || obj.field === selectedField;
         const availabilityFilter = !availability || obj.availability === availability;
@@ -36,7 +58,7 @@ const Home = () => {
         return fieldFilter && availabilityFilter && locationFilter && experienceFilter;
     });
 
-    console.log(filteredObject)
+    // console.log(filteredObject)
 
 
   return (

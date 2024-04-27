@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import Header from './Header'
 
-const SelectUse = ({showSelectUse, setShowSelectUse}) => {
+const SelectUse = () => {
   return (
     <div className={`${showSelectUse? 'flex': 'hidden'} h-screen overflow-y-scroll bg-white w-full flex justify-center`}>
         <div className=' p-5'>

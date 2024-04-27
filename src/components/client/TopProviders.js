@@ -5,20 +5,20 @@ import Image from 'next/image'
 const TopProviders = ({filteredProviders}) => {
   return (
     <div className=' flex items-center flex-wrap justify-center w-full gap-5'>
-        {filteredProviders.length == 0 && (<p>No item matches your search..</p>)}
-        {filteredProviders.map((p, i)=> (
+        {filteredProviders?.length == 0 && (<p>No item matches your search..</p>)}
+        {filteredProviders?.map((p, i)=> (
             <div key={i} className=' w-72 border pb-5 rounded-xl overflow-hidden'>
                 <div className=''>
                     <Image src={'/assets/profile/cover.svg'} alt='' width={100} height={100} className=' w-full h-28 object-cover' />
                 </div>
                 <div className=' flex justify-center -mt-7'>
                     <div>
-                        <Image src={p.logo} alt='' height={100} width={100} className=' h-14 w-14 rounded-full object-cover' />
+                        <Image src={p?.profilePic} alt='' height={100} width={100} className=' h-14 w-14 rounded-full object-cover' />
                     </div>
                 </div>
                 <div className=' text-center mt-5 space-y-2'>
                     <p>
-                        {p.name}
+                        {p?.fullName}
                     </p>
                     <p>
                         {p.skill} ${p.rate}/hr

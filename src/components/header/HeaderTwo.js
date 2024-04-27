@@ -7,12 +7,14 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import ProfileDropdown from './ProfileDropdown';
+import { useSelector } from 'react-redux';
 
 const HeaderTwo = () => {
 
     const router = useRouter()
     const pathname = usePathname()
     const [showProfileDropdown, setShowProfileDropdown] = useState(false)
+    const user = useSelector(state => state.user.info)
 
     // console.log(pathname)
   return (
@@ -42,15 +44,17 @@ const HeaderTwo = () => {
                     </nav>
                 </div>
             </div>
-            <div className=' hidden md:flex items-center'>
+            <div className=' hidden md:flex gap-5 items-center'>
                 <div className=' text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
                     <IoIosNotificationsOutline />
                 </div>
                 <div className=' relative cursor-pointer' >
-                    <div className=' absolute top-0 right-5 bg-green-500 h-3 w-3 rounded-full' />
-                    <Image onClick={()=> setShowProfileDropdown(!showProfileDropdown)} src={'/assets/home/profile.svg'} alt='profile' width={100} height={100} className=' h-8'  />
+                    <div className=' absolute top-0 right-0 bg-green-500 h-3 w-3 rounded-full' />
+                    <div className=' h-9 w-9 rounded-full border overflow-hidden'>
+                        <Image onClick={()=> setShowProfileDropdown(!showProfileDropdown)} src={user?.profilePic} alt='profile' width={100} height={100} className='object-cover '  />
+                    </div>
                     { showProfileDropdown && <div className=' absolute top-12 right-5'>
-                        <ProfileDropdown />
+                        <ProfileDropdown user={user} />
                     </div>}
                 </div>
             </div>
