@@ -9,8 +9,17 @@ import { MdOutlineEdit } from "react-icons/md";
 import { FaPlus } from 'react-icons/fa6';
 import CompleteProfile from './CompleteProfile';
 import HeaderTwo from '../header/HeaderTwo';
+import { useSelector } from 'react-redux';
 
 const UserProfile = () => {
+
+    const user = useSelector(state => state.user.info)
+
+    function convertDateToMonthYear(dateString) {
+        const date = new Date(dateString);
+        const options = { year: 'numeric', month: 'long' };
+        return date.toLocaleDateString('en-US', options);
+    }
 
     const generateStars = (rating) => {
         const stars = [];
@@ -39,25 +48,27 @@ const UserProfile = () => {
                         <div className=' absolute bg-white p-1 rounded-full bottom-3 left-3 text-neutral-600 text-xl'>
                             <TbCameraPlus />
                         </div>
-                        <Image src={'/assets/profile/man.svg'} alt='user' width={100} height={100} className=' h-full object-cover w-full' />
+                        <Image src={user?.profilePic} alt='user' width={100} height={100} className=' h-full object-cover w-full' />
                     </div>
                     <div className=' md:w-3/5 text-neutral-500'>
                         <div>
                             <p>
-                                Victor Matthew
+                                {user?.fullName}
                             </p>
                             <p className=' text-xs mt-1'>
-                                @Victormatthew
+                                @{user?.username}
                             </p>
                         </div>
-                        <div className=' mt-3'>
-                            <p className=' text-sm'>
-                                UI/UX Designer
-                            </p>
+                        <div className=' mt-3 flex items-center gap-2'>
+                            {user?.interests?.map((u, i)=> (
+                                <p key={i} className=' text-sm'>
+                                    {u}
+                                </p>
+                            ))}
                         </div>
                         <div className=' mt-3'>
                             <p className=' text-[0.7rem]'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                {user?.bio}
                             </p>
                         </div>
                         <div className='mt-3'>
@@ -66,7 +77,7 @@ const UserProfile = () => {
                             </div>
                             <div className=' mt-3'>
                                 <div  className=' flex gap-3 flex-wrap '>
-                                    {skills.map((tag, i)=> (
+                                    {user?.skills?.map((tag, i)=> (
                                         <div key={i} className=' border capitalize bg-neutral-100 px-4 py-1 rounded-full text-neutral-500  text-xs'>
                                             {tag}
                                         </div>
@@ -171,7 +182,7 @@ const UserProfile = () => {
                                 Availability
                             </p>
                             <p>
-                                part time
+                                {user?.availability}
                             </p>
                         </div>
                         <div>
@@ -179,7 +190,7 @@ const UserProfile = () => {
                                 years of experience
                             </p>
                             <p>
-                                2 years
+                                {user?.experience[0]?.years} years
                             </p>
                         </div>
                         <div>
@@ -187,7 +198,7 @@ const UserProfile = () => {
                                 Location
                             </p>
                             <p>
-                                Abuja Nigeria
+                                {user?.location?.state} {user?.location?.country}
                             </p>
                         </div>
                         <div>
@@ -195,7 +206,7 @@ const UserProfile = () => {
                                 Rate
                             </p>
                             <p>
-                                $25/hr
+                                &#8358;{user?.rate}/hr
                             </p>
                         </div>
                         <div>
@@ -203,7 +214,7 @@ const UserProfile = () => {
                                 Ratings
                             </p>
                             <p>
-                                4.5
+                                5
                             </p>
                         </div>
                     </div>
@@ -226,7 +237,7 @@ const UserProfile = () => {
                                 Description
                             </p>
                             <p className=' text-[0.6rem] w-3/4 mt-1'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                {user?.bio}
                             </p>
                         </div>
                         <div>
@@ -242,7 +253,7 @@ const UserProfile = () => {
                             </p>
                             <div className=' mt-2'>
                                 <div  className=' flex gap-1 flex-wrap '>
-                                    {skills.map((tag, i)=> (
+                                    {user?.skills?.map((tag, i)=> (
                                         <div key={i} className=' border capitalize bg-neutral-100 px-2 py-1 rounded-full text-neutral-500  text-[0.6rem]'>
                                             {tag}
                                         </div>
@@ -265,11 +276,11 @@ const UserProfile = () => {
                                 Experience
                             </p>
                             <div className=' mt-2'>
-                                {experience.map((ex,i)=> (
+                                {user?.experience?.map((ex,i)=> (
                                     <div key={i} className=' flex gap-2'>
                                         <div className=''>
-                                            <div className=' border rounded-full overflow-hidden p-1'>
-                                                <Image src={ex.logo} alt='' width={100} height={100} className=' h-7 w-7' />
+                                            <div className=' border rounded-full h-8 w-8 overflow-hidden'>
+                                                <Image src={'/assets/profile/company.jpeg'} alt='' width={100} height={100} className=' h-full w-full object-cover' />
                                             </div>
                                         </div>
                                         <div className=' text-xs flex flex-col gap-1'>
@@ -280,19 +291,19 @@ const UserProfile = () => {
                                             </div>
                                             <div>
                                                 <p>
-                                                    {ex.position}
+                                                    {ex.title}
                                                 </p>
                                             </div>
                                             <div className=' flex text-[0.5rem]'>
                                                 <p>
-                                                    {ex.start} - 
+                                                    {convertDateToMonthYear(ex.startDate)} - &nbsp; 
                                                 </p>
                                                 <p>
-                                                    {ex.end}
+                                                    {convertDateToMonthYear(ex.endDate)}
                                                 </p>
-                                                <p>
+                                                {/* <p>
                                                     ({ex.location})
-                                                </p>
+                                                </p> */}
                                             </div>
                                         </div>
                                     </div>
@@ -309,7 +320,7 @@ const UserProfile = () => {
                         </div>
                     </div>
 
-                    <div className=' mt-4 border-b pb-4 flex justify-between'>
+                    {/* <div className=' mt-4 border-b pb-4 flex justify-between'>
                         <div>
                             <p className=' text-sm'>
                                 Languages
@@ -326,24 +337,26 @@ const UserProfile = () => {
                                 <FaPlus />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className=' mt-4 flex justify-between'>
                         <div>
                             <p className=' text-sm'>
                                 Education
                             </p>
-                            <div className=' mt-2 text-xs font-light'>
-                                <p>
-                                    University of Ibandan
-                                </p>
-                                <p>
-                                    Computer Science (B.Sc)
-                                </p>
-                                <p>
-                                    2016 - 2020
-                                </p>
-                            </div>
+                            {user?.education?.map((e, i)=> (
+                                <div key={i} className=' mt-2 text-xs font-light'>
+                                    <p>
+                                        {e.school}
+                                    </p>
+                                    <p>
+                                        {e.field} ({e.degree})
+                                    </p>
+                                    <p>
+                                        {convertDateToMonthYear(e.startDate)} - {convertDateToMonthYear(e.endDate)}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                         <div className=' flex gap-2 items-start '>
                             <div className=' border border-[#31013f] p-1 rounded-full text-[#31013f]'>

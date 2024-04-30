@@ -14,7 +14,7 @@ export default function Home() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
 
-  console.log(userInfo)
+  // console.log(userInfo)
 
   useEffect(()=> {
     if(!userInfo) {

@@ -1,27 +1,27 @@
 export const skilledInterest = [
     {
         title: 'web design',
-        img: '/assets/interest/'
+        img: '/assets/interest/developer.jpeg'
     },
     {
         title: 'data entry',
-        img: '/assets/interest/'
+        img: '/assets/interest/data-entry.jpeg'
     },
     {
         title: 'copywriting',
-        img: '/assets/interest/'
+        img: '/assets/interest/copy.jpeg'
     },
     {
         title: 'digital marketing',
-        img: '/assets/interest/'
+        img: '/assets/interest/seo.jpeg'
     },
     {
         title: 'graphic designer',
-        img: '/assets/interest/'
+        img: '/assets/interest/graphic.jpeg'
     },
     {
         title: 'ui/ux design',
-        img: '/assets/interest/'
+        img: '/assets/interest/ui.jpeg'
     },
     
 ]

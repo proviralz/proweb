@@ -32,26 +32,26 @@ const Home = () => {
         getUsers()
     }, [])
 
-    const skilledUsers = activeUsers.filter(user => user.group === 'skilled');
-    const unskilledUsers = activeUsers.filter(user => user.group === 'unskilled');
+    const skilledUsers = activeUsers?.filter(user => user.group === 'skilled');
+    const unskilledUsers = activeUsers?.filter(user => user.group === 'unskilled');
 
     
-    const workingUsers = skilledUsers.concat(unskilledUsers)
+    const workingUsers = skilledUsers?.concat(unskilledUsers)
     
     console.log(workingUsers)
 
     const filterOptions = {
-        field: ['Web developer', 'Graphic designer', 'Data entry', 'Photographer', 'Shoe repear', 'Makeup artist', 'SEO'],
+        field: ['web design', 'graphic designer', 'data entry', 'photographer', 'shoe repear', 'makeup artist', 'seo'],
         availability: ['part time', 'full time'],
     }
    
 
 
-    const filteredObject = workingUsers.filter((obj) => {
+    const filteredObject = workingUsers?.filter((obj) => {
         // Check if the object meets all the filter criteria
-        const fieldFilter = !selectedField || obj.field === selectedField;
+        const fieldFilter = !selectedField || obj?.interests?.includes(selectedField);
         const availabilityFilter = !availability || obj.availability === availability;
-        const locationFilter = !userLocation || obj.location === userLocation;
+        const locationFilter = !userLocation || obj.location.state === userLocation;
         const experienceFilter = !experience || obj.experience === experience;
     
         // Return true if all filters pass

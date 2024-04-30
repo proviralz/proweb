@@ -30,7 +30,9 @@ const Client = () => {
         )}
         {currentPage === 2 && (
             <StepTwo 
+
                userId={params.id} 
+               prevPage={prevPage}
             />
         )}
     </div>

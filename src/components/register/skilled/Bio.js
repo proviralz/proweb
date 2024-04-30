@@ -29,7 +29,7 @@ const Bio = ({prevPage, nextPage, id}) => {
         setSkills(skills.filter((skill) => skill !== skillToRemove));
     };
 
-    console.log(skills)
+    // console.log(skills)
 
 
     const handleSubmit = async() => {

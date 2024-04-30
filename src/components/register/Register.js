@@ -15,7 +15,7 @@ import StepFive from './StepFive';
 const Register = () => {
 
     const [showSelect, setShowSelect] = useState(false)
-    const [currentPage, setCurrentPage] = useState(5)
+    const [currentPage, setCurrentPage] = useState(1)
     const [newUser, setNewUser] = useState(null)
     
 
@@ -27,9 +27,9 @@ const Register = () => {
         setCurrentPage(currentPage - 1)
     }
 
-    console.log(newUser)
+    // console.log(newUser)
 
-    const id = '66197c701e036d680449c7b9'
+    // const id = '66197c701e036d680449c7b9'
 
     // #CCE7F1
 
@@ -64,7 +64,7 @@ const Register = () => {
                 <StepFive 
                     nextPage={nextPage} 
                     prevPage={prevPage} 
-                    userId={id}/>
+                    userId={newUser?._id}/>
             )}
         </div>
     )

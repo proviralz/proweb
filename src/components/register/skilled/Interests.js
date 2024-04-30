@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Header from '../Header'
 import Image from 'next/image'
 import { FiSearch } from 'react-icons/fi'
-import { unSkilledInterest } from '@/components/data/interests'
+import { skilledInterest, unSkilledInterest } from '@/components/data/interests'
 import { FaPlay } from 'react-icons/fa6'
 import { publicRequest } from '@/requestMethods'
 import { useParams, useRouter } from 'next/navigation'
@@ -68,7 +68,7 @@ const Interests = () => {
                     </div>
                     <div className=' mt-5 w-full h-96 overflow-y-scroll'>
                         <div className=' flex flex-wrap gap-5 justify-between'>
-                            {unSkilledInterest.map((u, i)=> (
+                            {skilledInterest.map((u, i)=> (
                                 <div key={i}  className={`w-36 h-52 border p-3 rounded-lg ${selectedInterests.includes(u.title) ? 'bg-gray-300' : ''} `} onClick={() => toggleInterest(u.title)}>
                                     <div className=' w-full h-40'>
                                         <Image src={u.img} alt=''  width={100} height={100} className=' h-full w-full object-cover' />

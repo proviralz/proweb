@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { FaChalkboardUser } from 'react-icons/fa6'
 import { IoIosArrowForward } from 'react-icons/io'
@@ -28,7 +29,7 @@ const ActionsTab = () => {
             </div>
 
         {/* right */}
-            <div className=' flex justify-between flex-1 p-5 border rounded-xl'>
+            <Link href={'/jobs/new'} className=' flex justify-between flex-1 p-5 border rounded-xl'>
                 <div>
                     <PiHandshakeLight  size={50} className='text-[#ba68c8]' />
                 </div>
@@ -43,7 +44,7 @@ const ActionsTab = () => {
                 <div className=' flex items-center'>
                     <IoIosArrowForward />
                 </div>
-            </div>
+            </Link>
 
         </div>
     </div>
