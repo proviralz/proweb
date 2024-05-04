@@ -14,12 +14,10 @@ import { host, userRequest } from '@/requestMethods'
 
 const Message = () => {
 
-    // const [selectedMsg, setSelectedMsg] = useState(null)
-    // const [selectedChatId, setSelectedChatId] = useState(null)
+    
     const [contacts, setContacts] = useState([])
     const [currentChat, setCurrentChat] = useState(null)
     const [currentUserName, setCurrentUserName] = useState(undefined);
-    // const [currentUserImage, setCurrentUserImage] = useState(undefined);
     const [currentSelected, setCurrentSelected] = useState(undefined);
 
 
@@ -32,24 +30,15 @@ const Message = () => {
   
     const socket = useRef()
 
-    // const user = 'femi'
-
-    // const selectedChat = message.find((msg)=> msg.id === selectedChatId)
-
-    // const isMessageFromMe = selectedChat?.user === user
-
     const loggedUser = useSelector((state)=> state.user.info)
 
-    // console.log(loggedUser)
-    // console.log(contacts)
-    // console.log(messages)
 
     useEffect(()=> {
         if(loggedUser) {
             socket.current = io(host)
             socket.current.emit("add-user", loggedUser?._id)
         }
-        setCurrentUserName(loggedUser.fullName)
+        setCurrentUserName(loggedUser?.fullName)
         
     }, [loggedUser])
 
@@ -267,7 +256,7 @@ const Message = () => {
                                     </div>
                                     <div className={`mt-1 flex text-xs text-neutral-500 ${m.fromSelf? 'justify-end': ''}`}>
                                         <p>
-                                            {formatMessageTime(m.time)}
+                                            {/* {formatMessageTime(m.time)} */}
                                         </p>
                                     </div>
                                 </div>

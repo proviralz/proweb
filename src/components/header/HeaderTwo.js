@@ -8,6 +8,7 @@ import { FiSearch } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import ProfileDropdown from './ProfileDropdown';
 import { useSelector } from 'react-redux';
+import NotificationsDropdown from './NotificationsDropdown';
 
 const HeaderTwo = () => {
 
@@ -45,8 +46,13 @@ const HeaderTwo = () => {
                 </div>
             </div>
             <div className=' hidden md:flex gap-5 items-center'>
-                <div className=' text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
-                    <IoIosNotificationsOutline />
+                <div className='relative'>
+                    <div className='  text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
+                        <IoIosNotificationsOutline />
+                    </div>
+                    <div className=' absolute  right-0 top-12'>
+                        <NotificationsDropdown userId={user?._id} />
+                    </div>
                 </div>
                 <div className=' relative cursor-pointer' >
                     <div className=' absolute top-0 right-0 bg-green-500 h-3 w-3 rounded-full' />

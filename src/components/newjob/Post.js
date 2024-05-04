@@ -279,6 +279,8 @@ const Post = () => {
                         </div>    */}
                     </div>
                 </div>
+
+                {/* description */}
                 <div>
                     <div className=' space-y-2'>
                         <p >Brief description of your project</p>
@@ -292,6 +294,8 @@ const Post = () => {
                         
                     </div>
                 </div>
+
+                {/* images */}
                 <div>
                     <div className=' w-full mt-5'>
                         <div 
@@ -317,6 +321,8 @@ const Post = () => {
                         )}
                     </div>
                 </div>
+
+                {/* location */}
                 <div className=' space-y-2'>
                     <p>
                         Location

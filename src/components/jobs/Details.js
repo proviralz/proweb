@@ -261,7 +261,7 @@ const Details = () => {
                     </div>
 
 
-                    {/* proposal */}
+                    {/*  */}
 
                     {proposal && <div>
                         <div className=' border-t py-4 space-y-3 text-neutral-600'>
