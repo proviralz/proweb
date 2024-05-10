@@ -1,5 +1,6 @@
 'use client'
 import ClientProfile from '@/components/user/client/Profile'
+import SkilledProfile from '@/components/user/skilled/SkilledProfile'
 import { publicRequest } from '@/requestMethods'
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -61,6 +62,9 @@ const Page = () => {
     <div>
         {user?.group === 'client' && (
             <ClientProfile user={user} />
+        )}
+        {user?.group === 'skilled' && (
+            <SkilledProfile user={user} />
         )}
     </div>
   )

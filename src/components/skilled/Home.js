@@ -89,8 +89,8 @@ const Landing = () => {
         </div>
 
         {/* featured jobs */}
-        <div className=' px-5 md: flex gap-5'>
-            <div className=' mt-6 bg-white py-5 px-4 rounded-lg'>
+        <div className=' px-5 md:flex justify-between gap-5'>
+            <div className=' mt-6 flex-1 bg-white py-5 px-4 rounded-lg'>
                 <p className=' text-center text-xl font-light'>
                     Featured jobs
                 </p>

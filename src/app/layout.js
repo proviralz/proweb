@@ -18,11 +18,11 @@ const openSans = Open_Sans({ subsets: ["latin"]})
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <title>
           Provirals
         </title>
-      </Head>
+      </head>
       <body className={openSans.className}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>

@@ -1,13 +1,66 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ClientHeader from '../client/ClientHeader'
 import OngoingProjects from './OngoingProjects'
 import CompletedProjects from './CompletedProjects'
 import Footer from '../footer/Footer'
+import Link from 'next/link'
+import { publicRequest } from '@/requestMethods'
+import { useSelector } from 'react-redux'
 
 const ClientProjects = () => {
 
     const [selectedTab, setSelectedTab] = useState(1)
+    const [projects, setProjects] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const user = useSelector(state => state.user.info)
+
+
+    useEffect(()=> {
+        const getProjects = async ()=> {
+            try {
+                const res = await publicRequest.get(`jobs/client/${user._id}`)
+
+                setProjects(res.data)
+                setLoading(false)
+            } catch (error) {
+                console.log(error)
+                setLoading(false)
+            }
+        }
+        getProjects()
+    }, [user?._id])
+
+    if(loading) {
+        return (
+            <div className="section-center">
+                <div className="section-path">
+                    <div className="globe">
+                    <div className="wrapper">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+
   return (
     <div>
         <div>
@@ -36,16 +89,16 @@ const ClientProjects = () => {
 
                     {/* right */}
                     <div className=' mb-3'>
-                        <p className=' px-4 py-2 font-light bg-[#31013f] text-white rounded-full'>
+                        <Link href={'/jobs/new'} className=' px-4 py-2 font-light bg-[#31013f] text-white rounded-full'>
                             Post a job
-                        </p>
+                        </Link>
                     </div>
                 </div>
 
                 {/* tabs */}
                 <div className=' mt-5'>
                     {selectedTab === 1 && (
-                        <OngoingProjects />
+                        <OngoingProjects projects={projects} />
                     )}
                     {selectedTab === 2 && (
                         <CompletedProjects />

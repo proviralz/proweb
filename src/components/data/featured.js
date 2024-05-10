@@ -293,7 +293,7 @@ export const reviews = [
     {
         name: 'Philip Wayne',
         location: 'Namibia',
-        rating: 2,
+        rating: 2.5,
         desc: 'Did a great job on the design i ordered for. Highly recommend him for your projects',
         img: '/assets/profile/user3.svg',
         date: '2 months ago',

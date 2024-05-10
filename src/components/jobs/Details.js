@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import HeaderTwo from '../skilled/HeaderTwo'
+// import HeaderTwo from '../skilled/HeaderTwo'
 import Footer from '../footer/Footer'
 import { skills } from '../data/featured'
 import Image from 'next/image'
@@ -14,6 +14,7 @@ import { useParams } from 'next/navigation'
 import { publicRequest } from '@/requestMethods'
 import SubmitProposal from './SubmitProposal'
 import { useSelector } from 'react-redux'
+import HeaderTwo from '../header/HeaderTwo'
 
 const Details = () => {
 

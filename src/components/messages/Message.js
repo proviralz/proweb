@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import HeaderTwo from '../skilled/HeaderTwo'
+
 import Footer from '../footer/Footer'
 import { GoPlus } from 'react-icons/go'
 import { FiSearch } from 'react-icons/fi'
@@ -11,6 +11,7 @@ import { GrAttachment } from "react-icons/gr";
 import { useSelector } from 'react-redux'
 import { io } from 'socket.io-client'
 import { host, userRequest } from '@/requestMethods'
+import HeaderTwo from '../header/HeaderTwo'
 
 const Message = () => {
 
@@ -192,14 +193,14 @@ const Message = () => {
                         </p>
                     </div>
                     <div className=' mt-3 -mx-5 '>
-                        {contacts?.map((c, i)=> (
+                        { contacts && contacts?.map((c, i)=> (
                             <div 
                                 key={c._id} 
                                 onClick={()=> changeCurrentChat(i, c)}
                                 className={` ${currentSelected === i? 'bg-[#31013f]/20': ''} p-2 cursor-pointer flex items-center justify-between`}>
                                 <div className=' flex items-center gap-4'>
-                                    <div>
-                                        <Image src={'/assets/messages/1.svg'} alt='' width={100} height={100} className=' h-6 w-6' />
+                                    <div className=' w-6 h-6 rounded-full overflow-hidden'>
+                                        <Image src={c?.profilePic} alt='' width={100} height={100} className=' h-full w-full object-cover' />
                                     </div>
                                     <div>
                                         <p className=' text-xs text-neutral-600'>

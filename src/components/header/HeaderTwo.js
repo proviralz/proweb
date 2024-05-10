@@ -15,7 +15,13 @@ const HeaderTwo = () => {
     const router = useRouter()
     const pathname = usePathname()
     const [showProfileDropdown, setShowProfileDropdown] = useState(false)
+    const [showNotificationDropdown, setShowNotificationDropdown] = useState(false)
     const user = useSelector(state => state.user.info)
+
+
+    if(!user) {
+        router.push('/login')
+    }
 
     // console.log(pathname)
   return (
@@ -47,12 +53,12 @@ const HeaderTwo = () => {
             </div>
             <div className=' hidden md:flex gap-5 items-center'>
                 <div className='relative'>
-                    <div className='  text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
+                    <div onClick={()=> setShowNotificationDropdown(!showNotificationDropdown)} className='  text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
                         <IoIosNotificationsOutline />
                     </div>
-                    <div className=' absolute  right-0 top-12'>
+                    {showNotificationDropdown && <div className=' absolute  right-0 top-12'>
                         <NotificationsDropdown userId={user?._id} />
-                    </div>
+                    </div>}
                 </div>
                 <div className=' relative cursor-pointer' >
                     <div className=' absolute top-0 right-0 bg-green-500 h-3 w-3 rounded-full' />
