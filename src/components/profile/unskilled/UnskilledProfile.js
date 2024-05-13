@@ -8,9 +8,11 @@ import Footer from '../../footer/Footer';
 import { MdOutlineEdit } from "react-icons/md";
 import { FaPlus } from 'react-icons/fa6';
 import CompleteProfile from './CompleteProfile';
-import HeaderTwo from './HeaderTwo';
+// import HeaderTwo from './HeaderTwo';
 import Earn from '@/components/footer/Earn';
 import { useSelector } from 'react-redux';
+import HeaderTwo from '@/components/header/HeaderTwo';
+import Link from 'next/link';
 
 const UnskilledProfile = () => {
 
@@ -41,11 +43,13 @@ const UnskilledProfile = () => {
 
             <div className=' flex-1'>
                 <div className=' p-5 bg-white rounded-md flex md:flex-row flex-col gap-5'>
-                    <div className=' relative bg-slate-400 md:w-2/5 h-64 rounded-sm overflow-hidden'>
+                    <div className=' relative bg-slate-400 md:w-2/5 h-48 rounded-sm overflow-hidden'>
                         <div className=' absolute bg-white p-1 rounded-full bottom-3 left-3 text-neutral-600 text-xl'>
                             <TbCameraPlus />
                         </div>
-                        <Image src={user?.profilePic} alt='user' width={100} height={100} priority={true} className=' h-64 object-cover  w-full' />
+                        <div className=''>
+                            <Image src={user?.profilePic} alt='user' width={100} height={100} priority={true} className=' h-full object-cover   w-full' />
+                        </div>
                     </div>
                     <div className=' md:w-3/5 text-neutral-500'>
                         <div>
@@ -56,15 +60,18 @@ const UnskilledProfile = () => {
                                 @{user?.username}
                             </p>
                         </div>
-                        <div className=' mt-3'>
-                            <p className=' text-sm'>
-                                UI/UX Designer
-                            </p>
+                        <div className=' mt-3 flex gap-2 '>
+                            {user?.interests?.map((int, i)=> (
+                                <p key={i} className=' text-xs'>
+                                    {int}
+                                </p>
+
+                            ))}
                         </div>
                         <div className=' mt-3'>
-                            <p className=' text-[0.7rem]'>
+                            {/* <p className=' text-[0.7rem]'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
+                            </p> */}
                         </div>
                         {/* <div className='mt-3'>
                             <div>
@@ -90,17 +97,17 @@ const UnskilledProfile = () => {
                             </p>
                         </div>
                         <div>
-                            <p className=' purple-btn-long text-xs'>
+                            <Link href={'/portfolio/new'} className=' purple-btn-long text-xs'>
                                 Add to portfolio
-                            </p>
+                            </Link>
                         </div>
                     </div>
                     <div className=' mt-5'>
                         <div className=' flex flex-wrap justify-center md:justify-between gap-10'>
-                            {gallery.map((g, i)=> (
+                            {user?.portfolio?.map((g, i)=> (
                                 <div key={i} className=' w-56'>
                                     <div className=' w-full rounded-lg overflow-hidden'>
-                                        <Image src={g.img} alt={g.title} width={100} height={100} className=' w-full'  />
+                                        <Image src={g.image} alt={g.title} width={100} height={100} className=' w-full'  />
                                     </div>
                                     <div className=' mt-2 flex text-xs justify-between text-neutral-500'>
                                         <p>

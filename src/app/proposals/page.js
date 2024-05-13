@@ -15,6 +15,10 @@ const Page = () => {
         <Proposals />
       )}
 
+      {user.group === 'unskilled' && (
+        <Proposals />
+      )}
+
       {user.group === 'client' && (
         <ClientProposals />
       )}

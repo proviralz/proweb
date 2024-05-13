@@ -133,7 +133,7 @@ const SubmitProposal = ({showForm, setShowForm, clientId, jobId, providerId}) =>
     <div onClick={(e)=> {setShowForm(false); e.stopPropagation()}} 
         className={popUpClassName}>
         <div onClick={(e)=> e.stopPropagation()} 
-            className='overflow-y-scroll w-4/5 h-3/4 bg-white rounded-xl'>
+            className='overflow-y-scroll w-4/5 h-3/4 bg-white pb-10 rounded-xl'>
            
             <div className=' h-full flex flex-col items-center p-10 gap-5'>
                 <div>
@@ -207,7 +207,9 @@ const SubmitProposal = ({showForm, setShowForm, clientId, jobId, providerId}) =>
                         </div>
                     </div>
                 </div>
-                <div></div>
+                <div className=''>
+                    
+                </div>
             </div>
         </div>
     </div>

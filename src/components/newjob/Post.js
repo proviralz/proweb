@@ -13,6 +13,8 @@ import { RiCheckboxBlankFill, RiCheckboxBlankLine } from 'react-icons/ri'
 import { app } from '../../../lib/firebase'
 import { useSelector } from 'react-redux'
 import { publicRequest, userRequest } from '@/requestMethods'
+import { skilledInterest, unSkilledInterest } from '../data/interests'
+import { useRouter } from 'next/navigation'
 
 
 const Post = () => {
@@ -39,6 +41,7 @@ const Post = () => {
     const user = useSelector(state => state.user.info)
 
     const [errors, setErrors] = useState({});
+    const router = useRouter()
 
 
     const handleChange = (e) => {
@@ -138,6 +141,10 @@ const Post = () => {
         setSkills(skills.filter((skill) => skill !== skillToRemove));
     };
 
+    const category = [...skilledInterest, ...unSkilledInterest]
+
+    console.log(category)
+
 
 
     const handleSubmit = async() => {
@@ -175,6 +182,8 @@ const Post = () => {
                 })
 
                 console.log(res.data)
+                alert('Job posted')
+                router.push('/')
             } catch (error) {
                 console.log(error)
             }
@@ -220,7 +229,12 @@ const Post = () => {
                         id="" 
                         onChange={handleChange}>
                         <option value="">Choose one category</option>
-                        <option value="web design">Web design</option>
+                        {category.map((cat, i)=> (
+                            <option key={i} value={cat.title}>
+                                {cat.title}
+                            </option>
+                        ))}
+                        {/* <option value="web design">Web design</option> */}
                     </select>
                 </div>
                 <div className=' space-y-2'>
@@ -304,13 +318,13 @@ const Post = () => {
                             className=' h-20 border border-neutral-500  border-dashed p-5 rounded-md  flex  gap-5 items-center justify-center'>
                             <div className=' flex items-center text-neutral-600 gap-3 text-xs'>
                                 <IoCloudUploadOutline />
-                                {file && file[0]?.name || <p>
+                                {file && file[0]?.name || <p className=' w-3/4'>
                                     Drag and drop any images that might be helpful in explaining your brief
                                 </p>}
                             </div>
 
                             <div className=''>
-                                <label htmlFor="browse" className=' bg-neutral-100 px-5 py-2 text-neutral-600 text-sm'> Select Image</label>
+                                <label htmlFor="browse" className=' w-full bg-neutral-100 px-5 py-2 text-neutral-600 text-sm'> Select Image</label>
                                 <input type="file" onChange={handleFileSelect} className=' hidden' id='browse' />
                             </div>
                         </div>

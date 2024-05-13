@@ -51,5 +51,57 @@ export const unSkilledInterest = [
         title: 'photographer',
         img: '/assets/interest/photographer.jpeg'
     },
+    {
+        title: 'automobile mechanic',
+        img: '/assets/interest/mechanic.jpeg'
+    },
+    {
+        title: 'barber',
+        img: '/assets/interest/barber.jpeg'
+    },
+    {
+        title: 'beautician',
+        img: '/assets/interest/beautician.jpeg'
+    },
+    {
+        title: 'chef',
+        img: '/assets/interest/chef.jpeg'
+    },
+    {
+        title: 'horticulturist',
+        img: '/assets/interest/horticulturist.jpeg'
+    },
+    {
+        title: 'massage therapist ',
+        img: '/assets/interest/massage.jpeg'
+    },
+    {
+        title: 'mason',
+        img: '/assets/interest/mason.jpeg'
+    },
+    {
+        title: 'welder',
+        img: '/assets/interest/welder.jpeg'
+    },
+    {
+        title: 'make-up artist',
+        img: '/assets/interest/makeup.jpeg'
+    },
+    {
+        title: 'decorator',
+        img: '/assets/interest/decorator.jpeg'
+    },
+    {
+        title: 'event planner',
+        img: '/assets/interest/event.jpeg'
+    },
+    {
+        title: 'dentist',
+        img: '/assets/interest/dentist.jpeg'
+    },
+    {
+        title: 'printer',
+        img: '/assets/interest/printer.jpeg'
+    },
     
 ]
