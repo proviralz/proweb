@@ -38,18 +38,32 @@ const Details = () => {
 
                 const populatedJobs = {job, clientDetails} 
 
-                const proposalRes = await publicRequest.get(`proposal/find/${params.id}?providerId=${user?._id}`)
-                setProposal(proposalRes.data)
+                // const proposalRes = await publicRequest.get(`proposal/find/${params.id}?providerId=${user?._id}`)
+                // setProposal(proposalRes.data)
                 
                 
                 setJobs(populatedJobs)
                 setLoading(false)
             } catch (error) {
                 console.log(error)
-                if(error.response.status === 401){
-                    setProposal(null)
-                    setLoading(false)
-                }
+                
+            }
+        }
+
+        getJobs()
+    }, [params.id, user?._id])
+
+
+    useEffect(()=> {
+        const getJobs = async ()=> {
+            try {
+
+                const proposalRes = await publicRequest.get(`proposal/find/${params.id}?providerId=${user?._id}`)
+
+                setProposal( proposalRes.data || null)
+            } catch (error) {
+                console.log(error)
+         
             }
         }
 
