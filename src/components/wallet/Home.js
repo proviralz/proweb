@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import HeaderTwo from '../skilled/HeaderTwo'
+// import HeaderTwo from '../skilled/HeaderTwo'
 import Footer from '../footer/Footer'
 import { CiWallet } from 'react-icons/ci'
 import { FaRegCreditCard } from 'react-icons/fa6'
@@ -8,6 +8,7 @@ import { GoHistory } from 'react-icons/go'
 import Account from './Account'
 import Card from './Card'
 import History from './History'
+import HeaderTwo from '../header/HeaderTwo'
 
 const Home = () => {
     const [currentPage, setCurrentPage] = useState("wallet")

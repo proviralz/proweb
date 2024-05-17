@@ -56,7 +56,7 @@ const UnskilledDetails = () => {
         }
 
         getJobs()
-    }, [params.id, user?._id])
+    }, [params.id, user?._id]) 
 
 
     useEffect(()=> {
