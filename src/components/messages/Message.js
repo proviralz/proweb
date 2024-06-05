@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux'
 import { io } from 'socket.io-client'
 import { host, userRequest } from '@/requestMethods'
 import HeaderTwo from '../header/HeaderTwo'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 const Message = () => {
 
@@ -20,6 +21,7 @@ const Message = () => {
     const [currentChat, setCurrentChat] = useState(null)
     const [currentUserName, setCurrentUserName] = useState(undefined);
     const [currentSelected, setCurrentSelected] = useState(undefined);
+    const [showChatList, setShowChatList] = useState(true)
 
 
     const [messages, setMessages] = useState([])
@@ -120,6 +122,7 @@ const Message = () => {
     const changeCurrentChat = (index, contact) => {
         setCurrentSelected(index)
         handleChatChange(contact)
+        setShowChatList(false)
         
     }
 
@@ -159,7 +162,8 @@ const Message = () => {
         <div className=' p-5 md:p-10 bg-neutral-100 flex gap-[1px] '>
 
             {/* left side */}
-            <div className=' inline-block md:w-2/5 lg:w-1/3 rounded-l-md bg-white shadow-md'>
+            {showChatList &&
+            (<div className=' inline-block md:w-2/5 lg:w-1/3 rounded-l-md bg-white shadow-md'>
                 <div className=' border-b p-5 flex items-center justify-between'>
                     <div>
                         <p>
@@ -179,12 +183,12 @@ const Message = () => {
                 </div>
                 <div className=' p-5'>
                     <div>
-                        <div>
+                        {/* <div>
                             <div className=' flex items-center border px-2 py-1  rounded-xl gap-3'>
                                 <FiSearch />
                                 <input type="text" name="" id="" className=' w-28 md:w-full outline-none  text-neutral-600 ' placeholder='Search messages' />
                             </div>
-                        </div>
+                        </div> */}
                         {/* <div></div> */}
                     </div>
                     <div className=' mt-2'>
@@ -220,7 +224,8 @@ const Message = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div>)
+            }
 
             {/* message box */}
             <div className=' bg-white flex-1 shadow-md rounded-r-md'>
@@ -230,6 +235,9 @@ const Message = () => {
                     <div className=' flex gap-3 items-center'>
                         <div>
                             {/* {selectedChat && <Image src={selectedChat?.img} alt='' width={100} height={100} className=' h-6 w-6' />} */}
+                        </div>
+                        <div className=' text-2xl'>
+                            <AiOutlineMenu onClick={() => setShowChatList(!showChatList)} />
                         </div>
                         <div>
                             <p>
@@ -250,7 +258,7 @@ const Message = () => {
                         <div key={i} ref={scrollRef}>
                             <div className={` flex ${m.fromSelf? 'justify-end' :""}`}>
                                 <div>
-                                    <div className={`${m.fromSelf? " text-xs bg-[#31013f] text-white rounded-t-3xl rounded-l-3xl": "rounded-t-3xl rounded-r-3xl bg-neutral-200 text-neutral-600"} p-5`}>
+                                    <div className={`${m.fromSelf? " text-xs bg-[#31013f] text-white rounded-t-xl md:rounded-t-3xl rounded-l-xl md:rounded-l-3xl": " rounded-t-xl md:rounded-t-3xl rounded-r-xl md:rounded-r-3xl bg-neutral-200 text-neutral-600"} p-2 md:p-5`}>
                                         <p>
                                             {m.message}
                                         </p>

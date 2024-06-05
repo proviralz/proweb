@@ -60,7 +60,7 @@
 }
 
 .wallet-nav {
-  @apply space-y-3
+  @apply flex flex-row md:flex-col justify-between 
 }
 
 .wallet-cards {
@@ -379,4 +379,8 @@
   justify-content: center;
   align-items: center;
   opacity: 1;
+}
+
+.milestones div {
+  @apply border rounded-md p-2
 }

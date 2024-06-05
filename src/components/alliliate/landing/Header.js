@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Header = () => {
@@ -10,14 +11,14 @@ const Header = () => {
         </div>
         <div className=' flex items-center gap-5'>
             <div>
-                <p className=' trans-purple-btn'>
+                <Link href={'/affiliate/login'} className=' trans-purple-btn'>
                     Login
-                </p>
+                </Link>
             </div>
             <div>
-                <p  className=' purple-btn'>
+                <Link href={'/affiliate/register'}  className=' purple-btn'>
                    Join Now 
-                </p>
+                </Link>
             </div>
         </div>
     </div>

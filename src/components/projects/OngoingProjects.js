@@ -8,13 +8,13 @@ const OngoingProjects = ({projects}) => {
     <div className=' flex flex-col gap-4'>
         {projects?.map((job, i)=> (
             <div key={i}  className=' border rounded-sm flex text-neutral-600'>
-                <div className=' p-5 flex-1'>
-                    <div>
+                <div className=' p-5 space-y-2 flex-1'>
+                    <div className=' w-full'>
                         <p className=' text-[#31013f]'>
                             {job?.title}
                         </p>
                     </div>
-                    <div>
+                    <div className=' w-full text-sm'>
                         <p>
                             {job?.description}
                         </p>
@@ -46,7 +46,7 @@ const OngoingProjects = ({projects}) => {
                         </p>
                     </div>
                 </div>
-                <div className=' py-5 px-10  flex items-end justify-center gap-1'>
+                <div className=' hidden py-5 px-10  items-end justify-center gap-1'>
                     <div>
                         <p className={`text-lg capitalize ${job.status === 'closed'? 'text-red-500': 'text-green-600'}`}>
                             {job?.status}

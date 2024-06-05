@@ -15,10 +15,10 @@ const ClientHome = () => {
         <div>
           <ClientHeader />
         </div>
-        <div className=' bg-neutral-100 h-full px-10 '>
+        <div className=' bg-neutral-100 h-full px-3 md:px-10 '>
           <div className=' p-5 bg-white rounded-b-lg space-y-4'>
             <div className=' '>
-              <div className=' flex items-center border px-2 py-1  rounded-xl gap-3'>
+              <div className=' hidden md:flex items-center border px-2 py-1  rounded-xl gap-3'>
                   <FiSearch />
                   <input type="text" name="" id="" className=' w-28 md:w-full outline-none  text-neutral-600 ' placeholder='Search services' />
               </div>
@@ -31,7 +31,7 @@ const ClientHome = () => {
 
           {/* featured jobs */}
           <div className=' md:flex gap-5'>
-              <div className=' mt-6 bg-white py-5 px-4 rounded-lg'>
+              <div className=' mt-6 bg-white py-5 px-5 rounded-lg'>
                   <p className=' text-center text-xl font-light'>
                       Top Liked Projects
                   </p>

@@ -1,17 +1,20 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 const PersonalInfo = () => {
 
-    const user = {
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'john.doe@example.com',
-        country: 'USA',
-        state: 'California',
-        city: 'Los Angeles',
-        address: '123 Main St',
-        phone: '555-1234'
-    };
+    const user = useSelector(state=> state.affiliateUser.info)
+
+    // const user = {
+    //     firstName: 'John',
+    //     lastName: 'Doe',
+    //     email: 'john.doe@example.com',
+    //     country: 'USA',
+    //     state: 'California',
+    //     city: 'Los Angeles',
+    //     address: '123 Main St',
+    //     phone: '555-1234'
+    // };
 
 
   return (
@@ -26,13 +29,13 @@ const PersonalInfo = () => {
                 </thead> */}
                 <tbody className=' text-xs'>
                     <tr>
-                        <td className="px-4 py-2 border border-gray-300">First Name</td>
-                        <td className="px-4 py-2 border border-gray-300">{user.firstName}</td>
+                        <td className="px-4 py-2 border border-gray-300">Fullname</td>
+                        <td className="px-4 py-2 border border-gray-300">{user.fullName}</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                         <td className="px-4 py-2 border border-gray-300">Last Name</td>
                         <td className="px-4 py-2 border border-gray-300">{user.lastName}</td>
-                    </tr>
+                    </tr> */}
                     <tr>
                         <td className="px-4 py-2 border border-gray-300">Email</td>
                         <td className="px-4 py-2 border border-gray-300">{user.email}</td>

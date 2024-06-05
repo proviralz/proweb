@@ -1,9 +1,94 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GoDotFill } from 'react-icons/go'
-import { jobs } from '../data/jobs'
+// import { jobs } from '../data/jobs'
+import { useSelector } from 'react-redux'
+import { publicRequest } from '@/requestMethods'
 
 const CompletedJobs = () => {
+
+
+    const user = useSelector(state=> state.user.info)
+    const [projects, setProjects]  = useState(null)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(()=> {
+        const getProjects = async()=> {
+            try {
+                const res = await publicRequest.get(`project/${user?._id}`)
+
+                const clientIds = [...new Set(res.data.map(proposal => proposal.clientId))]
+
+                const jobIds = [...new Set(res.data.map(proposal => proposal.jobId))]
+
+                const clients = await Promise.all(clientIds.map(async (clientId)=> {
+                    const clientRes =  await  publicRequest.get(`users/find/${clientId}`)
+
+                    return clientRes.data
+                }))
+
+                const jobs = await Promise.all(jobIds.map(async (jobId)=> {
+                    const jobRes =  await  publicRequest.get(`jobs/${jobId}`)
+
+                    return jobRes.data
+                }))
+
+                const populatedProjects = res.data.map(proposal => {
+                    const clientData = clients.find(client => client._id === proposal.clientId)
+                    const jobData = jobs.find(job => job._id === proposal.jobId)
+
+                    return {...proposal, clientData, jobData}
+                })
+
+                setProjects(populatedProjects)
+                setLoading(false)
+            } catch (error) {
+                console.log(error)
+                if(error.response.status === 401){
+                    setProposals(null)
+                    setLoading(false)
+                }
+            }
+        }
+
+        getProjects()
+    }, [user?._id])
+
+    console.log(projects)
+
+
+    if(loading) {
+        return (
+            <div className="section-center">
+                <div className="section-path">
+                    <div className="globe">
+                    <div className="wrapper">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    const jobs = projects?.filter((pro)=> pro.status === 'completed')
+
+
   return (
     <div className=' flex flex-col gap-4'>
         {jobs.map((job, i)=> (

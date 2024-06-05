@@ -25,7 +25,7 @@ const Account = () => {
                     $0.00
                 </p>
             </div>
-            <div className=' flex flex-1'>
+            {/* <div className=' flex flex-1'>
                 <div className=' border-r w-32'>
                     <p className=' text-xs font-light '>
                         Affliate Balance
@@ -47,7 +47,7 @@ const Account = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
         {/* buttons */}

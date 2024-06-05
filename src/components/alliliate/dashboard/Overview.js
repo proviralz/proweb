@@ -29,7 +29,7 @@ const Overview = () => {
   return (
     <div>
         <div className=' space-y-4'>
-            <div className=' flex gap-5'>
+            <div className=' flex flex-wrap gap-5'>
 
                 <div className=' flex flex-1 gap-2 items-center p-3 shadow-md rounded-md'>
                     <div className=' bg-[#31013f]/10 text-[#31013f] p-2 font-light'>

@@ -75,19 +75,19 @@ const Home = () => {
                 }}
             />
             <div className='absolute inset-0 flex flex-col justify-center items-center'>
-                <p className='text-white text-5xl font-semibold text-center'>
+                <p className='text-white text-3xl md:text-5xl font-semibold text-center'>
                     Explore our top service providers
                 </p>
-                <p className=' text-white text-2xl mt-3'>
+                <p className=' text-white text-center text-lg md:text-2xl mt-3'>
                     Find the perfect talent for your projects on Proviralz
                 </p>
             </div>
         </div>
 
-        <div className=' bg-neutral-100 pr-10 pb-10 flex gap-5'>
+        <div className=' bg-neutral-100 pr-5 md:pr-10 pb-10 flex gap-5'>
             
             {/* filter */}
-            <div>
+            <div className=' hidden md:block'>
                 <div className=' rounded-b-xl bg-white p-3 w-64 text-sm'>
                     
                     <div className=' flex items-center gap-4 text-[#31013f]'>

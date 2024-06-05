@@ -2,10 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../profile/Header'
 import Footer from '../footer/Footer'
-import HeaderTwo from '../skilled/HeaderTwo'
+// import HeaderTwo from '../HeaderTwo'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { publicRequest } from '@/requestMethods'
+import HeaderTwo from '../header/HeaderTwo'
 
 const Proposals = () => {
 

@@ -37,7 +37,7 @@ const Account = () => {
                     </div>
                 </div>
 
-                <div className=' mt-5 p-5'>
+                <div className=' mt-5 md:p-5'>
                     {isSelected === 'personal-information' && (
                         <PersonalInfo />
                     )}

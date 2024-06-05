@@ -18,8 +18,8 @@ const Home = () => {
             <HeaderTwo />
         </div>
         <div className='p-5 md:p-10 bg-neutral-100'>
-            <div className=' p-5 bg-white rounded-lg text-neutral-600 flex gap-5'>
-                <div className=' w-40'>
+            <div className=' p-5 bg-white rounded-lg text-neutral-600 flex flex-col md:flex-row gap-5'>
+                <div className=' w-full md:w-40'>
                     <div className='wallet-nav'>
                         <div className={`${currentPage === "wallet"? "bg-neutral-100": ""}`} onClick={()=> setCurrentPage("wallet")}>
                             <CiWallet />

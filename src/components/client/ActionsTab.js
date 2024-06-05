@@ -8,7 +8,7 @@ const ActionsTab = () => {
   return (
     <div>
         {/* tabs */}
-        <div className=' flex items-center gap-5'>
+        <div className=' flex flex-col md:flex-row items-center gap-5'>
 
         {/* left */}
             <div className=' flex h-full justify-between flex-1 p-5 border rounded-xl'>

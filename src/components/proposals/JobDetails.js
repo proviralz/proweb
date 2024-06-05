@@ -100,10 +100,11 @@ const JobDetails = () => {
         try {
             setIsClicked(true)
 
-            const res = await publicRequest.put(`proposal/${proposal._id}`)
+            const res = await publicRequest.put(`project/${proposal._id}`)
 
             console.log(res.data)
             setIsClicked(false)
+            router.push('/projects')
 
         } catch (error) {
             console.log(error)

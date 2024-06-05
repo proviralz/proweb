@@ -5,7 +5,8 @@ import PendingJobs from './PendingJobs'
 import CompletedJobs from './CompletedJobs'
 import Bookmarks from './Bookmarks'
 import Footer from '../footer/Footer'
-import HeaderTwo from '../skilled/HeaderTwo'
+import HeaderTwo from '../header/HeaderTwo'
+// import HeaderTwo from '../skilled/HeaderTwo'
 
 const MyJob = () => {
 
@@ -18,13 +19,13 @@ const MyJob = () => {
         <div className=' p-5 md:p-10 bg-neutral-100'>
             <div className=' p-5 bg-white rounded-lg'>
                 <div className=' flex border-b text-sm tab-menu'>
-                    <p onClick={()=> setSelectedTab(1)} className={`${selectedTab === 1 ? 'text-[#31013f] border-b border-[#31013f]' : 'text-neutral-500'} `}>
+                    <p onClick={()=> setSelectedTab(1)} className={`${selectedTab === 1 ? 'text-[#31013f] border-b border-[#31013f]' : 'text-neutral-500'} text-xs md:text-base `}>
                         Pending jobs
                     </p>
-                    <p onClick={()=> setSelectedTab(2)} className={`${selectedTab === 2 ? 'text-[#31013f] border-b border-[#31013f]' : 'text-neutral-500'} `}>
+                    <p onClick={()=> setSelectedTab(2)} className={`${selectedTab === 2 ? 'text-[#31013f] border-b border-[#31013f]' : 'text-neutral-500'} text-xs md:text-base `}>
                         Completed jobs
                     </p>
-                    <p onClick={()=> setSelectedTab(3)} className={`${selectedTab === 3 ? 'text-[#31013f] border-b-2 border-[#31013f]' : 'text-neutral-500'} `}>
+                    <p onClick={()=> setSelectedTab(3)} className={`${selectedTab === 3 ? 'text-[#31013f] border-b-2 border-[#31013f]' : 'text-neutral-500'} text-xs md:text-base `}>
                         Bookmarks
                     </p>
                 </div>

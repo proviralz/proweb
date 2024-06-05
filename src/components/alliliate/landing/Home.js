@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Image from 'next/image'
-import { FaArrowRightLong } from 'react-icons/fa6'
+import { FaArrowDownLong, FaArrowRightLong } from 'react-icons/fa6'
 import Footer from './Footer'
 
 const Home = () => {
@@ -21,13 +21,13 @@ const Home = () => {
                     }}
                 />
                 <div className='absolute inset-0 flex flex-col justify-center items-center'>
-                    <p className='text-white text-5xl text-center'>
+                    <p className='text-white text-3xl md:text-5xl text-center'>
                         Join our affiliate program
                     </p>
-                    <p className='text-white text-3xl mt-2 italic text-center'>
+                    <p className='text-white text-xl md:text-3xl mt-2 italic text-center'>
                         Where passion meets profit
                     </p>
-                    <p className=' text-white font-light text-2xl mt-3'>
+                    <p className=' text-white font-light text-sm md:text-2xl mt-3'>
                         Become a creative catalyst and earn with every referral
                     </p>
                     <div className=' w-40 mt-14'>
@@ -49,7 +49,7 @@ const Home = () => {
                     </p>
                 </div>
 
-                <div className=' mt-10 flex items-center justify-between'>
+                <div className=' mt-10 flex flex-col md:flex-row gap-5 items-center justify-between'>
                     <div className=' flex flex-col items-center gap-3 text-neutral-500'>
                         <div>
                             <Image src={'/assets/affiliate/landing/1.svg'} alt='' width={100}  height={100} />
@@ -66,8 +66,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div>
-                        <p className=' text-neutral-500'>
+                        <p className=' hidden md:flex text-neutral-500'>
                             <FaArrowRightLong size={40} />
+                        </p>
+                        <p className=' md:hidden text-neutral-500'>
+                            <FaArrowDownLong size={40} />
                         </p>
                     </div>
                     <div className=' flex flex-col items-center gap-3 text-neutral-500'>
@@ -86,8 +89,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div>
-                        <p className=' text-neutral-500'>
+                        <p className=' hidden md:flex text-neutral-500'>
                             <FaArrowRightLong size={40} />
+                        </p>
+                        <p className=' md:hidden text-neutral-500'>
+                            <FaArrowDownLong size={40} />
                         </p>
                     </div>
                     <div className=' flex flex-col items-center gap-3 text-neutral-500'>
@@ -117,7 +123,7 @@ const Home = () => {
                     </p>
                 </div>
 
-                <div className=' mt-10 grid grid-cols-3 gap-8 text-neutral-600'>
+                <div className=' mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-start text-neutral-600'>
                     <div className=' space-y-3'>
                         <p className=' text-3xl'>
                             Maximum earnings

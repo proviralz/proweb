@@ -45,24 +45,24 @@ const SkilledProfile = ({user}) => {
         </div>
 
 
-        <div className=' p-10 md:flex md:justify-between gap-5'>
+        <div className=' p-5 md:p-10 md:flex md:justify-between gap-5'>
             <div className=' flex-1'>
                 <div className=' p-5 bg-white rounded-md flex flex-col gap-1'>
 
 
-                    <div className=' border rounded-sm p-5 flex gap-5'>
+                    <div className=' border rounded-sm p-5 flex flex-col md:flex-row gap-5'>
                         <div>
-                            <div className=' h-20 w-20 rounded-full overflow-hidden'>
+                            <div className=' md:h-20 md:w-20 md:rounded-full rounded-md overflow-hidden'>
                                 <Image src={user?.profilePic} alt={user?.fullName} height={100} width={100} className=' h-full w-full object-cover' />
                             </div>
                         </div>
                         <div>
                             <div className=' space-y-5'>
-                                <div>
+                                <div className=' space-y-2'>
                                     <p>
                                         {user?.fullName}
                                     </p>
-                                    <p>
+                                    <p className=' text-xs font-light'>
                                         @{user?.username}
                                     </p>
                                     <div className=' flex items-center gap-5'>

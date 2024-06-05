@@ -39,7 +39,7 @@ const UserProfile = () => {
         </div>
 
 
-        <div  className=' p-10 md:flex md:justify-between gap-5'>
+        <div  className=' p-5 md:p-10 md:flex md:justify-between gap-5'>
 
 
             <div className=' flex-1'>

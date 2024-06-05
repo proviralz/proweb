@@ -11,13 +11,13 @@ export const footerNav = [
                 url: 'blog'
             },
             {
-                name: 'Affliate Program',
-                url: 'affliate'
+                name: 'Affiliate Program',
+                url: 'affiliate'
             },
-            {
-                name: 'Testimonials',
-                url: 'testimonials'
-            },
+            // {
+            //     name: 'Testimonials',
+            //     url: 'testimonials'
+            // },
             {
                 name: 'Help center',
                 url: 'help'
@@ -30,23 +30,23 @@ export const footerNav = [
         links: [
             {
                 name: 'Post a job',
-                url: 'post-job'
+                url: 'job/new'
             },
-            {
-                name: 'Browse companies',
-                url: 'browse-companies'
-            },
+            // {
+            //     name: 'Browse companies',
+            //     url: 'browsw'
+            // },
             {
                 name: 'Browse jobs',
-                url: 'browse-jobs'
+                url: 'jobs'
             },
-            {
-                name: 'Become a seller',
-                url: 'become-seller'
-            },
+            // {
+            //     name: 'Become a seller',
+            //     url: 'become-seller'
+            // },
             {
                 name: 'Subscription',
-                url: 'subscription'
+                url: 'agency'
             },
             
         ]
@@ -56,7 +56,7 @@ export const footerNav = [
         links: [
             {
                 name: 'Terms of service',
-                url: 'terms-of-service'
+                url: 'terms'
             },
             {
                 name: 'Privacy policy',
@@ -64,7 +64,7 @@ export const footerNav = [
             },
             {
                 name: 'Security',
-                url: 'security'
+                url: 'profile'
             },
         ]
     },

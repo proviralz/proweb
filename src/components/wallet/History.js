@@ -44,7 +44,7 @@ const History = () => {
               Date  range
             </p>
           </div>
-          <div className=' flex gap-4 items-center'>
+          <div className=' flex flex-col md:flex-row gap-4 overflow-x-scroll items-center'>
             <DatePicker
                 selected={startDate}
                 onChange={(date)=> setStartDate(date)}

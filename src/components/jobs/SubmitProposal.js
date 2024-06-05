@@ -135,9 +135,9 @@ const SubmitProposal = ({showForm, setShowForm, clientId, jobId, providerId}) =>
         <div onClick={(e)=> e.stopPropagation()} 
             className='overflow-y-scroll w-4/5 h-3/4 bg-white pb-10 rounded-xl'>
            
-            <div className=' h-full flex flex-col items-center p-10 gap-5'>
+            <div className=' h-full flex flex-col items-center p-3 md:p-10 gap-5'>
                 <div>
-                    <p className=' text-2xl font-semibold'>
+                    <p className=' text-2xl md:font-semibold'>
                         Submit a proposal
                     </p>
                 </div>
@@ -156,7 +156,7 @@ const SubmitProposal = ({showForm, setShowForm, clientId, jobId, providerId}) =>
                             <input type="Number" name="bid" id="bid" placeholder='Ex. N300' onChange={(e)=> setBidAmount(e.target.value)} />
                         </div>
                         <div className=' flex-1 space-y-2'>
-                            <label htmlFor="deliveryDate">When will this project be delivered?</label>
+                            <label htmlFor="deliveryDate">Project duration</label>
                             <input onChange={(e)=> setDeliveryDate(e.target.value)} type="date" name="deliveryDate" id="deliveryDate" />
                         </div>
                     </div>
@@ -169,7 +169,7 @@ const SubmitProposal = ({showForm, setShowForm, clientId, jobId, providerId}) =>
                         <div 
                             onDragOver={(e) => e.preventDefault()} 
                             onDrop={handleFileDrop} 
-                            className=' h-16 border border-neutral-400  border-dashed p-5 bg-neutral-100 rounded-md  flex  gap-5 items-center justify-center'>
+                            className=' h-16 border border-neutral-400  border-dashed p-2 md:p-5 bg-neutral-100 rounded-md  flex  gap-5 items-center justify-center'>
                             <div className=' flex items-center text-neutral-600 gap-3 text-xs'>
                                 <IoCloudUploadOutline />
                                 {file && file[0]?.name || <p>
@@ -178,7 +178,7 @@ const SubmitProposal = ({showForm, setShowForm, clientId, jobId, providerId}) =>
                             </div>
 
                             <div className=''>
-                                <label htmlFor="browse" className=' bg-white px-5 py-2 text-neutral-600 text-sm'> Select Image</label>
+                                <label htmlFor="browse" className=' bg-white px-1 md:px-5 py-2 text-neutral-600 text-sm'> Select Image</label>
                                 <input type="file" onChange={handleFileSelect} className=' hidden' id='browse' />
                             </div>
                         </div>

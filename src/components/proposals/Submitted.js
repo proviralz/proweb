@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import HeaderTwo from '../skilled/HeaderTwo'
+// import HeaderTwo from '../skilled/HeaderTwo'
 import Footer from '../footer/Footer'
 import { FiSearch } from 'react-icons/fi'
 // import { proposals } from '../data/jobs'
@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import { publicRequest } from '@/requestMethods'
 import Link from 'next/link'
+import HeaderTwo from '../header/HeaderTwo'
 
 const Submitted = () => {
 
@@ -126,9 +127,9 @@ const Submitted = () => {
                 </div>
                 <div>
                     {proposals.map((p, i)=> (
-                        <div key={i} className=' p-5 border-b flex justify-between items-center '>
+                        <div key={i} className=' p-5 border-b flex flex-col md:flex-row justify-between items-center '>
                             <div className=' w-full flex items-center gap-5'>
-                                <div  className=' h-20 w-20 rounded-full overflow-hidden'>
+                                <div  className=' h-10 md:h-20 w-10 md:w-20 rounded-full overflow-hidden'>
                                     <Image src={p?.clientData.profilePic} alt='' width={100} height={100} className=' h-full w-full object-cover' />
                                 </div>
                                 <div className=' flex-1 pr-10'>
@@ -152,9 +153,11 @@ const Submitted = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className=' w-40'>
-                                <Link href={`/jobs/${p?.jobId}`} className=' purple-btn-long text-[0.7rem]'>
-                                    View proposal
+                            <div className=' mt-5 md:mt-0 w-full md:w-40'>
+                                <Link href={`/jobs/${p?.jobId}`} >
+                                    <p className=' purple-btn-long text-[0.7rem]'>
+                                        View proposal
+                                    </p>
                                 </Link>
                             </div>
                         </div>

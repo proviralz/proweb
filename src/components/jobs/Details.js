@@ -164,9 +164,9 @@ const Details = () => {
                 providerId={user?._id} />
         </div>
 
-        <div className=' p-10 md:flex md:justify-between gap-5'>
+        <div className=' p-5 md:p-10 md:flex md:justify-between gap-5'>
             <div className=' flex-1'>
-                <div className=' p-5 bg-white rounded-md flex flex-col gap-1'>
+                <div className=' md:p-5 p-3 bg-white rounded-md flex flex-col gap-1'>
 
                     {/* job details title */}
                     <div className=' py-4 border-b'>
@@ -179,12 +179,12 @@ const Details = () => {
                     <div className='py-4 border-b text-neutral-600'>
                         <div className=' flex items-center gap-5'>
                             <div>
-                                <p className='text-lg capitalize'>
+                                <p className='md:text-lg text-base capitalize'>
                                     {jobs?.job.title}
                                 </p>
                             </div>
                             <div>
-                                <p className=' text-xs'>
+                                <p className=' text-[0.6rem] md:text-xs '>
                                     posted {timeAgoString}
                                 </p>
                             </div>

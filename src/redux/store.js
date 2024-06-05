@@ -11,6 +11,7 @@ import {
     REGISTER,
   } from 'redux-persist'
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
+import affiliateUserSlice from './affiliateUserSlice';
   // import storage from 'redux-persist/lib/storage'
 
   const createNoopStorage = () => {
@@ -36,7 +37,7 @@ import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
     storage,
   }
 
-  const rootReducer = combineReducers({user: userSlice})
+  const rootReducer = combineReducers({user: userSlice, affiliateUser: affiliateUserSlice})
 
   const persistedReducer = persistReducer(persistConfig, rootReducer)
 

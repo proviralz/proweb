@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "@/redux/store";
 import Head from "next/head";
-import { NextAuthProvider } from "./Providers";
+// import { NextAuthProvider } from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const openSans = Open_Sans({ subsets: ["latin"]})
@@ -26,9 +26,9 @@ export default function RootLayout({ children }) {
       <body className={openSans.className}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <NextAuthProvider>
+            {/* <NextAuthProvider> */}
               {children}
-            </NextAuthProvider>
+            {/* </NextAuthProvider> */}
           </PersistGate>
         </Provider>
       </body>

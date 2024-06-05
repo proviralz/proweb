@@ -74,13 +74,13 @@ const ClientProjects = () => {
                 <div className=' flex justify-between border-b'>
 
                     {/* left */}
-                    <div className=' flex text-lg'>
-                        <div onClick={()=> setSelectedTab(1)} className={`${selectedTab === 1 && 'text-[#31013f] border-b-2 border-[#31013f]'} py-4 px-6`}>
+                    <div className=' flex text-xs md:text-lg'>
+                        <div onClick={()=> setSelectedTab(1)} className={`${selectedTab === 1 && 'text-[#31013f] border-b-2 border-[#31013f]'} py-4 px-2 md:px-6`}>
                             <p>
                                 Ongoing projects
                             </p>
                         </div>
-                        <div onClick={()=> setSelectedTab(2)} className={`${selectedTab === 2 && 'text-[#31013f] border-b-2 border-[#31013f]'} py-4 px-6`}>
+                        <div onClick={()=> setSelectedTab(2)} className={`${selectedTab === 2 && 'text-[#31013f] border-b-2 border-[#31013f]'} py-4 px-2 md:px-6`}>
                             <p>
                                 Completed projects
                             </p>
@@ -89,7 +89,7 @@ const ClientProjects = () => {
 
                     {/* right */}
                     <div className=' mb-3'>
-                        <Link href={'/jobs/new'} className=' px-4 py-2 font-light bg-[#31013f] text-white rounded-full'>
+                        <Link href={'/jobs/new'} className=' md:px-4 md:py-2 p-1 text-xs md:text-base font-light bg-[#31013f] text-white rounded-full'>
                             Post a job
                         </Link>
                     </div>
