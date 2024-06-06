@@ -145,7 +145,7 @@ const HeaderTwo = () => {
 
         {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className='md:hidden shadow-md fixed top-0 left-0 h-screen bg-white w-4/5 p-5'>
+        <div className='md:hidden shadow-md fixed top-0 left-0 h-screen z-50 bg-white w-4/5 p-5'>
             <div className=' flex justify-between'>
                 <div className=' flex gap-4 items-center'>
                     <div>
