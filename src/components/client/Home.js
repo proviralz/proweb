@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ClientHeader from './ClientHeader'
 import { FiSearch } from 'react-icons/fi'
 import { PiHandshakeLight } from "react-icons/pi";
@@ -8,13 +8,28 @@ import ActionsTab from './ActionsTab';
 import Sidebar from './Sidebar';
 import TopProjects from './TopProjects';
 import Footer from '../footer/Footer';
+import VerifyEmail from '../skilled/VerifyEmail';
+import { useSelector } from 'react-redux';
 
 const ClientHome = () => {
+
+  const user = useSelector(state => state.user.info)
+
+  const [showForm, setShowForm] = useState(!user?.emailVerified)
+
   return (
     <div>
         <div>
           <ClientHeader />
         </div>
+
+        <div>
+            <VerifyEmail 
+                setShowForm={setShowForm} 
+                showForm={showForm}
+                user={user} />
+        </div>
+
         <div className=' bg-neutral-100 h-full px-3 md:px-10 '>
           <div className=' p-5 bg-white rounded-b-lg space-y-4'>
             <div className=' '>

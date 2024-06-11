@@ -45,11 +45,11 @@ const Social = () => {
                     </div>
                     <div>
                         <p className=' text-justify text-sm font-light'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Take your business online presence to the next level with Proviralz marketing services. we&apos;ll show you how to build and maximize your business online impact with our social media marketing services. From growing your social media following to increasing engagement and conversions, we&apos;ll cover it all. Our team provides valuable information that resonates your target audience. 
                         </p>
                     </div>
                     <div>
-                        <ul className=" list-inside space-y-2 text-sm font-light">
+                        {/* <ul className=" list-inside space-y-2 text-sm font-light">
                             <li className="text-gray-700">
                                 <span className="inline-block w-3 h-3 bg-[#31013f] rounded-full mr-2"></span>
                                 Lorem ipsum dolor sit amet
@@ -70,7 +70,7 @@ const Social = () => {
                                 <span className="inline-block w-3 h-3 bg-[#31013f] rounded-full mr-2"></span>
                                 Lorem ipsum dolor sit amet
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
                     <div>
                         <div className=' inline-block'>

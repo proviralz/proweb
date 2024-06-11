@@ -41,15 +41,16 @@ const Ppc = () => {
                 <div className=' space-y-10 w-3/5'>
                     <div>
                         <p className=' text-2xl'>
-                            Social Media Marketing Services:
+                            Pay Per Click Management:
                         </p>
                     </div>
                     <div>
                         <p className=' text-justify text-sm font-light'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Boost your business online presence with our expert in Proviralz. Our team gives tips to improve your business online through advertising to reach your target audience and drive conversions. Maximize your business online impact with Proviralz expert on PPC management services taking your business online presence through Google Ads management, Facebook Ads management.
                         </p>
                     </div>
-                    <div>
+
+                    {/* <div>
                         <ul className=" list-inside space-y-4 text-sm font-light">
                             <li className="text-gray-700 flex gap-6">
                                 <IoMdCheckmark size={40} />
@@ -77,7 +78,9 @@ const Ppc = () => {
                             </li>
                             
                         </ul>
-                    </div>
+                    </div> */}
+
+
                     {/* <div>
                         <div className=' inline-block'>
                             <p className=' purple-btn text-xs'>
@@ -94,7 +97,7 @@ const Ppc = () => {
             </div>
 
             {/* why */}
-            <div className=' flex justify-center gap-7 flex-col'>
+            {/* <div className=' flex justify-center gap-7 flex-col'>
                 <div>
                     <p className=' text-center text-2xl'>
                         Support features from us
@@ -162,7 +165,7 @@ const Ppc = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* packages */}
             <div>

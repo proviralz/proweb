@@ -7,6 +7,7 @@ import Sidebar from './Sidebar'
 import HeaderTwo from '../header/HeaderTwo'
 import { publicRequest } from '@/requestMethods'
 import { useSelector } from 'react-redux'
+import VerifyEmail from '../skilled/VerifyEmail'
 // import { useSession } from 'next-auth/react'
 // import HeaderTwo from './HeaderTwo'
 
@@ -16,6 +17,7 @@ const UnskilledHome = () => {
     const [jobs, setJobs] = useState(null)
     const [loading, setLoading] = useState(true)
     const user = useSelector(state => state.user.info)
+    const [showForm, setShowForm] = useState(!user?.emailVerified)
 
 
     useEffect(()=> {
@@ -70,6 +72,13 @@ const UnskilledHome = () => {
     <div className=' bg-neutral-100'>
         <div>
             <HeaderTwo /> 
+        </div>
+
+        <div>
+            <VerifyEmail 
+                setShowForm={setShowForm} 
+                showForm={showForm}
+                user={user} />
         </div>
 
         {/* featured jobs */}

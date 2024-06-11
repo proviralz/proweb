@@ -14,6 +14,7 @@ import { LuMailSearch } from 'react-icons/lu';
 import { TbSocial } from 'react-icons/tb';
 import { MdClose } from 'react-icons/md';
 import NotificationsDropdown from '../header/NotificationsDropdown';
+import { logoutUser } from '@/redux/userSlice';
 
 const ClientHeader = () => {
 

@@ -45,7 +45,7 @@ const Seo = () => {
                     </div>
                     <div>
                         <p className=' text-justify text-sm font-light'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            At Proviralz, we believe in a data-driven approach to digital marketing. Our team will work closely with you to understand your unique needs and goals, and develop a customized strategy to achieve them. Improve your business online visibility and credibility, improve your search engine rankings and drive organic traffic, Drive conversions and boost sales to stay ahead of the competition. Learn more about Proviralz services and take your business online presence to the next level. 
                         </p>
                     </div>
                     
@@ -66,7 +66,7 @@ const Seo = () => {
 
 
             {/* 2 */}
-            <div className=' flex items-center gap-10'>
+            {/* <div className=' flex items-center gap-10'>
                 <div className=' flex-1'>
                     <div className=' '>
                         <Image src={'/assets/agency/woman.svg'} alt='' width={500} height={500} className=' w-full h-full' />
@@ -113,7 +113,7 @@ const Seo = () => {
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* why */}
             <div>

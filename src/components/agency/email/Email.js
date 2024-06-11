@@ -36,7 +36,7 @@ const Email = () => {
 
 
             {/* desc */}
-            <div className=' flex items-center gap-16'>
+            <div className=' flex items-center flex-col md:flex-row gap-16'>
                 <div className=' space-y-10 w-3/5'>
                     <div>
                         <p>
@@ -45,11 +45,11 @@ const Email = () => {
                     </div>
                     <div>
                         <p className=' text-justify text-sm font-light'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Proviralz is a marketing platform designed to help businesses like yours thrive online. Our team will provide tips on segmentation and personalization techniques, comprehensive guide on how email marketing automation can save time and boost efficiency, Creative ideas for email marketing campaigns, how to avoid spam filters and improve deliverability.
                         </p>
                     </div>
                     <div>
-                        <ul className=" list-inside space-y-2 text-sm font-light">
+                        {/* <ul className=" list-inside space-y-2 text-sm font-light">
                             <li className="text-gray-700">
                                 <span className="inline-block w-3 h-3 bg-[#31013f] rounded-full mr-2"></span>
                                 Lorem ipsum dolor sit amet
@@ -70,7 +70,7 @@ const Email = () => {
                                 <span className="inline-block w-3 h-3 bg-[#31013f] rounded-full mr-2"></span>
                                 Lorem ipsum dolor sit amet
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
                     <div>
                         <div className=' inline-block'>

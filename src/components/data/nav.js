@@ -46,7 +46,7 @@ export const footerNav = [
             // },
             {
                 name: 'Subscription',
-                url: 'agency'
+                url: 'agency/email'
             },
             
         ]
@@ -64,7 +64,7 @@ export const footerNav = [
             },
             {
                 name: 'Security',
-                url: 'profile'
+                url: 'settings'
             },
         ]
     },

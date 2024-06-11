@@ -9,6 +9,8 @@ import Sidebar from './Sidebar'
 import { useSession } from 'next-auth/react'
 import HeaderTwo from '../header/HeaderTwo'
 import { publicRequest } from '@/requestMethods'
+import VerifyEmail from './VerifyEmail'
+import { useSelector } from 'react-redux'
 // import HeaderTwo from './HeaderTwo'
 
 const Landing = () => {
@@ -17,8 +19,11 @@ const Landing = () => {
 
     // console.log(session)
 
+    const user = useSelector(state => state.user.info)
+
     const [jobs, setJobs] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [showForm, setShowForm] = useState(!user?.emailVerified)
 
     useEffect(()=> {
         const getJobs = async ()=> {
@@ -49,7 +54,7 @@ const Landing = () => {
         getJobs()
     }, [])
 
-    console.log(jobs)
+    // console.log(jobs)
 
 
     if(loading) {
@@ -86,6 +91,13 @@ const Landing = () => {
     <div className=' bg-neutral-100'>
         <div>
             <HeaderTwo />
+        </div>
+
+        <div>
+            <VerifyEmail 
+                setShowForm={setShowForm} 
+                showForm={showForm}
+                user={user} />
         </div>
 
         {/* featured jobs */}

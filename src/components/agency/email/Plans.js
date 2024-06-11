@@ -10,7 +10,7 @@ const Plans = () => {
                 </p>
             </div>
             <div className=' w-full'>
-                <div className=' flex items-center justify-around w-full'>
+                <div className=' flex flex-col md:flex-row items-center justify-around w-full'>
                     <div className=' space-y-3 bg-[#bd69df]/5 rounded-lg p-5 text-fuchsia-950'>
                         <div>
                             <p className=' text-sm'>
