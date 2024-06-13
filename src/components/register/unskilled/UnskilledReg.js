@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Header'
 import Image from 'next/image'
 import { FiSearch } from 'react-icons/fi'
@@ -11,8 +11,22 @@ import { useParams, useRouter } from 'next/navigation'
 const UnskilledReg = () => {
 
     const [selectedInterests, setSelectedInterests] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredInterests, setFilteredInterests] = useState([]);
     const params = useParams()
     const router = useRouter()
+
+    useEffect(() => {
+        // Assuming skilledInterest is an array of interests available globally or fetched from an API
+        setFilteredInterests(unSkilledInterest);
+      }, []);
+
+    useEffect(() => {
+        const results = unSkilledInterest.filter(interest =>
+            interest.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredInterests(results);
+    }, [searchTerm]);
 
     const toggleInterest = (interest) => {
         if (selectedInterests.includes(interest)) {
@@ -36,11 +50,11 @@ const UnskilledReg = () => {
                 console.log(error)
             }
         } else {
-            console.log('select at least one interest')
+            alert('select at least one interest')
         }
     }
 
-    console.log(params.id)
+    // console.log(params.id)
   return (
     <div className={``}>
         <div className=''>
@@ -62,13 +76,20 @@ const UnskilledReg = () => {
                         <div className=' flex-1'>
                             <div className=' flex items-center border px-2 py-1  rounded-xl gap-3'>
                                 <FiSearch />
-                                <input type="text" name="" id="" className=' w-28 md:w-full outline-none  text-neutral-600 ' placeholder='Search services' />
+                                <input 
+                                    type="text" 
+                                    name="" 
+                                    id="" 
+                                    value={searchTerm}
+                                    onChange={(e)=> setSearchTerm(e.target.value)}
+                                    className=' w-28 md:w-full outline-none  text-neutral-600 ' 
+                                    placeholder='Search services' />
                             </div>
                         </div>
                     </div>
                     <div className=' mt-5 w-full h-96 overflow-y-scroll'>
                         <div className=' flex flex-wrap gap-5 justify-between'>
-                            {unSkilledInterest.map((u, i)=> (
+                            {filteredInterests.map((u, i)=> (
                                 <div key={i}  className={`w-36 h-52 border p-3 rounded-lg ${selectedInterests.includes(u.title) ? 'bg-gray-300' : ''} `} onClick={() => toggleInterest(u.title)}>
                                     <div className=' w-full h-40'>
                                         <Image src={u.img} alt=''  width={100} height={100} className=' h-full w-full object-cover' />

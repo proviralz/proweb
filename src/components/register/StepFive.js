@@ -71,7 +71,7 @@ const StepFive = ({userId, nextPage}) => {
                                 </div>
                                 <div className=' p-5 '>
                                     <p className=' text-xl text-[#31013f] text-center'>
-                                      I am unskilled service provider (artisan)
+                                      I am a skilled artisans (handyman)
                                     </p>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@ const StepFive = ({userId, nextPage}) => {
                                 </div>
                                 <div className=' p-5 '>
                                     <p className=' text-xl text-[#31013f] text-center'>
-                                      I am a skilled service providers
+                                      I am a skilled professional service provider
                                     </p>
                                 </div>
                             </div>
