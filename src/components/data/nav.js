@@ -30,7 +30,7 @@ export const footerNav = [
         links: [
             {
                 name: 'Post a job',
-                url: 'job/new'
+                url: 'jobs/new'
             },
             // {
             //     name: 'Browse companies',

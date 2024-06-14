@@ -439,7 +439,7 @@ const Details = () => {
                             </div>
                             <div className='  gap-5 space-y-3 text-xs mt-2'>
                                 <p className=' text-[0.6rem] p-2 bg-neutral-100 font-light rounded-md'>
-                                    https://provirals.com/jobs/{params.id}
+                                    https://proviralz.com/jobs/{params.id}
                                 </p>
                                 <p>
                                     copy link
