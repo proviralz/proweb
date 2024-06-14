@@ -28,14 +28,14 @@ const TopCompanies = () => {
         {companies?.map((comp, i)=> (
             <div key={i} className=' border flex items-center gap-3 rounded-lg px-3 py-2'>
                 <div className=' h-20 w-20 rounded-full overflow-hidden'>
-                    <Image src={comp?.profilePic} alt={comp.name} width={100} height={100} className=' h-full w-full object-cover' />
+                    <Image src={comp?.profilePic} alt={comp?.name} width={100} height={100} className=' h-full w-full object-cover' />
                 </div>
                 <div className=' flex flex-col gap-1'>
                     <p className=' text-xs text-neutral-600'>
-                        {comp.fullName}
+                        {comp?.fullName}
                     </p>
                     <p className=' text-xs font-light text-[#31013f]'>
-                        {comp.companyProfile.industry}
+                        {comp?.companyProfile?.industry}
                     </p>
                     {/* <p className=' text-xs text-neutral-400'>
                         available jobs: <span className=' text-neutral-600'>{comp.jobs}</span>

@@ -113,7 +113,7 @@ const Login = () => {
             </div>
         </div>
        <div className=' hidden w-1/2 bg-[#BA68C8] h-screen md:flex items-center justify-center'>
-        <Image src={'/assets/onboard/woman-desktop.svg'} alt='login' width={100} height={100} priority={true} className=' w-full'  />
+        <Image src={'/assets/onboard/woman-desktop.svg'} alt='login' width={500} height={500} priority={true} className=' w-full'  />
        </div>
     </div>
   )
