@@ -122,7 +122,7 @@ const StepThree = ({prevPage, nextPage, userId}) => {
                         <select onChange={(e)=> setIdType(e.target.value)} name="" id="" className=''>
                             <option value="">Select ID Type</option>
                             <option value="national id card">National ID Card</option>
-                            <option value="NIMC">NIMC</option>
+                            <option value="Voter's ard">Voter&apos;s card </option>
                             <option value="passport">Passport</option>
                             <option value="licence">Driver&apos;s licence</option>
                         </select>
