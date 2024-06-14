@@ -20,7 +20,7 @@ const TopProviders = ({filteredProviders}) => {
                 </div>
                 <div className=' flex justify-center -mt-7'>
                     <div>
-                        <Image src={p?.profilePic} alt='Profile picture' height={100} width={100} className=' h-14 w-14 rounded-full object-cover' />
+                        <Image src={p?.profilePic || "/assets/profile/man.svg"} alt='Profile picture' height={100} width={100} className=' h-14 w-14 rounded-full object-cover' />
                     </div>
                 </div>
                 <div className=' text-center mt-5 space-y-2'>
@@ -35,12 +35,12 @@ const TopProviders = ({filteredProviders}) => {
                         ))}
                     </div>
                     <p>
-                        &#8358;{p?.rate}/hr
+                        &#8358;{p?.rate || ""}/hr
                     </p>
                 </div>
                 <div className=' px-5 mt-3'>
                     <p className=' text-xs font-light'>
-                        {p?.bio}
+                        {p?.bio || ""}
                     </p>
                 </div>
                 <div className=' mt-5 px-5'>

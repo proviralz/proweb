@@ -56,7 +56,7 @@ const ClientHome = () => {
               </div>
 
               <div>
-                  {/* <Sidebar /> */}
+                  <Sidebar />
                   {/* <div className=' hidden md:flex mt-10'>
                       <Earn />
                   </div> */}
