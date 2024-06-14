@@ -34,11 +34,16 @@ const Login = () => {
       }
     }
   return (
-    <div className=' p-5 md:p-0 md:flex md:bg-neutral-100'>
-        <div className=' md:p-10 flex-1 my-auto md:bg-neutral-100'>
-            <div className=' mt-10 md:mt-0 bg-white p-5 md:shadow-2xl '>
+    <div className=' relative p-5 md:p-0 md:flex md:bg-neutral-100'>
+        <div className=' p-10 absolute top-0 left-0'>
+            <div>
+                <Image src={'/assets/logo/logo.svg'} alt='' width={100} height={100} />
+            </div>
+        </div>
+        <div className='  md:p-10 flex-1 my-auto md:bg-neutral-100'>
+            <div className=' mt-20 md:mt-0 bg-white p-5 md:shadow-2xl '>
                 <div>
-                    <p className=' text-3xl text-neutral-700 font-light'>
+                    <p className=' text-3xl text-neutral-700'>
                         Login
                     </p>
                 </div>
@@ -100,8 +105,8 @@ const Login = () => {
                         </p>
                     </div>
                 </div> */}
-                <div className=' mt-10 flex justify-center'>
-                    <p className=' text-neutral-500 font-light'>
+                <div className=' mt-6 flex justify-center'>
+                    <p className=' text-neutral-700 font-light'>
                         Not Registered? <Link href={'/start'} className=' text-[#31013f] '>Sign up</Link>
                     </p>
                 </div>
