@@ -64,9 +64,9 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder='Password' />
                     <div className=' flex justify-end'>
-                        <p className=' text-neutral-500'>
+                        <Link href={'/forgot-password'} className=' text-neutral-500'>
                             Forgot password?
-                        </p>
+                        </Link>
                     </div>
                 </div>
                 <div className=' mt-5'>

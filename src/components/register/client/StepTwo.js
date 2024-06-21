@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../Header';
 import { useRouter } from 'next/navigation';
 import { publicRequest } from '@/requestMethods';
+import { skilledInterest, unSkilledInterest } from '@/components/data/interests';
 
 const StepTwo = ({prevPage, userId}) => {
 
@@ -46,6 +47,8 @@ const StepTwo = ({prevPage, userId}) => {
           setErrors(errors);
       }
     };
+
+    const allIndustries = [...skilledInterest, ...unSkilledInterest]
   return (
     <div>
         <div className='p-5 md:p-10'>
@@ -84,16 +87,14 @@ const StepTwo = ({prevPage, userId}) => {
                     <div className=' login-form w-3/4 flex flex-col gap-2'>
                         {/* <label htmlFor="commitment">Which type of commitment do you prefer</label> */}
                         <select 
-                            name="" 
+                            name="interest" 
                             value={industry|| ""}
                             onChange={(e) => setIndustry(e.target.value)}
                             id="industry">
                             <option value="">Industry/sector</option>
-                            <option value="technology">Technology</option>
-                            <option value="data">Data</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="media">Media</option>
-                            <option value="design">Design</option>
+                            {allIndustries.map((ind, i)=> (
+                                <option key={i} value={ind.title}>{ind.title}</option>
+                            ))}
 
                         </select>
                         {errors.industry && <p className='text-red-500 mt-2'>{errors.industry}</p>}
