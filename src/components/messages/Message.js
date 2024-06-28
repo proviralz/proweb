@@ -204,11 +204,11 @@ const Message = () => {
                                 className={` ${currentSelected === i? 'bg-[#31013f]/20': ''} p-2 cursor-pointer flex items-center justify-between`}>
                                 <div className=' flex items-center gap-4'>
                                     <div className=' w-6 h-6 rounded-full overflow-hidden'>
-                                        <Image src={c?.profilePic} alt='' width={100} height={100} className=' h-full w-full object-cover' />
+                                        <Image src={c?.profilePic || "/assets/profile/user1.svg"} alt='' width={100} height={100} className=' h-full w-full object-cover' />
                                     </div>
                                     <div>
                                         <p className=' text-xs text-neutral-600'>
-                                            {c.fullName}
+                                            {c.fullName || ""}
                                         </p>
                                         {/* <p className=' text-xs font-light text-neutral-600'>
                                             {m.msg}
