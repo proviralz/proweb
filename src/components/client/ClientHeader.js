@@ -47,14 +47,26 @@ const ClientHeader = () => {
     const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
   return (
     <div className=' p-5 md:p-0 flex justify-between bg-white md:flex-col'>
-        <div className=' flex items-center gap-2  md:px-10 md:py-5 md:border-b border-neutral-500'>
+        <div className=' flex items-center w-full gap-2  md:px-10 md:py-5 md:border-b border-neutral-500'>
             <div className=' flex justify-between md:justify-start gap-3 md:gap-10 w-full items-center'>
+              <div className=' flex items-center gap-2'>
                 <div className=' md:hidden text-2xl' onClick={toggleMobileMenu}>
                     <AiOutlineMenu />
                 </div>
                 <Link href={'/'} className=''>
                     <Image src={'/assets/logo/logo.svg'}  alt='proviralz' width={100} height={100} />
                 </Link>
+              </div>
+              <div className=' md:hidden'>
+                <div className='relative'>
+                    <div onClick={()=> setShowNotificationDropdown(!showNotificationDropdown)} className='  text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
+                        <IoIosNotificationsOutline />
+                    </div>
+                    {showNotificationDropdown && <div className=' absolute  right-0 top-12'>
+                        <NotificationsDropdown userId={user?._id} />
+                    </div>}
+                </div>
+              </div>
                 <div className=' hidden md:flex'>
                     <nav className=' flex gap-4 text-neutral-500 text-sm font-light'>
                         <Link href={'/projects'} className={pathname.startsWith('/projects')? 'text-[#31013f]': ''}>

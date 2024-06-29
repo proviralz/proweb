@@ -38,7 +38,10 @@ const Message = () => {
 
     useEffect(()=> {
         if(loggedUser) {
-            socket.current = io(host)
+            socket.current = io(host, {
+                transports: ["websocket"],
+                withCredentials: true
+            })
             socket.current.emit("add-user", loggedUser?._id)
         }
         setCurrentUserName(loggedUser?.fullName)
@@ -49,17 +52,22 @@ const Message = () => {
     // get all users and all messages
     useEffect(()=> {
         const getChatUsers = async()=> {
-            if(loggedUser){
-                const data = await userRequest.get(`users/allchat/${loggedUser?._id}`)
-                const res = await userRequest.post(`/messages/getmsg/`, {
-                    from: loggedUser?._id,
-                    to: currentChat?._id
-                })
+            try {
+                if (loggedUser) {
+                    const data = await userRequest.get(`users/allchat/${loggedUser?._id}`);
+                    const res = await userRequest.post(`/messages/getmsg/`, {
+                        from: loggedUser?._id,
+                        to: currentChat?._id
+                    });
 
-                setContacts(data.data)
-                setMessages(res.data)
+                    setContacts(data.data);
+                    setMessages(res.data);
+                }
+            } catch (error) {
+                console.error("Error fetching chat users or messages:", error);
             }
-        }
+        };
+        
         getChatUsers()
     }, [loggedUser, currentChat])
 
