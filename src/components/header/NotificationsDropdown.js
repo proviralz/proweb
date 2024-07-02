@@ -4,28 +4,52 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { LuMessageSquare } from "react-icons/lu";
 
-const NotificationsDropdown = ({userId}) => {
+const NotificationsDropdown = (
+    {
+        userId, 
+        onUnseenCountChange, 
+        isLoading,
+        notifications, 
+        setNotifications}
+) => {
 
 
-    const [notifications, setNotifications] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
+    // const [notifications, setNotifications] = useState(null)
+    const [currentTab, setCurrentTab] = useState('all');
+    
 
-    useEffect(()=> {
-        const getNotif = async()=> {
-            if(userId) {
-                try {
-                    const res = await userRequest.get(`notifications/${userId}`)
+    // useEffect(()=> {
+    //     const getNotif = async()=> {
+    //         if(userId) {
+    //             try {
+    //                 const res = await userRequest.get(`notifications/${userId}`)
 
-                    setNotifications(res.data)
-                    setIsLoading(false)
-                } catch (error) {
-                    console.log(error)
-                    setIsLoading(false)
-                }
-            }
+    //                 setNotifications(res.data)
+    //                 setIsLoading(false)
+    //                 const unseenCount = res.data.filter((notif)=> !notif.seen).length;
+    //                 onUnseenCountChange(unseenCount)
+    //             } catch (error) {
+    //                 console.log(error)
+    //                 setIsLoading(false)
+    //             }
+    //         }
+    //     }
+    //     getNotif()
+    // }, [userId, onUnseenCountChange])
+
+    const markAsSeen = async (notificationId) => {
+        try {
+            await userRequest.put(`notifications/mark-as-seen/${notificationId}`);
+            setNotifications((prevNotifications) =>
+            prevNotifications.map((notif) =>
+                notif._id === notificationId ? { ...notif, seen: true } : notif
+            )
+            );
+        } catch (error) {
+            console.log(error);
         }
-        getNotif()
-    }, [userId])
+    };
+    
 
 
     function getDaysAheadOrWeeksOrMonths(dateString) {
@@ -55,6 +79,11 @@ const NotificationsDropdown = ({userId}) => {
         }
     }
 
+    const filteredNotifications =
+        currentTab === 'unread'
+            ? notifications.filter((notif) => !notif.seen)
+            : notifications;
+
     console.log(notifications)
 
 
@@ -80,22 +109,30 @@ const NotificationsDropdown = ({userId}) => {
             <div className=' px-5 py-3 flex items-center gap-5'>
                 <div>
                     <div>
-                        <p className=' bg-[#9747FF] px-5 py-2 text-white text-xs rounded-md'>
+                        <p className={`px-5 py-2 text-xs rounded-md cursor-pointer ${
+                            currentTab === 'all' ? 'bg-[#9747FF] text-white' : 'bg-gray-200'
+                            }`}
+                            onClick={() => setCurrentTab('all')}
+                        >
                             All ({notifications?.length})
                         </p>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <p>
+                        <p className={`px-5 py-2 text-xs rounded-md cursor-pointer ${
+                            currentTab === 'unread' ? 'bg-[#9747FF] text-white' : 'bg-gray-200'
+                            }`}
+                            onClick={() => setCurrentTab('unread')}
+                        >
                             Unread ({notifications?.filter(notif => notif.seen === false).length})
                         </p>
                     </div>
                 </div>
             </div>
             <div className=' h-96 overflow-y-scroll'>
-                {notifications && notifications?.map((n, i)=> (
-                    <div key={i} className={` bg-slate-50 ${n.category === 'message' && 'bg-red-200/10'} p-3 flex gap-4 items-center`}>
+                {notifications && filteredNotifications?.map((n, i)=> (
+                    <div key={i} className={` bg-slate-50 ${n.category === 'message' && 'bg-red-300/10'} p-3 flex gap-4 items-center`}>
                         <div>
                             <p>
                                 <LuMessageSquare size={20} />
@@ -115,7 +152,7 @@ const NotificationsDropdown = ({userId}) => {
                                 </div>
                             </div>
                             <div className=' inline-block border border-[#31013f] text-[#31013f] text-[0.8rem] px-4 py-2 rounded-sm cursor-pointer'>
-                                <Link href={n.link} >
+                                <Link href={n.link} onClick={()=> markAsSeen(n._id)} >
                                     Open
                                 </Link>
                             </div>

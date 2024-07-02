@@ -189,7 +189,7 @@ const Message = () => {
                         </div> */}
                     </div>
                 </div>
-                <div className=' p-5'>
+                <div className=' p-5 h-[400px] overflow-y-auto'>
                     <div>
                         {/* <div>
                             <div className=' flex items-center border px-2 py-1  rounded-xl gap-3'>
