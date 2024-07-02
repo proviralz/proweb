@@ -107,7 +107,7 @@ const ClientProposals = () => {
             <ClientHeader />
         </div>
         <div className=' p-5 md:p-10 bg-neutral-100'>
-            <div className=' p-5 bg-white rounded-lg text-neutral-600 flex flex-col gap-5'>
+            <div className=' p-2 md:p-5 bg-white rounded-lg text-neutral-600 flex flex-col gap-5'>
                 <div>
                     <p >
                         Click on job posted to see the proposals submitted for the job
@@ -119,14 +119,14 @@ const ClientProposals = () => {
                         <input type="text" name="" id="" className=' w-28 md:w-full outline-none  text-neutral-600 ' placeholder='Search services' />
                     </div>
                 </div> */}
-                <div>
+                <div className=' space-y-3'>
                     {job?.map((j, i)=> (
                         <Link href={`/proposals/${j._id}`} key={i} className=' p-5 border rounded-lg flex justify-between items-center '>
-                            <div className=' w-full flex items-center gap-5'>
-                                <div  className=' h-20 w-40 overflow-hidden'>
+                            <div className=' w-full flex flex-col md:flex-row items-center gap-5'>
+                                <div  className=' w-full h-40 md:h-20 md:w-40 overflow-hidden'>
                                     <Image src={j?.document} alt='' width={100} height={100} className=' h-full w-full object-cover' />
                                 </div>
-                                <div className=' flex-1 pr-10 space-y-3'>
+                                <div className=' w-full flex-1 md:pr-10 space-y-3'>
                                     <div className='  w-full flex items-center justify-between'>
                                         <p className=' text-base text-neutral-800'>
                                             {j?.title}

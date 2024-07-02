@@ -115,13 +115,13 @@ const JobProposals = () => {
                     </div>
                 </div>
                 <div>
-                    {proposals.map((p, i)=> (
-                        <div key={i} className=' p-5 border-b flex justify-between items-center '>
-                            <div className=' w-full flex items-center gap-5'>
-                                <div  className=' h-20 w-20 rounded-full overflow-hidden'>
+                    {proposals?.map((p, i)=> (
+                        <div key={i} className=' p-5 border-b flex flex-col md:flex-row md:justify-between md:items-center gap-5 '>
+                            <div className=' w-full flex flex-col md:flex-row md:items-center gap-5'>
+                                <div  className=' h-12 w-12 md:h-20 md:w-20 rounded-full overflow-hidden'>
                                     <Image src={p?.userData.profilePic} alt='' width={100} height={100} className=' h-full w-full object-cover' />
                                 </div>
-                                <div className=' flex-1 pr-10'>
+                                <div className=' flex-1 pr-10 space-y-2'>
                                     <div className='  w-full flex items-center justify-between'>
                                         <p className=' text-sm text-neutral-800'>
                                             {p?.userData.fullName}
@@ -142,9 +142,11 @@ const JobProposals = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className=' w-40'>
-                                <Link href={`/jobs/proposal/${p?._id}`} className=' purple-btn-long text-[0.7rem]'>
-                                    View proposal
+                            <div className='  md:w-40'>
+                                <Link href={`/jobs/proposal/${p?._id}`} >
+                                    <p className=' purple-btn-long text-[0.8rem]'>
+                                        View proposal
+                                    </p>
                                 </Link>
                             </div>
                         </div>

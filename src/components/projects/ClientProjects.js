@@ -67,8 +67,8 @@ const ClientProjects = () => {
             <ClientHeader />
         </div>
 
-        <div className=' bg-neutral-100 p-10'>
-            <div className=' bg-white p-5'>
+        <div className=' bg-neutral-100 p-3 md:p-10'>
+            <div className=' bg-white p-2 md:p-5'>
 
 
                 <div className=' flex justify-between border-b'>
@@ -88,9 +88,11 @@ const ClientProjects = () => {
                     </div>
 
                     {/* right */}
-                    <div className=' mb-3'>
-                        <Link href={'/jobs/new'} className=' md:px-4 md:py-2 p-1 text-xs md:text-base font-light bg-[#31013f] text-white rounded-full'>
-                            Post a job
+                    <div className=' md:mb-3'>
+                        <Link href={'/jobs/new'} >
+                            <p className=' md:px-4 md:py-2 p-2 text-xs md:text-base font-light bg-[#31013f] text-white rounded-full'>
+                                Post a job
+                            </p>
                         </Link>
                     </div>
                 </div>
