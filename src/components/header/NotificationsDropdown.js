@@ -81,7 +81,7 @@ const NotificationsDropdown = (
 
     const filteredNotifications =
         currentTab === 'unread'
-            ? notifications.filter((notif) => !notif.seen)
+            ? notifications?.filter((notif) => !notif?.seen)
             : notifications;
 
     console.log(notifications)

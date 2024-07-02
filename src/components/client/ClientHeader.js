@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineMenu } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
@@ -15,6 +15,7 @@ import { TbSocial } from 'react-icons/tb';
 import { MdClose } from 'react-icons/md';
 import NotificationsDropdown from '../header/NotificationsDropdown';
 import { logoutUser } from '@/redux/userSlice';
+import { userRequest } from '@/requestMethods';
 
 const ClientHeader = () => {
 
@@ -24,6 +25,9 @@ const ClientHeader = () => {
     const [showNotificationDropdown, setShowNotificationDropdown] = useState(false)
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [unseenCount, setUnseenCount] = useState(0);
+    const [notifications, setNotifications] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
 
     const user = useSelector(state => state.user.info)
     console.log(user)
@@ -34,6 +38,25 @@ const ClientHeader = () => {
 
     const dispatch = useDispatch()
     // const router = useRouter()
+
+    useEffect(()=> {
+      const getNotif = async()=> {
+          if(user?._id) {
+              try {
+                  const res = await userRequest.get(`notifications/${user?._id}`)
+
+                  setNotifications(res.data)
+                  setIsLoading(false)
+                  const unseenCount = res.data.filter((notif)=> !notif.seen).length;
+                  setUnseenCount(unseenCount)
+              } catch (error) {
+                  console.log(error)
+                  setIsLoading(false)
+              }
+          }
+      }
+      getNotif()
+    }, [user?._id])
 
     const handleLogout =()=> {
         dispatch(logoutUser())
@@ -61,9 +84,19 @@ const ClientHeader = () => {
                 <div className='relative'>
                     <div onClick={()=> setShowNotificationDropdown(!showNotificationDropdown)} className='  text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
                         <IoIosNotificationsOutline />
+                        {unseenCount > 0 && (
+                          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            {unseenCount}
+                          </span>
+                        )}
                     </div>
                     {showNotificationDropdown && <div className=' absolute  right-0 top-12'>
-                        <NotificationsDropdown userId={user?._id} />
+                        <NotificationsDropdown 
+                            userId={user?._id}
+                            notifications={notifications}
+                            setNotifications={setNotifications}
+                            isLoading={isLoading}
+                            onUnseenCountChange={setUnseenCount} />
                     </div>}
                 </div>
               </div>
