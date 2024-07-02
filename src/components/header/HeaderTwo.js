@@ -81,13 +81,26 @@ const HeaderTwo = () => {
                     <Image src={'/assets/logo/logo.svg'}  alt='proviralz' width={100} height={100} />
                 </Link>
               </div>
+
+              {/* desktop notifications */}
               <div className=' md:hidden'>
                 <div className='relative'>
                     <div onClick={()=> setShowNotificationDropdown(!showNotificationDropdown)} className='  text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
                         <IoIosNotificationsOutline />
+                        {unseenCount > 0 && (
+                          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            {unseenCount}
+                          </span>
+                        )}
                     </div>
                     {showNotificationDropdown && <div className=' absolute  right-0 top-12'>
-                        <NotificationsDropdown userId={user?._id} />
+                        <NotificationsDropdown 
+                          userId={user?._id}
+                          notifications={notifications}
+                          setNotifications={setNotifications}
+                          isLoading={isLoading}
+                          onUnseenCountChange={setUnseenCount}
+                           />
                     </div>}
                 </div>
               </div>

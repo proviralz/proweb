@@ -39,6 +39,19 @@ const ClientHeader = () => {
     const dispatch = useDispatch()
     // const router = useRouter()
 
+    
+    const handleLogout =()=> {
+      dispatch(logoutUser())
+      router.push('/login')
+    }
+    
+    const toggleMobileMenu = () => {
+      setIsMobileMenuOpen(!isMobileMenuOpen);
+    }
+    
+    const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
+
     useEffect(()=> {
       const getNotif = async()=> {
           if(user?._id) {
@@ -58,17 +71,8 @@ const ClientHeader = () => {
       getNotif()
     }, [user?._id])
 
-    const handleLogout =()=> {
-        dispatch(logoutUser())
-        router.push('/login')
-    }
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-      }
-
-    const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-  return (
+    return (
     <div className=' p-5 md:p-0 flex justify-between bg-white md:flex-col'>
         <div className=' flex items-center w-full gap-2  md:px-10 md:py-5 md:border-b border-neutral-500'>
             <div className=' flex justify-between md:justify-start gap-3 md:gap-10 w-full items-center'>
@@ -168,9 +172,19 @@ const ClientHeader = () => {
                 <div className='relative'>
                     <div onClick={()=> setShowNotificationDropdown(!showNotificationDropdown)} className='  text-2xl border rounded-full p-1 border-neutral-500 text-neutral-500'>
                         <IoIosNotificationsOutline />
+                        {unseenCount > 0 && (
+                          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            {unseenCount}
+                          </span>
+                        )}
                     </div>
                     {showNotificationDropdown && <div className=' absolute  right-0 top-12'>
-                        <NotificationsDropdown userId={user?._id} />
+                        <NotificationsDropdown 
+                            userId={user?._id}
+                            notifications={notifications}
+                            setNotifications={setNotifications}
+                            isLoading={isLoading}
+                            onUnseenCountChange={setUnseenCount} />
                     </div>}
                 </div>
                 <div className=' relative cursor-pointer' >

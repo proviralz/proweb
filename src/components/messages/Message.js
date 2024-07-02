@@ -285,14 +285,14 @@ const Message = () => {
                 {/* text box */}
                 <div className=' p-5'>
                     <div className=' flex gap-5 items-center'>
-                        <div>
+                        {/* <div>
                             <GrAttachment />
-                        </div>
+                        </div> */}
                         <div className=' border flex-1 p-2 rounded-full text-neutral-500'>
                             <input value={text|| ""} onChange={(e)=> setText(e.target.value)} type="text" name="" id="" className=' w-full outline-none' />
                         </div>
                         <div>
-                            <p onClick={sendChat} className=' text-xs bg-[#31013f] px-3 py-1 text-white rounded-full font-light'>
+                            <p onClick={sendChat} className=' text-base bg-[#31013f] px-3 py-1 text-white rounded-full font-light'>
                                 Send
                             </p>
                         </div>
