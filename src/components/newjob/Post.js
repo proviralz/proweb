@@ -151,9 +151,17 @@ const Post = () => {
         // Add validation logic here
         // For example, check if required fields are filled
         const newErrors = {};
-        if (!formData.title.trim()) {
-            newErrors.title = 'Title is required';
-        }
+        if (!formData.title.trim()) newErrors.title = 'Title is required';
+        if (!formData.category.trim()) newErrors.category = 'Category is required';
+        if (!formData.description.trim()) newErrors.description = 'Description is required';
+        if (!formData.experience.trim()) newErrors.experience = 'Experience is required';
+        if (!formData.paymentStructure.trim()) newErrors.paymentStructure = 'Payment structure is required';
+        if (!formData.budget.trim()) newErrors.budget = 'Budget is required';
+        if (!formData.deliveryDate.trim()) newErrors.deliveryDate = 'Delivery date is required';
+        if (!formData.qualification.trim()) newErrors.qualification = 'Qualification is required';
+        // if (!selectedState.trim()) newErrors.state = 'State is required';
+        if (skills.length === 0) newErrors.skills = 'At least one skill is required';
+        if (!file) newErrors.file = 'File is required';
         // Add more validation logic as needed
 
         if (Object.keys(newErrors).length === 0) {
@@ -208,18 +216,18 @@ const Post = () => {
                 }}
             />
             <div className='absolute inset-0 flex flex-col justify-center items-center'>
-                <p className='text-white text-5xl font-semibold text-center'>
+                <p className='text-white text-3xl md:text-5xl font-semibold text-center'>
                     Post a Project
                 </p>
-                <p className=' text-white md:text-xl  mt-3'>
+                <p className=' text-white md:text-xl text-center mt-3'>
                     Post a job, share your vision, and staart getting proposals within minutes
                 </p>
             </div>
         </div>
 
-        <div className=' bg-neutral-100 px-10 pb-10'>
+        <div className=' bg-neutral-100 px-5 md:px-10 pb-10'>
             
-            <div className=' bg-white p-5 space-y-5 post-form w-3/4'>
+            <div className=' bg-white p-5 space-y-5 post-form w-full md:w-3/4'>
                 <div className=' space-y-2'>
                     <p>
                         Select category
@@ -236,6 +244,7 @@ const Post = () => {
                         ))}
                         {/* <option value="web design">Web design</option> */}
                     </select>
+                    {errors.category && <p className="text-red-500">{errors.category}</p>}
                 </div>
                 <div className=' space-y-2'>
                     <p>
@@ -247,6 +256,7 @@ const Post = () => {
                         id="title" 
                         placeholder='Ex. Data entry job' 
                         onChange={handleChange} />
+                    {errors.title && <p className="text-red-500">{errors.title}</p>}
                 </div>
                 <div className=' space-y-2'>
                     <p>
@@ -280,6 +290,7 @@ const Post = () => {
                                 </div>
                             ))}
                         </div>
+                        {errors.skills && <p className="text-red-500">{errors.skills}</p>}
 
                         {/* <div className=' flex gap-3 flex-wrap mt-5 w-4/5'>
                             {skilled?.map((tag, i)=> (
@@ -304,6 +315,7 @@ const Post = () => {
                             placeholder=''
                             onChange={handleChange}
                             id="" />
+                        {errors.description && <p className="text-red-500">{errors.description}</p>}
 
                         
                     </div>
@@ -315,8 +327,8 @@ const Post = () => {
                         <div 
                             onDragOver={(e) => e.preventDefault()} 
                             onDrop={handleFileDrop} 
-                            className=' h-20 border border-neutral-500  border-dashed p-5 rounded-md  flex  gap-5 items-center justify-center'>
-                            <div className=' flex items-center text-neutral-600 gap-3 text-xs'>
+                            className=' h-20 border border-neutral-500  border-dashed p-2 md:p-5 rounded-md  flex  gap-5 items-center justify-center'>
+                            <div className=' hidden md:flex items-center text-neutral-600 gap-3 text-xs'>
                                 <IoCloudUploadOutline />
                                 {file && file[0]?.name || <p className=' w-3/4'>
                                     Drag and drop any images that might be helpful in explaining your brief
@@ -334,6 +346,7 @@ const Post = () => {
                             </div>
                         )}
                     </div>
+                    {errors.file && <p className="text-red-500">{errors.file}</p>}
                 </div>
 
                 {/* location */}
@@ -367,6 +380,7 @@ const Post = () => {
                                 ))}
                             </select>
                         </div>
+                        {/* {errors.state && <p className="text-red-500">{errors.state}</p>} */}
                     </div>
                 </div>
                 <div className=' space-y-2'>
@@ -384,6 +398,7 @@ const Post = () => {
                             <input type="text" name="qualification" id="qualification" placeholder='Ex. B.Sc' onChange={handleChange} />
                         </div>
                     </div>
+                    {errors.experience && <p className="text-red-500">{errors.experience}</p>}
                 </div>
 
                 {/* payment structure */}
@@ -397,6 +412,7 @@ const Post = () => {
                         <option value="full">Full payment (when job is completed)</option>
                         <option value="upfront">Upfront payment (part)</option>
                     </select>
+                    {errors.paymentStructure && <p className="text-red-500">{errors.paymentStructure}</p>}
 
                     { formData.paymentStructure === 'milestone' &&
                     <div className=' space-y-2'>
@@ -417,12 +433,14 @@ const Post = () => {
                 <div className=''>
                     <div className=' flex gap-5 w-full'>
                         <div className=' flex-1 space-y-2'>
-                            <label htmlFor="budget">Budget</label>
+                            <label htmlFor="budget">Budget (Naira)</label>
                             <input type="Number" name="budget" id="" placeholder='Ex. N300'  onChange={handleChange}/>
+                            {errors.budget && <p className="text-red-500">{errors.budget}</p>}
                         </div>
                         <div className=' flex-1 space-y-2'>
                             <label htmlFor="deliveryDate">Delivery date</label>
                             <input type="date" name="deliveryDate" id="deliveryDate" onChange={handleChange} />
+                            {errors.deliveryDate && <p className="text-red-500">{errors.deliveryDate}</p>}
                         </div>
                     </div>
                     <div className=' mt-3'>
