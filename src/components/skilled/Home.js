@@ -11,6 +11,7 @@ import HeaderTwo from '../header/HeaderTwo'
 import { publicRequest } from '@/requestMethods'
 import VerifyEmail from './VerifyEmail'
 import { useSelector } from 'react-redux'
+import SearchJobs from './SearchJobs'
 // import HeaderTwo from './HeaderTwo'
 
 const Landing = () => {
@@ -24,6 +25,7 @@ const Landing = () => {
     const [jobs, setJobs] = useState(null)
     const [loading, setLoading] = useState(true)
     const [showForm, setShowForm] = useState(!user?.emailVerified)
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(()=> {
         const getJobs = async ()=> {
@@ -53,6 +55,17 @@ const Landing = () => {
 
         getJobs()
     }, [])
+
+    const handleSearch = (term) => {
+        setSearchTerm(term);
+    };
+
+    const filteredJobs = jobs?.filter((job) =>
+        searchTerm
+            ? job.title.toLowerCase().includes(searchTerm.toLowerCase()) || job.description.toLowerCase().includes(searchTerm.toLowerCase())
+            : user?.interests?.some((interest) => interest === job?.category)
+    );
+    
 
     // console.log(jobs)
 
@@ -100,6 +113,10 @@ const Landing = () => {
                 user={user} />
         </div>
 
+        <div>
+            <SearchJobs onSearch={handleSearch} />
+        </div>
+
         {/* featured jobs */}
         <div className=' px-5 md:flex justify-between gap-5'>
             <div className=' mt-6 flex-1 bg-white py-5 px-4 rounded-lg'>
@@ -107,7 +124,7 @@ const Landing = () => {
                     Featured jobs
                 </p>
                 <div className=' mt-5'>
-                    <FeaturedJob jobs={jobs} />
+                    <FeaturedJob jobs={filteredJobs} />
                 </div>
             </div>
 

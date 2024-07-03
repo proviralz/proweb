@@ -8,6 +8,7 @@ import HeaderTwo from '../header/HeaderTwo'
 import { publicRequest } from '@/requestMethods'
 import { useSelector } from 'react-redux'
 import VerifyEmail from '../skilled/VerifyEmail'
+import SearchJobs from './SearchJobs'
 // import { useSession } from 'next-auth/react'
 // import HeaderTwo from './HeaderTwo'
 
@@ -18,6 +19,7 @@ const UnskilledHome = () => {
     const [loading, setLoading] = useState(true)
     const user = useSelector(state => state.user.info)
     const [showForm, setShowForm] = useState(!user?.emailVerified)
+    const [searchTerm, setSearchTerm] = useState('');
 
 
     useEffect(()=> {
@@ -37,6 +39,17 @@ const UnskilledHome = () => {
     }, [])
 
     console.log(jobs)
+
+    const handleSearch = (term) => {
+        setSearchTerm(term);
+    };
+
+    const filteredJobs = jobs?.filter((job) =>
+        searchTerm
+            ? job.title.toLowerCase().includes(searchTerm.toLowerCase()) || job.description.toLowerCase().includes(searchTerm.toLowerCase())
+            : user?.interests?.some((interest) => interest === job?.category)
+    );
+    
 
 
     if(loading) {
@@ -81,6 +94,10 @@ const UnskilledHome = () => {
                 user={user} />
         </div>
 
+        <div>
+            <SearchJobs onSearch={handleSearch} />
+        </div>
+
         {/* featured jobs */}
         <div className=' px-5 md: flex gap-5'>
             <div className=' flex-1 mt-6 bg-white py-5 px-4 rounded-lg'>
@@ -88,7 +105,7 @@ const UnskilledHome = () => {
                     Featured jobs
                 </p>
                 <div className=' mt-5'>
-                    <FeaturedJob user={user} jobs={jobs} />
+                    <FeaturedJob user={user} jobs={filteredJobs} />
                 </div>
             </div>
 

@@ -13,7 +13,7 @@ const FeaturedJob = ({jobs, user}) => {
     console.log(featuredJobs)
   return (
     <div className=' flex flex-col gap-10'>
-        {featuredJobs?.map((item, i)=> (
+        {jobs?.map((item, i)=> (
             <div key={i} className=' border p-3 rounded-lg'>
                 <div className=' md:flex gap-5 w-full'>
                     <div className=' min-w-32 h-20 '>
