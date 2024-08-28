@@ -12,6 +12,7 @@ import {
   } from 'redux-persist'
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 import affiliateUserSlice from './affiliateUserSlice';
+import adminUserSlice from './adminUserSlice';
   // import storage from 'redux-persist/lib/storage'
 
   const createNoopStorage = () => {
@@ -37,7 +38,11 @@ import affiliateUserSlice from './affiliateUserSlice';
     storage,
   }
 
-  const rootReducer = combineReducers({user: userSlice, affiliateUser: affiliateUserSlice})
+  const rootReducer = combineReducers({
+    user: userSlice, 
+    affiliateUser: affiliateUserSlice,
+    admin: adminUserSlice
+  })
 
   const persistedReducer = persistReducer(persistConfig, rootReducer)
 

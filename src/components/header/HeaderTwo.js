@@ -15,7 +15,7 @@ import { LuMailSearch } from 'react-icons/lu';
 import { PiHandTapThin, PiListPlusThin } from 'react-icons/pi';
 import { MdClose } from 'react-icons/md';
 import { logoutUser } from '@/redux/userSlice';
-import { userRequest } from '@/requestMethods';
+import { publicRequest, userRequest } from '@/requestMethods';
 
 const HeaderTwo = () => {
 
@@ -53,7 +53,7 @@ const HeaderTwo = () => {
       const getNotif = async()=> {
           if(user?._id) {
               try {
-                  const res = await userRequest.get(`notifications/${user?._id}`)
+                  const res = await publicRequest.get(`notifications/${user?._id}`)
 
                   setNotifications(res.data)
                   setIsLoading(false)
