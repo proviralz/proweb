@@ -1,6 +1,6 @@
-'use client'
-import React from 'react'
-import Clients from '@/components/admin/dashboard/users/Clients'
+// 'use client'
+// import React from 'react'
+// import Clients from '@/components/admin/dashboard/users/Clients'
 
 const Page = () => {
   return (

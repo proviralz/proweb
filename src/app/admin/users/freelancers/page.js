@@ -1,5 +1,4 @@
-'use client'
-import React from 'react'
+// import React from 'react'
 import Freelancer from '@/components/admin/dashboard/users/Freelancer'
 
 const Page = () => {
