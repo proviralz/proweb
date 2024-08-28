@@ -4,7 +4,7 @@ import Freelancer from '@/components/admin/dashboard/users/Freelancer'
 const Page = () => {
   return (
     <div>
-      {/* <Freelancer /> */}
+      <Freelancer />
     </div>
   )
 }
