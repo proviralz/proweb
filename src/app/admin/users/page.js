@@ -6,7 +6,7 @@ import UserHome from '@/components/admin/dashboard/users/UserHome'
 const page = () => {
   return (
     <div>
-      <UserHome />
+      {/* <UserHome /> */}
     </div>
   )
 }

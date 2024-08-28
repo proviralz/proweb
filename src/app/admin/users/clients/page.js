@@ -5,7 +5,7 @@ import Clients from '@/components/admin/dashboard/users/Clients'
 const Page = () => {
   return (
     <div>
-      <Clients />
+      {/* <Clients /> */}
     </div>
   )
 }
