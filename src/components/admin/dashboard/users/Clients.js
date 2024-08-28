@@ -6,7 +6,7 @@ import { publicRequest } from '@/requestMethods'
 
 const Clients = () => {
 
-  const [users, setUsers] = useState({})
+  const [users, setUsers] = useState(null)
 
   useEffect(()=> {
     const getUsers = async ()=> {
@@ -21,7 +21,7 @@ const Clients = () => {
     getUsers()
   }, [])
 
-  return (
+  return ( users &&
     <div>
       <Layout>
         <div className=' space-y-5'>
