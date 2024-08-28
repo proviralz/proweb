@@ -2,7 +2,7 @@
 import React from 'react'
 import Clients from '@/components/admin/dashboard/users/Clients'
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <Clients />
@@ -10,4 +10,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

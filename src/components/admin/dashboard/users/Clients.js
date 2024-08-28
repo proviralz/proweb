@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import ClientTable from './ClientTable'
 import Search from '../common/Search'

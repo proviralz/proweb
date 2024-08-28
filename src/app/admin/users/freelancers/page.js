@@ -2,7 +2,7 @@
 import React from 'react'
 import Freelancer from '@/components/admin/dashboard/users/Freelancer'
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <Freelancer />
@@ -10,4 +10,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
