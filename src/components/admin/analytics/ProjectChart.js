@@ -37,7 +37,7 @@ const ProjectChart = ({data}) => {
 
     
     // Process the data to count projects by month
-    const processedData = data.reduce((acc, project) => {
+    const processedData = data?.reduce((acc, project) => {
         const month = new Date(project.createdAt).getMonth();
         acc[month] = (acc[month] || 0) + 1;
         return acc;

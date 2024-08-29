@@ -16,7 +16,7 @@ const AnalyticsHome = () => {
         const getUsers = async()=> {
             try {
                 const res = await publicRequest.get('users')
-                const proRes = await axios.get('http://localhost:5000/api/project/find/all')
+                const proRes = await publicRequest.get('project/find/all')
 
                 setUsers(res.data)
                 setProjects(proRes.data)
