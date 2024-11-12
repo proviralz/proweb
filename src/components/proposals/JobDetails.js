@@ -1,11 +1,12 @@
 'use client'
-import { publicRequest } from '@/requestMethods'
+import { host, publicRequest } from '@/requestMethods'
 import { useParams, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import Footer from '../footer/Footer'
 import ClientHeader from '../client/ClientHeader'
 import Link from 'next/link'
+import { FlutterWaveButton, useFlutterwave } from 'flutterwave-react-v3'
 
 const JobDetails = () => {
 
@@ -95,6 +96,8 @@ const JobDetails = () => {
             return `${monthsAhead} month${monthsAhead > 1 ? 's' : ''}`;
         }
     }
+
+
 
     const handleHire = async()=> {
         try {
