@@ -31,3 +31,13 @@ export const adminLogin = async (user, dispatch) => {
         throw error
     }
 }
+
+export const fetchUserBalance = async (userId)=> {
+    try {
+        const res = await publicRequest.get(`users/${userId}`)
+
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}

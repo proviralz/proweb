@@ -1,20 +1,41 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { PaystackButton } from 'react-paystack';
 import { useSelector } from 'react-redux';
 import { AmountModal } from './AmountModal';
+import { fetchUserBalance } from '@/redux/apiCalls';
+import { publicRequest } from '@/requestMethods';
+import { useRouter } from 'next/navigation';
 
 const Account = () => {
 
     const [showAmount, setShowAmount] = useState(false)
     const [amount, setAmount] = useState("")
     const [paymentStatus, setPaymentStatus] = useState(null);
+    const [balance, setBalance] = useState(0)
     const publicKey = 'pk_test_9364105df8a33975edb2780324d9331ed9194b2c';
     const user = useSelector(state => state.user.info)
+    const router = useRouter()
+
+
+    useEffect(()=> {
+        const fetchBal = async()=> {
+            try {
+                const res = await publicRequest.get(`users/find/${user._id}`)
+        
+                setBalance(res?.data?.balance)
+            } catch (error) {
+                throw error
+            }
+        }
+
+        fetchBal()
+    }, [user])
 
 
     const handleSuccess = (response) => {
         console.log("Payment Response:", response);
         if (response.status === "success") {
+            router.refresh()
           setPaymentStatus("Payment successful! Transaction reference: " + response.reference);
         } else {
           setPaymentStatus("Payment failed. Please try again.");
@@ -26,6 +47,8 @@ const Account = () => {
         setAmount("");
         setShowAmount(false);
       };
+
+
 
 
     const componentProps = {
@@ -63,7 +86,7 @@ const Account = () => {
                     Available Balance
                 </p>
                 <p>
-                    $0.00
+                &#8358; {balance} 
                 </p>
             </div>
             <div>
