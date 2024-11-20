@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(()=> {
     if(!userInfo) {
-      router.push('/login')
+      router.push('/home')
     }
   })
 

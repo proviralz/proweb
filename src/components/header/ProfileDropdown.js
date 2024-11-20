@@ -14,7 +14,7 @@ const ProfileDropdown = ({user}) => {
 
     const handleLogout =()=> {
         dispatch(logoutUser())
-        router.push('/login')
+        router.push('/home')
     }
   return (
     <div className=' rounded-md bg-white shadow-md'>

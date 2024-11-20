@@ -13,7 +13,7 @@ const Page = () => {
 
   useEffect(()=> {
     if(!userGroup) {
-      router.push('/login')
+      router.push('/home')
     }
   })
 

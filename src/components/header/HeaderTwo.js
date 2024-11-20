@@ -35,12 +35,12 @@ const HeaderTwo = () => {
 
     const handleLogout =()=> {
         dispatch(logoutUser())
-        router.push('/login')
+        router.push('/home')
     }
 
 
     if(!user) {
-        router.push('/login')
+        router.push('/home')
     }
 
     const toggleMobileMenu = () => {

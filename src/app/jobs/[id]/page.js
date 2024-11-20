@@ -13,7 +13,7 @@ const Page = () => {
   const user = useSelector(state => state.user?.info)
   const userGroup  = user?.group
   if(!user) {
-    router.push('/login')
+    router.push('/home')
   }
   return (
     <div>

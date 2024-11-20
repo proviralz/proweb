@@ -33,7 +33,7 @@ const ClientHeader = () => {
     console.log(user)
 
     if(!user) {
-        router.push('/login')
+        router.push('/home')
     }
 
     const dispatch = useDispatch()
@@ -42,7 +42,7 @@ const ClientHeader = () => {
     
     const handleLogout =()=> {
       dispatch(logoutUser())
-      router.push('/login')
+      router.push('/home')
     }
     
     const toggleMobileMenu = () => {
