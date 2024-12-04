@@ -116,7 +116,7 @@ const Home = () => {
             
 
             {/* benefits */}
-            <div className=' mt-14'>
+            {/* <div className=' mt-14'>
                 <div className=' text-center text-2xl font-semibold text-neutral-600'>
                     <p>
                         Benefits
@@ -178,7 +178,7 @@ const Home = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
         <div>

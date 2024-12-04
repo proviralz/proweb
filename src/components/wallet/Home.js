@@ -25,10 +25,10 @@ const Home = () => {
                             <CiWallet />
                             <p>wallet</p>
                         </div>
-                        <div className={`${currentPage === "card"? "bg-neutral-100": ""}`} onClick={()=> setCurrentPage("card")}>
+                        {/* <div className={`${currentPage === "card"? "bg-neutral-100": ""}`} onClick={()=> setCurrentPage("card")}>
                             <FaRegCreditCard />
                             <p>cards</p>
-                        </div>
+                        </div> */}
                         <div className={`${currentPage === "history"? "bg-neutral-100": ""}`} onClick={()=> setCurrentPage("history")}>
                             <GoHistory />
                             <p>history</p>

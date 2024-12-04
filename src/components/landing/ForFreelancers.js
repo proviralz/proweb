@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ForFreelancers = () => {
     return (
@@ -11,9 +12,11 @@ const ForFreelancers = () => {
           <p className="text-gray-700">
             Join our platform to connect with clients looking for your skills. Set your own rates, choose your projects, and start earning on your terms.
           </p>
-          <button className="mt-4 px-6 py-2 bg-[#31013f] text-white rounded-lg font-semibold hover:bg-purple-800">
-            Get Started →
-          </button>
+          <Link href={'/login'}>
+            <button className="mt-4 px-6 py-2 bg-[#31013f] text-white rounded-lg font-semibold hover:bg-purple-800">
+              Get Started →
+            </button>
+          </Link>
         </div>
         <div className="md:w-1/2 flex items-center justify-center">
           <Image

@@ -10,6 +10,7 @@ import { FaPlus } from 'react-icons/fa6';
 import CompleteProfile from './CompleteProfile';
 import HeaderTwo from '../header/HeaderTwo';
 import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
 const UserProfile = () => {
 
@@ -95,31 +96,31 @@ const UserProfile = () => {
                             </p>
                         </div>
                         <div>
-                            <p className=' purple-btn-long text-xs'>
+                            <Link href={'/portfolio/new'} className=' purple-btn-long text-xs'>
                                 Add to portfolio
-                            </p>
+                            </Link>
                         </div>
                     </div>
                     <div className=' mt-5'>
                         <div className=' flex flex-wrap justify-center md:justify-between gap-10'>
-                            {gallery.map((g, i)=> (
+                            {user?.portfolio?.map((g, i)=> (
                                 <div key={i} className=' w-56'>
                                     <div className=' w-full rounded-lg overflow-hidden'>
-                                        <Image src={g.img} alt={g.title} width={100} height={100} className=' w-full'  />
+                                        <Image src={g?.image} alt={g?.title} width={100} height={100} className=' w-full'  />
                                     </div>
                                     <div className=' mt-2 flex text-xs justify-between text-neutral-500'>
                                         <p>
                                             {g.title}
                                         </p>
-                                        <p className=' cursor-pointer'>
+                                        {/* <p className=' cursor-pointer'>
                                             Remove
-                                        </p>
+                                        </p> */}
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className=' mt-10'>
+                    {/* <div className=' mt-10'>
                         <div>
                             <p>
                                 Reviews
@@ -164,7 +165,7 @@ const UserProfile = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

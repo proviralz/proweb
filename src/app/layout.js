@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>
-          Provirals
+          Proviralz
         </title>
       </head>
       <body className={openSans.className}>

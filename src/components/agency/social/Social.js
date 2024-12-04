@@ -93,9 +93,9 @@ const Social = () => {
             </div>
 
             {/* packages */}
-            <div>
+            {/* <div>
                 <Plans />
-            </div>
+            </div> */}
         </div>
 
         <div>

@@ -9,10 +9,10 @@ export const navData = [
         title: 'account',
         icon: <FiUser />,
     },
-    {
-        title: 'payment',
-        icon: <CiCreditCard1 />,
-    },
+    // {
+    //     title: 'payment',
+    //     icon: <CiCreditCard1 />,
+    // },
     {
         title: 'security',
         icon: <IoShieldOutline />,

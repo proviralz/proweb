@@ -27,7 +27,7 @@ const Account = () => {
             newPassword,
             userId: user?._id,
           });
-          alert(response.data.message);
+          alert(response?.data.message);
           router.push('/')
         } catch (err) {
           alert(err.response.data.error);

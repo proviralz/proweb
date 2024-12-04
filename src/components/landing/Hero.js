@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -8,7 +9,11 @@ export default function Hero() {
                 <p className="mt-4 max-w-2xl mx-auto text-lg">
                 Connect with skilled professionals right away for top-notch services.
                 </p>
-                <button className="mt-6 px-6 py-3 bg-[#31013f] text-white font-bold rounded">Get Started</button>
+                <Link href={'/login'}>
+                    <button className="mt-6 px-6 py-3 bg-[#31013f] text-white font-bold rounded">
+                        Get Started
+                    </button>
+                </Link>
             </div>
             <div className=" flex-1">
                 <Image src={'/assets/landing/hero.svg'} alt="" height={500} width={500} className=" w-full h-auto" />

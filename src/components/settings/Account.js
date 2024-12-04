@@ -83,7 +83,7 @@ const Account = () => {
                 </div>
                 <div className="">
                     <button type="submit" className="purple-btn">
-                        Change Password
+                        Update Profile
                     </button>
                 </div>
             </form>

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -9,9 +10,11 @@ const Footer = () => {
             </p>
         </div>
         <div>
-            <p className='yellow-btn-long w-56'>
-                Start Earning Now
-            </p>
+            <Link href={'/affiliate/register'}>
+                <p className='yellow-btn-long w-56'>
+                    Start Earning Now
+                </p>
+            </Link>
         </div>
     </div>
   )

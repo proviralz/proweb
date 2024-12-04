@@ -18,15 +18,21 @@ const Footer = () => {
                         <p>
                             Find us:
                         </p>
-                        <p className='social-icon'>
-                            <FaXTwitter />
-                        </p>
-                        <p className='social-icon'>
-                            <FaInstagram />
-                        </p>
-                        <p className=' social-icon'>
-                            <FaFacebookF />
-                        </p>
+                        <Link href={'https://x.com/proviralz'}>
+                            <p className='social-icon'>
+                                <FaXTwitter />
+                            </p>
+                        </Link>
+                        <Link href={'https://www.instagram.com/proviralz_hub'}>
+                            <p className='social-icon'>
+                                <FaInstagram />
+                            </p>
+                        </Link>
+                        <Link href={'https://facebook.com/proviralz'}>
+                            <p className=' social-icon'>
+                                <FaFacebookF />
+                            </p>
+                        </Link>
                     </div>
                 </div>
             </div>

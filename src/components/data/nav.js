@@ -18,10 +18,10 @@ export const footerNav = [
             //     name: 'Testimonials',
             //     url: 'testimonials'
             // },
-            {
-                name: 'Help center',
-                url: 'help'
-            },
+            // {
+            //     name: 'Help center',
+            //     url: 'help'
+            // },
             
         ]
     },

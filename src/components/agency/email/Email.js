@@ -93,9 +93,9 @@ const Email = () => {
             </div>
 
             {/* packages */}
-            <div>
+            {/* <div>
                 <Plans />
-            </div>
+            </div> */}
         </div>
 
         <div>

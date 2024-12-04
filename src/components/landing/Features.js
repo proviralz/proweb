@@ -21,7 +21,7 @@ export default function Features() {
   
           {/* Feature Item List */}
           <div className="space-y-6">
-            <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Budgeting Intervals" />
+            <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Search Engine Optimization" text={''}  />
             <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Budgeting Intervals" />
             <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Budgeting Intervals" />
           </div>
@@ -31,7 +31,7 @@ export default function Features() {
   }
 
 
-  function FeatureItem({ icon, title }) {
+  function FeatureItem({ icon, title, text }) {
     return (
       <div className="flex items-start space-x-4">
         {icon}

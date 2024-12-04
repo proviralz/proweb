@@ -168,9 +168,9 @@ const Ppc = () => {
             </div> */}
 
             {/* packages */}
-            <div>
+            {/* <div>
                 <Plans />
-            </div>
+            </div> */}
         </div>
 
         <div>

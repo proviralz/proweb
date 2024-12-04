@@ -11,7 +11,7 @@ const WhyHireUs = () => {
                     Why should you hire us?
                 </p>
                 <p className=' text-xs font-light mt-5 text-justify'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Reach potential clients and increase your chances of been hired by clients.follow up on clients and retain customers loyalty.
                 </p>
             </div>
             <div className=' flex-1 space-y-6'>
@@ -21,10 +21,10 @@ const WhyHireUs = () => {
                     </div>
                     <div className=' space-y-3 text-neutral-600 w-3/4'>
                         <p className=' text-sm font-semibold'>
-                            Email campaign design and creation
+                            Social media campaign design and creation
                         </p>
                         <p className=' text-xs font-extralight'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Increase sales: leverage on email marketing to increase client hire rate
                         </p>
                     </div>
                 </div>
@@ -35,10 +35,10 @@ const WhyHireUs = () => {
                     </div>
                     <div className=' space-y-3 text-neutral-600 w-3/4'>
                         <p className=' text-sm font-semibold'>
-                            Email campaign design and creation
+                            Retain customer
                         </p>
                         <p className=' text-xs font-extralight'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Follow up on client and increase chances of getting hired consistently 
                         </p>
                     </div>
                 </div>
@@ -49,10 +49,10 @@ const WhyHireUs = () => {
                     </div>
                     <div className=' space-y-3 text-neutral-600 w-3/4'>
                         <p className=' text-sm font-semibold'>
-                            Email campaign design and creation
+                            Tailor content to target customers
                         </p>
                         <p className=' text-xs font-extralight'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Get to connect with your customers pain points and position your services as the right services they need.
                         </p>
                     </div>
                 </div>
