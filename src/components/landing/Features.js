@@ -7,7 +7,7 @@ export default function Features() {
         {/* Left Image Section */}
         <div className="relative w-full md:w-1/2 h-72 md:h-auto rounded-lg overflow-hidden">
           <Image
-            src="/assets/landing/features.svg" // Replace with your image path
+            src="/assets/landing/features2.svg" // Replace with your image path
             alt="Man working on laptop"
             layout="fill"
             objectFit="cover"
@@ -21,9 +21,9 @@ export default function Features() {
   
           {/* Feature Item List */}
           <div className="space-y-6">
-            <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Search Engine Optimization" text={''}  />
-            <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Budgeting Intervals" />
-            <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Budgeting Intervals" />
+            <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Find talent" text={'get to hire artisans and professional near you ranging from tutors,upholstery,hair stylist,nanny,technician,caterer,private chef,plumber,freelancers'}  />
+            <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="⁠Find customers" text={'find potential client who need your services immediately and are willing to hire you Now.'} />
+            <FeatureItem icon={<PiStarFour className="w-6 h-6 text-purple-500" />} title="Reach more audience" text={'Hire marketing team to increase sales, client retention and introduce new offers to your clients'} />
           </div>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function Features() {
         <div>
           <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
           <p className="text-gray-600">
-            Cum et convallis risus placerat aliquam, nunc. Scelerisque aliquet faucibus tincidunt eu adipiscing sociis arcu lorem porttitor.
+            {text}
           </p>
         </div>
       </div>

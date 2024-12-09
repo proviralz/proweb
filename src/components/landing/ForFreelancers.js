@@ -20,7 +20,7 @@ const ForFreelancers = () => {
         </div>
         <div className="md:w-1/2 flex items-center justify-center">
           <Image
-            src="/assets/landing/freelancer.svg"
+            src="/assets/landing/providers.svg"
             alt="Service Provider"
             className="rounded-lg shadow-lg w-full h-auto"
             width={100}
